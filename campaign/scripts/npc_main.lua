@@ -26,6 +26,7 @@ function update()
 	stamina.setReadOnly(bReadOnly);
 	initiative.setReadOnly(bReadOnly);
 	armour.setReadOnly(bReadOnly);
+	damage_as.setReadOnly(bReadOnly);
 	description.setReadOnly(bReadOnly);
 	special.setReadOnly(bReadOnly);
 	mien.setReadOnly(bReadOnly);

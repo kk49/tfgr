@@ -139,7 +139,12 @@
 			<number_column name="armour">
 				<default>1</default>
 			</number_column>
-			
+
+			<label_column name="damage_as_label">
+				<static textres="troika_damage_as" />
+			</label_column>
+			<string_columnh name="damage_as" />
+
 			<label_column name="description_label">
 				<static textres="troika_description" />
 			</label_column>
