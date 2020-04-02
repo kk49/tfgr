@@ -29,6 +29,7 @@
 			<subwindow_record name="main">
 				<class>npc_main</class>
 			</subwindow_record>
+
 			<ft_record name="notes">
 				<anchored to="contentframe" position="over" />
 				<empty textres="ft_empty" hidereadonly="true" />
@@ -38,6 +39,7 @@
 			<scrollbar_record>
 				<target>main</target>
 			</scrollbar_record>
+
 			<scrollbar_record>
 				<target>notes</target>
 			</scrollbar_record>

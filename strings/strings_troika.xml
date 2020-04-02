@@ -9,4 +9,6 @@
 	<string name="troika_mien">Mien</string>
 	<string name="troika_description">Description</string>
 	<string name="troika_special">Special</string>
+	<string name="troika_possessions">Possessions</string>
+	<string name="troika_luck">Luck</string>
 </root>

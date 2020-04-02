@@ -26,6 +26,7 @@
 
   <!-- Campaign Records -->
   <includefile source="campaign/record_npc.xml" />
+  <includefile source="campaign/record_char.xml" />
 
 
 </root>
