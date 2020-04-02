@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root version="3.0" release="1" logo="graphics/troika_compatible.png">
+  <description>
+    <text>off-brand Troika! Ruleset for Fantasy Grounds</text>
+    <author>MathArtBang</author>
+    <website>https://github.com/kk49/tfg_ruleset</website>
+  </description>
+  <announcement text="TRFG is an independent production by MathArtBang and is not affiliated with the Melsonian Arts Council." font="emotefont" icon="rulesetlogo_CoreRPG" />
+  <importruleset source="CoreRPG" />
+</root>
