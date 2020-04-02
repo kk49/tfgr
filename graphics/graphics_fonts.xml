@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<!-- Note: FGF tags processed first for FG Classic, and TTF tags processed first for FGU -->
+	<font name="troika_emotefont">
+		<!-- fgffile name="graphics/fonts/troika-10.fgf" /-->
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre.ttf" name="Averia Libre" size="16" />
+		<color value="#261A12" />
+	</font>
+	<font name="troika_attribute">
+		<!-- fgffile name="graphics/fonts/troika-10.fgf" /-->
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="16" />
+		<color value="#000000" />
+	</font>
+
+</root>

@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<root version="3.0" release="1" logo="graphics/troika_compatible.png">
+<root version="3.0" release="1" logo="graphics/troika_compatible_logo/logo.png">
   <description>
-    <text>off-brand Troika! Ruleset for Fantasy Grounds</text>
+    <text>Troika! Compatible Ruleset for Fantasy Grounds</text>
     <author>MathArtBang</author>
     <website>https://github.com/kk49/tfg_ruleset</website>
   </description>
-  <announcement text="TRFG is an independent production by MathArtBang and is not affiliated with the Melsonian Arts Council." font="emotefont" icon="rulesetlogo_CoreRPG" />
+  <announcement
+          text="TRFG is an independent production by MathArtBang and is not affiliated with the Melsonian Arts Council. Troika! Compatibility Logo Copyright 2019 Sam Mameli"
+          font="troika_emotefont"
+          icon="graphics/troika_compatible_logo/logo.png"
+  />
+
   <importruleset source="CoreRPG" />
+
+  <!-- Graphics -->
+  <includefile source="graphics/graphics_fonts.xml" />
+
+  <!-- String resources -->
+  <includefile source="strings/strings_troika.xml" />
+
+  <!-- Common templates -->
+  <!--script name="NPCManager" file="scripts/manager_npc.lua" /-->
+
+  <!-- Campaign Records -->
+  <includefile source="campaign/record_npc.xml" />
+
+
 </root>

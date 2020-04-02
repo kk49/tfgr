@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<string name="troika_skill">Skill</string>
+	<string name="troika_stamina">Stamina</string>
+	<string name="troika_initiative">Initiative</string>
+	<string name="troika_armour">Armour</string>
+	<string name="troika_damage_as">Damage as</string>
+	<string name="troika_mien">Mien</string>
+	<string name="troika_description">Description</string>
+	<string name="troika_special">Special</string>
+</root>
