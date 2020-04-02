@@ -6,15 +6,17 @@
     <website>https://github.com/kk49/tfg_ruleset</website>
   </description>
   <announcement
-          text="TRFG is an independent production by MathArtBang and is not affiliated with the Melsonian Arts Council. Troika! Compatibility Logo Copyright 2019 Sam Mameli"
-          font="troika_emotefont"
-          icon="graphics/troika_compatible_logo/logo.png"
+          text="  TRFG is an independent production by MathArtBang and is not affiliated with the Melsonian Arts Council.
+  Troika! Compatibility Logo Copyright 2019 Sam Mameli"
+          font="troika_font"
+          icon="troika_icon_compatibility_small"
   />
 
   <importruleset source="CoreRPG" />
 
   <!-- Graphics -->
   <includefile source="graphics/graphics_fonts.xml" />
+  <includefile source="graphics/graphics_icons.xml" />
 
   <!-- String resources -->
   <includefile source="strings/strings_troika.xml" />
