@@ -11,9 +11,9 @@ def process_element(ele, output_prefix, indent=0):
     erase_all_children = False
     if ele.tag == 'root':
         process_children = True
-    elif ele.tag in {'announcement', 'description'}:
+    elif ele.tag in {'announcement', 'description', 'desktopframe', 'tokenroot', 'characterdbroot'}:
         ele.getparent().remove(ele)
-    elif ele.tag in {'windowclass', 'panel'}:
+    elif ele.tag in {'windowclass', 'panel', 'die', 'customdie', 'diebox', 'pollbox', 'hotkeybar', 'menusettings'}:
         ele.set('merge', 'delete')
         erase_all_children = True
     elif ele.tag == 'script':
