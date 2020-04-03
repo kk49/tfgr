@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<template name="story_button_generate">
+		<button_text_sm>
+			<anchored to="contentframe" width="100">
+				<top anchor="bottom" offset="10"/>
+				<left anchor="center" offset="-50"/>
+			</anchored>
+			<state textres="story_button_generate"/>
+			<script file="campaign/scripts/story_template_generate.lua"/>
+			<gmvisibleonly/>
+		</button_text_sm>
+	</template>
+	
+	<windowclass name="storytemplate" merge="delete"/>
+
+	<windowclass name="storytemplate_header" merge="delete"/>
+</root>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Reference Manual sheets (non-editable) -->
+	<windowclass name="reference_manualtextwide" merge="delete"/>
+	<windowclass name="referencemanualpage" merge="delete"/>
+	<windowclass name="referencemanualpageheader" merge="delete"/>
+	<windowclass name="referencemanualpagecontent" merge="delete"/>
+	<windowclass name="referencemanualtextblock" merge="delete"/>	
+
+	<windowclass name="referencemanualarticle" merge="delete"/>
+	
+	<windowclass name="referencemanualsection" merge="delete"/>
+	
+	<windowclass name="referencemanualchapter" merge="delete"/>
+	
+	<windowclass name="reference_manual" merge="delete"/>
+</root>

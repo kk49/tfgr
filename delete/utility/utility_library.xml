@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="library_recordtype" merge="delete"/>
+
+	<windowclass name="library_booklistcategory" merge="delete"/>
+
+	<windowclass name="library_booklistentry" merge="delete"/>
+
+	<windowclass name="library_pagelistentry" merge="delete"/>
+
+	<windowclass name="library" merge="delete"/>
+</root>

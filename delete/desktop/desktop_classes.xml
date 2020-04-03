@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="desktopdecal" merge="delete"/>
+
+	<windowclass name="chat" merge="delete"/>
+
+	<windowclass name="chatlocal" merge="delete"/>
+	
+	<windowclass name="identitylist" merge="delete"/>
+
+	<windowclass name="characterlist" merge="delete"/>
+	
+	<windowclass name="shortcuts" merge="delete"/>
+	<windowclass name="shortcutbar" merge="delete"/>
+	<windowclass name="shortcutsanchor" merge="delete"/>
+
+	<windowclass name="modifierstack" merge="delete"/>
+
+	<windowclass name="dicetower" merge="delete"/>
+
+	<windowclass name="imagebackpanel" merge="delete"/>
+	<windowclass name="imagefullpanel" merge="delete"/>
+</root>

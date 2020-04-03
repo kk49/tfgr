@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-    	<template name="list_char_possession">
+	<template name="list_char_possession">
 		<windowlist>
 			<class>char_possession</class>
 			<datasource>.possessionlist</datasource>

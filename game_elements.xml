@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<desktopframe>desktop</desktopframe>
+
+	<tokenroot source="tokens" />
+
+	<characterdbroot>char_sheet</characterdbroot>
+
+	<hotkeybar>
+		<frame>hotkeybox</frame>
+		<location offset="0" height="33" />
+		<title frame="hotkeytitlebox" frameoffset="2,-2,5,2" margin="2,1" font="hotkey" />
+		<label margin="10,12" font="hotkey" />
+		<iconmargins>0,10,0,3</iconmargins>
+	</hotkeybar>
+
+	<tooltip>
+		<frame name="tooltipbox" margins="7,4,10,7" wrapwidth="300" />
+		<radial name="mini_name" margins="7,2,7,2" />
+		<font name="mini_name" />
+	</tooltip>
+
+	<pollbox version="&gt;=4">
+		<frame name="diebox" offset="4,4,4,4" />
+		<icons empty="poll_empty" positive="poll_check" negative="poll_negative" />
+	</pollbox>
+	<pollbox version="&lt;4">
+		<frame name="diebox" />
+		<margin value="21" numbertailmargin="10" />
+		<icons empty="poll_empty" positive="poll_check" negative="poll_negative" />
+	</pollbox>
+
+
+</root>

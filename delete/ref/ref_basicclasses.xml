@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="referencetext" merge="delete"/>
+
+	<windowclass name="referencetextwide" merge="delete"/>
+
+	<windowclass name="ref_text_header" merge="delete"/>
+
+	<!-- Generic lists -->
+	<windowclass name="referenceindexitem" merge="delete"/>
+
+	<windowclass name="referenceindex" merge="delete"/>
+	<windowclass name="reference_index" merge="delete"/>
+	
+	<windowclass name="referenceindexsorted" merge="delete"/>
+
+	<!-- Inline text list -->
+	<windowclass name="referenceinlineindexitem" merge="delete"/>
+
+	<windowclass name="referenceinlineindex" merge="delete"/>
+	
+	<!-- Grouped list -->
+	<windowclass name="reference_colindexitem" merge="delete"/>
+
+	<windowclass name="reference_colindexgroup" merge="delete"/>
+
+	<windowclass name="reference_colindex" merge="delete"/>
+	
+	<!-- Misc -->
+	<!-- Deprecated - v3.2 -->
+	<windowclass name="reference_tableresult" merge="delete"/>
+</root>

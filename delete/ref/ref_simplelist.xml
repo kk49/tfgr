@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Grouped content -->
+	<template name="filter_reflist">
+		<filter>
+			<anchored to="contentanchor" height="20">
+				<left offset="25"/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-10"/>
+			</anchored>
+		</filter>
+	</template>
+	<template name="list_reflist">
+		<windowlist name="list">
+			<anchored to="contentanchor">
+				<top anchor="bottom" relation="relative" offset="15"/>
+				<left/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-20"/>
+			</anchored>
+			<frame name="groupbox" offset="15,15,20,15"/>
+			<class>reference_list_item</class>
+			<child/>
+			<child><backcolor>1A40301E</backcolor></child>
+			<skipempty/>
+			<readonly/>
+			<sortby><control>name</control></sortby>
+			<filter><control>filter</control></filter>
+			<filteron><control>name</control></filteron>
+		</windowlist>
+	</template>
+	<template name="link_reflistitem">
+		<linkcontrol name="link">
+			<bounds>5,2,20,20</bounds>
+			<description field="name"/>
+			<readonly/>
+		</linkcontrol>
+	</template>
+	<template name="string_reflistitem">
+		<stringfield>
+			<anchored position="insidetopleft" offset="30,2" height="20">
+				<right offset="-5"/>
+			</anchored>
+			<font>reference-r</font>
+			<underlineoffset>-1</underlineoffset>
+			<empty>-</empty>
+			<readonly/>
+			<script file="common/scripts/string_reflistitem_link.lua"/>
+		</stringfield>
+	</template>
+	<template name="ft_reflist_notes">
+		<simpleft>
+			<anchored to="contentanchor">
+				<sizelimits><maximum height="80"/></sizelimits>
+				<left/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-10"/>
+			</anchored>
+		</simpleft>
+	</template>
+	<template name="scrollbar_reflist_notes">
+		<scrollbar/>
+	</template>
+	
+	<windowclass name="reference_list_item" merge="delete"/>
+	<windowclass name="reference_list" merge="delete"/>
+</root>

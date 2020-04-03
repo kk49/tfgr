@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="charsheet_main" merge="delete"/>
+
+	<windowclass name="char_main_category_header" merge="delete"/>
+	
+	<windowclass name="char_main_category" merge="delete"/>
+	
+	<windowclass name="char_attribute" merge="delete"/>
+</root>

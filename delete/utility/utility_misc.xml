@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="portraitselection_entry" merge="delete"/>
+
+	<windowclass name="portraitselection_up" merge="delete"/>
+
+	<windowclass name="portraitselection_dir" merge="delete"/>
+
+	<windowclass name="portraitselection" merge="delete"/>
+
+	<windowclass name="pointerselection" merge="delete"/>
+	
+	<template name="lightingselection">
+		<buttoncontrol>
+			<light>
+				<system>FFFFFFFF</system>
+				<window>FFFFFFFF</window>
+				<control>FFFFFFFF</control>
+				<content>FFFFFFFF</content>
+			</light>
+			<script>
+				function onButtonPress()
+					Interface.setLighting(light[1].system[1], light[1].window[1], light[1].control[1], light[1].content[1]);
+					window.close();
+					return true;
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+	
+	<windowclass name="lightingselection" merge="delete"/>
+</root>

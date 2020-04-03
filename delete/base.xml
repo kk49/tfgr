@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root version="3.0" release="4" logo="logo.png">
+	<!-- Attributes -->
+	<!-- Tabletop settings -->
+	<includefile source="delete/gameelements.xml"/>
+
+	<!-- Graphics -->
+	<includefile source="delete/graphics/graphics_fonts.xml"/>
+	<includefile source="delete/graphics/graphics_frames.xml"/>
+	<includefile source="delete/graphics/graphics_icons.xml"/>
+	<includefile source="delete/graphics/graphics_portraits.xml"/>
+	<includefile source="delete/graphics/graphics_radial.xml"/>
+	<includefile source="delete/graphics/graphics_tabs.xml"/>
+	
+	<!-- String resources -->
+	<includefile source="delete/strings/strings_common.xml"/>
+	<includefile source="delete/strings/strings_utility.xml"/>
+	<includefile source="delete/strings/strings_campaign.xml"/>
+	<includefile source="delete/strings/strings_ct.xml"/>
+	<includefile source="delete/strings/strings_ps.xml"/>
+
+	<!-- Common templates -->
+	<includefile source="delete/common/template_common.xml"/>
+	<includefile source="delete/common/template_buttons.xml"/>
+	<includefile source="delete/common/template_windows.xml"/>
+	<includefile source="delete/common/template_lists.xml"/>
+	<includefile source="delete/common/template_records.xml"/>
+	<includefile source="delete/common/template_toolbar.xml"/>
+	<includefile source="delete/common/template_combobox.xml"/>
+	<script name="OOBManager" merge="delete"/>
+	<script name="OptionsManager" merge="delete"/>
+	<script name="OptionsCore" merge="delete"/>
+	<script name="ExportManager" merge="delete"/>
+
+	<script name="CampaignDataManager" merge="delete"/>
+	<script name="StringManager" merge="delete"/>
+	<script name="UtilityManager" merge="delete"/>
+	<script name="GameSystem" merge="delete"/>
+	<script name="TableManager" merge="delete"/>
+	<script name="CalendarManager" merge="delete"/>
+	<script name="ReferenceManualManager" merge="delete"/>
+	<script name="WindowManager" merge="delete"/>
+
+	<script name="ActorManager" merge="delete"/>
+	<script name="ActionsManager" merge="delete"/>
+	<script name="ColorManager" merge="delete"/>
+	<script name="CombatManager" merge="delete"/>
+	<script name="CombatManager2" merge="delete"/>
+	<script name="CurrencyManager" merge="delete"/>
+	<script name="EffectManager" merge="delete"/>
+	<script name="ImageManager" merge="delete"/>
+	<script name="ItemManager" merge="delete"/>
+	<script name="LanguageManager" merge="delete"/>
+	<script name="ManualRollManager" merge="delete"/>
+	<script name="NPCManager" merge="delete"/>
+	<script name="TargetingManager" merge="delete"/>
+	<script name="TokenManager" merge="delete"/>
+	<script name="VersionManager" merge="delete"/>
+	<script name="VersionManager2" merge="delete"/>
+
+	<script name="ActionEffect" merge="delete"/>
+
+	<script name="LibraryData" merge="delete"/>
+
+	<!-- Desktop -->
+	<includefile source="delete/desktop/template_desktop.xml"/>
+	<includefile source="delete/desktop/desktop_classes.xml"/>
+	<includefile source="delete/desktop/desktop_panels.xml"/>
+	<script name="CharacterListManager" merge="delete"/>
+	<script name="ModifierStack" merge="delete"/>
+	<script name="GmIdentityManager" merge="delete"/>
+	<script name="DiceTowerManager" merge="delete"/>
+
+	<script name="ChatManager" merge="delete"/>
+	<script name="DesktopManager" merge="delete"/>
+	<script name="Desktop" merge="delete"/>
+	
+	<!-- Utilities -->
+	<includefile source="delete/utility/template_utility.xml"/>
+	<includefile source="delete/utility/utility_calendar.xml"/>
+	<includefile source="delete/utility/utility_calendar_log.xml"/>
+	<includefile source="delete/utility/utility_currencies.xml"/>
+	<includefile source="delete/utility/utility_dialog_missinglink.xml"/>
+	<includefile source="delete/utility/utility_dialog_select.xml"/>
+	<includefile source="delete/utility/utility_modifiers.xml"/>
+	<includefile source="delete/utility/utility_effects.xml"/>
+	<includefile source="delete/utility/utility_export.xml"/>
+	<includefile source="delete/utility/utility_languages.xml"/>
+	<includefile source="delete/utility/utility_library.xml"/>
+	<includefile source="delete/utility/utility_manualrolls.xml"/>
+	<includefile source="delete/utility/utility_modules.xml"/>
+	<includefile source="delete/utility/utility_options.xml"/>
+	<includefile source="delete/utility/utility_setup.xml"/>
+	<includefile source="delete/utility/utility_tokenbag.xml"/>
+	<includefile source="delete/utility/utility_misc.xml"/>
+	
+	<!-- Campaign Records -->
+	<includefile source="delete/campaign/template_campaign.xml"/>
+	<includefile source="delete/campaign/template_char.xml"/>
+
+	<includefile source="delete/campaign/campaign_masterindex.xml"/>
+	<includefile source="delete/campaign/campaign_chars.xml"/>
+	
+	<includefile source="delete/campaign/record_char.xml"/>
+	<includefile source="delete/campaign/record_char_main.xml"/>
+	<includefile source="delete/campaign/record_char_abilities.xml"/>
+	<includefile source="delete/campaign/record_char_inventory.xml"/>
+	<includefile source="delete/campaign/record_char_notes.xml"/>
+	<includefile source="delete/campaign/record_ability.xml"/>
+	<script name="CharManager" merge="delete"/>
+
+	<includefile source="delete/campaign/record_note.xml"/>
+	<includefile source="delete/campaign/record_story.xml"/>
+	<includefile source="delete/campaign/record_storytemplate.xml"/>
+	<includefile source="delete/campaign/record_quest.xml"/>
+	<includefile source="delete/campaign/record_image.xml"/>
+	<includefile source="delete/campaign/record_table.xml"/>
+	<includefile source="delete/campaign/record_npc.xml"/>
+	<includefile source="delete/campaign/record_encounter.xml"/>
+	<includefile source="delete/campaign/record_encounterrandom.xml"/>
+	<includefile source="delete/campaign/record_item.xml"/>
+	<includefile source="delete/campaign/record_parcel.xml"/>
+	<includefile source="delete/campaign/record_vehicle.xml"/>
+	
+	<!-- REFERENCE -->
+	<includefile source="delete/ref/template_ref.xml"/>
+	<includefile source="delete/ref/ref_basicclasses.xml"/>
+	<includefile source="delete/ref/ref_simplelist.xml"/>
+	<includefile source="delete/ref/ref_groupedlist.xml"/>
+	<includefile source="delete/ref/ref_manual.xml"/>
+
+	<!-- Combat tracker -->
+	<includefile source="delete/ct/template_ct.xml"/>
+	<includefile source="delete/ct/ct_host.xml"/>
+	<includefile source="delete/ct/ct_client.xml"/>
+
+	<!-- Party sheet -->
+	<includefile source="delete/ps/template_ps.xml"/>
+	<includefile source="delete/ps/ps.xml"/>
+	<includefile source="delete/ps/ps_inventory.xml"/>
+	<includefile source="delete/ps/ps_order.xml"/>
+	<script name="PartyManager" merge="delete"/>
+	<script name="PartyLootManager" merge="delete"/>
+</root>

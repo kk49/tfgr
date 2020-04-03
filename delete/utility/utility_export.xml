@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="export_entry" merge="delete"/>
+
+	<windowclass name="export_categoryentry" merge="delete"/>
+
+	<windowclass name="export_token" merge="delete"/>
+
+	<windowclass name="export" merge="delete"/>
+</root>

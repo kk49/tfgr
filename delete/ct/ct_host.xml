@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="combattracker_host" merge="delete"/>
+	
+	<windowclass name="ct_entry" merge="delete"/>
+
+	<windowclass name="ct_effect" merge="delete"/>
+
+	<windowclass name="ct_targets" merge="delete"/>
+	
+	<windowclass name="ct_target" merge="delete"/>
+</root>

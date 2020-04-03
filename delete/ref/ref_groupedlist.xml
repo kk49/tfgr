@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Grouped content -->
+	<template name="anchor_refgroupedlist_bottom">
+		<genericcontrol name="bottomanchor">
+			<anchored position="insidebottom" offset="0,0" height="20"/>
+			<disabled/>
+		</genericcontrol>
+	</template>
+	<template name="anchor_refgroupedlist_label">
+		<genericcontrol name="labelanchor">
+			<anchored to="contentanchor" width="0" height="20">
+				<left offset="25"/>
+				<top anchor="bottom" relation="relative" offset="0"/>
+			</anchored>
+			<disabled/>
+		</genericcontrol>
+	</template>
+	<template name="label_refgroupedlist">
+		<stringcontrol>
+			<anchored to="labelanchor" height="20" width="50">
+				<left anchor="right" relation="relative" offset="5"/>
+				<top/>
+			</anchored>
+			<font>reference-header</font>
+			<readonly/>
+		</stringcontrol>
+	</template>
+	<template name="label_refgroupedlist_center">
+		<label_refgroupedlist>
+			<center/>
+		</label_refgroupedlist>
+	</template>
+	<template name="list_refgroupedlist">
+		<windowlist name="list">
+			<anchored to="contentanchor">
+				<top anchor="bottom" relation="relative" offset="15"/>
+				<left/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-20"/>
+			</anchored>
+			<frame name="groupbox" offset="15,15,20,15"/>
+			<class>reference_groupedlist_group</class>
+			<skipempty/>
+			<readonly/>
+			<script>
+				function onSortCompare(w1, w2)
+					return window.onSortCompare(w1, w2);
+				end
+			</script>
+		</windowlist>
+	</template>
+	<template name="scrollbar_refgroupedlist">
+		<scrollbar>
+			<anchored to="grouplist"/>
+			<target>grouplist</target>
+		</scrollbar>
+	</template>
+	<template name="ft_refgroupedlist_notes">
+		<simpleft>
+			<anchored to="contentanchor">
+				<sizelimits><maximum height="80"/></sizelimits>
+				<left/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-10"/>
+			</anchored>
+		</simpleft>
+	</template>
+	<template name="filter_refgroupedlist">
+		<filter>
+			<anchored to="contentanchor" height="20">
+				<left offset="85"/>
+				<right/>
+				<bottom parent="bottomanchor" anchor="top" relation="relative" offset="-10"/>
+			</anchored>
+			<target>grouplist,list</target>
+			<script file="ref/scripts/ref_filter.lua"/>
+		</filter>
+	</template>
+	<template name="button_refgroupedlist_expand">
+		<button_expand>
+			<anchored to="filter" width="20" height="20">
+				<right anchor="left" offset="-65"/>
+				<bottom/>
+			</anchored>
+		</button_expand>
+	</template>
+	<template name="button_refgroupedlist_collapse">
+		<button_collapse>
+			<anchored to="filter" width="20" height="20">
+				<right anchor="left" offset="-35"/>
+				<bottom/>
+			</anchored>
+		</button_collapse>
+	</template>
+	<template name="scrollbar_refgroupedlist_notes">
+		<scrollbar/>
+	</template>
+	<template name="list_groupedlist_group_content">
+		<windowlist>
+			<anchored>
+				<top parent="topanchor" anchor="bottom" relation="relative" offset="2"/>
+				<left/>
+				<right/>
+			</anchored>
+			<noscroll/>
+			<child/>
+			<child><backcolor>1A40301E</backcolor></child>
+			<class>reference_groupedlist_groupitem</class>
+			<skipempty/>
+			<readonly/>
+			<script file="ref/scripts/ref_list.lua"/>
+		</windowlist>
+	</template>
+	<template name="frame_groupedlist_group">
+		<genericcontrol>
+			<anchored height="25">
+				<top parent="topanchor" anchor="bottom"/>
+				<left offset="10"/>
+				<right/>
+			</anchored>
+			<frame name="headerref" offset="10,0,0,0"/>
+			<script>
+				function onClickDown(button, x, y)
+					return true;
+				end
+				function onClickRelease(button, x, y)
+					window.list.setVisible(not window.list.isVisible());
+					return true;
+				end
+			</script>
+		</genericcontrol>
+	</template>
+	<template name="string_groupedlist_group">
+		<stringcontrol>
+			<anchored height="20">
+				<top parent="topanchor" anchor="bottom" relation="relative" offset="5"/>
+				<left offset="15"/>
+			</anchored>
+			<font>reference-groupdesc</font>
+			<static/>
+			<script>
+				function onClickDown(button, x, y)
+					return true;
+				end
+				function onClickRelease(button, x, y)
+					window.list.setVisible(not window.list.isVisible());
+					return true;
+				end
+			</script>
+		</stringcontrol>
+	</template>
+	<template name="link_refgroupedlistgroupitem">
+		<linkcontrol name="link">
+			<bounds>5,2,20,20</bounds>
+			<description field="name"/>
+			<readonly/>
+		</linkcontrol>
+	</template>
+	<template name="anchor_refgroupedlistgroupitem_left">
+		<genericcontrol name="leftanchor">
+			<anchored position="insidetopleft" offset="25,2" height="20"/>
+			<disabled/>
+		</genericcontrol>
+	</template>
+	<template name="string_refgroupedlistgroupitem">
+		<stringfield>
+			<anchored to="leftanchor" height="20" width="50">
+				<top/>
+				<left anchor="right" relation="relative" offset="5"/>
+			</anchored>
+			<font>reference-r</font>
+			<empty>-</empty>
+			<readonly/>
+		</stringfield>
+	</template>
+	<template name="string_refgroupedlistgroupitem_wrap">
+		<stringfield>
+			<anchored to="leftanchor" width="50">
+				<top/>
+				<left anchor="right" relation="relative" offset="5"/>
+			</anchored>
+			<multilinespacing>20</multilinespacing>
+			<font>reference-r</font>
+			<empty>-</empty>
+			<readonly/>
+		</stringfield>
+	</template>
+	<template name="string_refgroupedlistgroupitem_link">
+		<string_refgroupedlistgroupitem>
+			<underlineoffset>-1</underlineoffset>
+			<script file="common/scripts/string_reflistitem_link.lua"/>
+		</string_refgroupedlistgroupitem>
+	</template>
+	<template name="string_refgroupedlistgroupitem_link_wrap">
+		<string_refgroupedlistgroupitem_wrap>
+			<underlineoffset>-1</underlineoffset>
+			<script file="common/scripts/string_reflistitem_link.lua"/>
+		</string_refgroupedlistgroupitem_wrap>
+	</template>
+	<template name="string_refgroupedlistgroupitem_center">
+		<string_refgroupedlistgroupitem>
+			<center/>
+		</string_refgroupedlistgroupitem>
+	</template>
+	<template name="string_refgroupedlistgroupitem_center_wrap">
+		<string_refgroupedlistgroupitem_wrap>
+			<center/>
+		</string_refgroupedlistgroupitem_wrap>
+	</template>
+	<template name="number_refgroupedlistgroupitem">
+		<numberfield>
+			<anchored to="leftanchor" height="20" width="50">
+				<top/>
+				<left anchor="right" relation="relative" offset="5"/>
+			</anchored>
+			<font>reference-r</font>
+			<hideonvalue>0</hideonvalue>
+			<readonly/>
+			<nodrag/>
+		</numberfield>
+	</template>
+	<template name="number_signed_refgroupedlistgroupitem">
+		<number_refgroupedlistgroupitem>
+			<displaysign/>
+		</number_refgroupedlistgroupitem>
+	</template>
+	<template name="string_refgroupedlistgroupitem_ft">
+		<stringcontrol>
+			<anchored to="leftanchor" height="20" width="50">
+				<top/>
+				<left anchor="right" relation="relative" offset="5"/>
+			</anchored>
+			<font>reference-r</font>
+			<empty>-</empty>
+			<readonly/>
+		</stringcontrol>
+	</template>
+	<template name="string_refgroupedlistgroupitem_ft_wrap">
+		<stringcontrol>
+			<anchored to="leftanchor" width="50">
+				<top/>
+				<left anchor="right" relation="relative" offset="5"/>
+			</anchored>
+			<font>reference-r</font>
+			<empty>-</empty>
+			<readonly/>
+		</stringcontrol>
+	</template>
+	
+	<windowclass name="reference_groupedlist_groupitem" merge="delete"/>
+	<windowclass name="reference_groupedlist_group" merge="delete"/>
+	<windowclass name="reference_groupedlist" merge="delete"/>
+</root>

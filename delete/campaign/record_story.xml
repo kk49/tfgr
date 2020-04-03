@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<template name="story_page_top">
+		<button_page_top>
+			<anchored to="contentframe">
+				<top anchor="bottom" offset="8"/>
+				<left anchor="center" offset="-12"/>
+			</anchored>
+		</button_page_top>
+	</template>
+	<template name="story_page_prev">
+		<button_page_prev>
+			<anchored to="contentframe">
+				<top anchor="bottom" offset="8"/>
+				<right anchor="center" offset="-36"/>
+			</anchored>
+		</button_page_prev>
+	</template>
+	<template name="story_page_next">
+		<button_page_next>
+			<anchored to="contentframe">
+				<top anchor="bottom" offset="8"/>
+				<left anchor="center" offset="36"/>
+			</anchored>
+		</button_page_next>
+	</template>
+	
+	<windowclass name="encounter" merge="delete"/>
+
+	<windowclass name="encounter_header" merge="delete"/>
+</root>

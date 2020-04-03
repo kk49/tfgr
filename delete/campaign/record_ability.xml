@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="ability" merge="delete"/>
+
+	<windowclass name="char_ability_header" merge="delete"/>
+</root>

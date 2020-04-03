@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<panel name="desktop_background_panel" modes="all">
+		<class>desktop_background</class>
+		<bounds>64,64,-64,-64</bounds>
+		<disabled />
+	</panel>
+
+	<panel name="chat" modes="all">
+		<class>chat</class>
+		<bounds>5,90,395,-130</bounds>
+		<dynamic />
+		<locked />
+	</panel>
+
+</root>

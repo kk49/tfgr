@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="battle" merge="delete"/>
+	
+	<windowclass name="battle_header" merge="delete"/>
+	
+	<windowclass name="battle_npc" merge="delete"/>
+
+	<windowclass name="battle_npcmaplink" merge="delete"/>
+</root>

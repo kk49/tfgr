@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<!-- Character Selection -->
+	<template name="filter_charselect">
+		<filter>
+			<anchored to="list" position="belowleft" offset="25,8" height="20">
+				<right parent="rightanchor" anchor="left" relation="relative" offset="-15"/>
+			</anchored>
+		</filter>
+	</template>
+	<template name="anchor_charselect_button">
+		<genericcontrol name="rightanchor">
+			<anchored to="list" height="0" width="0">
+				<top anchor="bottom" offset="8"/>
+				<right/>
+			</anchored>
+		</genericcontrol>
+	</template>
+	<template name="button_backcharwindow">
+		<buttoncontrol>
+			<anchored width="20" height="20"/>
+			<icon normal="button_back" pressed="button_back_down"/>
+			<tooltip textres="charselect_tooltip_back"/>
+		</buttoncontrol>
+	</template>
+	<template name="button_importcharwindow">
+		<buttoncontrol>
+			<anchored width="20" height="20"/>
+			<icon normal="button_import" pressed="button_import_down"/>
+			<tooltip textres="charselect_tooltip_import"/>
+		</buttoncontrol>
+	</template>
+	<template name="button_importcharfile">
+		<buttoncontrol>
+			<anchored width="20" height="20"/>
+			<icon normal="button_import" pressed="button_import_down"/>
+			<tooltip textres="charselect_tooltip_importfile"/>
+		</buttoncontrol>
+	</template>
+	<template name="button_importcharadd">
+		<buttoncontrol>
+			<anchored width="20" height="20"/>
+			<icon normal="button_add" pressed="button_add_down"/>
+			<tooltip textres="charselect_tooltip_importadd"/>
+		</buttoncontrol>
+	</template>
+	<template name="button_exportchar">
+		<buttoncontrol>
+			<anchored width="20" height="20"/>
+			<icon normal="button_export" pressed="button_export_down"/>
+			<tooltip textres="charselect_tooltip_export"/>
+		</buttoncontrol>
+	</template>
+	
+	<template name="button_portrait_folder">
+		<button_text_sm>
+			<anchored position="insidetopleft" offset="12,10" width="50"/>
+			<state textres="portrait_button_folder"/>
+			<script>
+				function onButtonPress()
+					Interface.openDataFolder("portraits");
+					window.close();
+				end
+			</script>
+		</button_text_sm>
+	</template>
+	<template name="button_portrait_store">
+		<button_store_sm>
+			<anchored position="insidetopleft" offset="72,10" width="50"/>
+			<source>portrait</source>
+		</button_store_sm>
+	</template>
+
+	<template name="frame_char">
+		<genericcontrol>
+			<frame name="groupbox"/>
+		</genericcontrol>
+	</template>
+	<template name="string_labeled">
+		<stringfield>
+			<font>sheettext</font>
+			<lineoffset default="on">1</lineoffset>
+			<script>
+				labelwidget = nil;
+			
+				function onInit()
+					if labelres then
+						labelwidget = addTextWidget("sheetlabelinline", string.upper(Interface.getString(labelres[1])));
+					else
+						labelwidget = addTextWidget("sheetlabelinline", string.upper(label[1]));
+					end
+					if labelwidget then
+						local w,h = labelwidget.getSize();
+						labelwidget.setPosition("bottomleft", w/2, h/2-4);
+					end
+				end
+			</script>
+		</stringfield>
+	</template>
+	<template name="stringc_labeled">
+		<stringfield>
+			<font>sheettext</font>
+			<lineoffset default="on">1</lineoffset>
+			<script>
+				labelwidget = nil;
+			
+				function onInit()
+					if labelres then
+						labelwidget = addTextWidget("sheetlabelinline", string.upper(Interface.getString(labelres[1])));
+					else
+						labelwidget = addTextWidget("sheetlabelinline", string.upper(label[1]));
+					end
+					if labelwidget then
+						local w,h = labelwidget.getSize();
+						labelwidget.setPosition("bottomleft", w/2, h/2-4);
+					end
+				end
+			</script>
+		</stringfield>
+	</template>
+
+	<template name="button_charactivate">
+		<buttoncontrol>
+			<icon normal="button_speak" pressed="button_speak_down"/>
+			<script>
+				function onInit()
+					if User.isLocal() then
+						setVisible(false);
+					elseif User.isHost() then
+						setTooltipText(Interface.getString("char_tooltip_speak"));
+					else
+						setTooltipText(Interface.getString("char_tooltip_activate"));
+					end
+				end
+				function onButtonPress()
+					if User.isHost() then
+						GmIdentityManager.addIdentity(window.name.getValue());
+					else
+						local nodeWin = window.getDatabaseNode();
+						if nodeWin then
+							local identityname = nodeWin.getName();
+
+							User.setCurrentIdentity(identityname);
+
+							if CampaignRegistry and CampaignRegistry.colortables and CampaignRegistry.colortables[identityname] then
+								local colortable = CampaignRegistry.colortables[identityname];
+								User.setCurrentIdentityColors(colortable.color or "000000", colortable.blacktext or false);
+							end
+						end
+					end
+				end
+			</script>
+		</buttoncontrol>
+	</template>
+	<template name="portrait_charlocal">
+		<portraitselectioncontrol>
+			<base>portraittoken_base</base>
+			<mask>portraittoken_mask</mask>
+			<script>
+				function canModify()
+					return window.getDatabaseNode().isReadOnly();
+				end
+				
+				function onInit()
+					local portraitfile = User.getLocalIdentityPortrait(window.getDatabaseNode());
+					if portraitfile then
+						setFile(portraitfile);
+					end
+				end
+				
+				function onClickDown(button, x, y)
+					return true;
+				end
+				
+				function onClickRelease(button, x, y)
+					if not window.getDatabaseNode().isReadOnly() then
+						local nodeChar = window.getDatabaseNode();
+						if nodeChar then
+							local wnd = Interface.openWindow("portraitselection", "");
+							if wnd then
+								wnd.SetLocalNode(nodeChar);
+							end
+						end
+					end
+				end
+			</script>
+		</portraitselectioncontrol>
+	</template>
+	<template name="token_char">
+		<tokenfield>
+			<empty>token_empty</empty>
+			<tooltip textres="char_tooltip_token"/>
+			<script>
+				function onDragStart(button, x, y, draginfo)
+					local nodeChar = window.getDatabaseNode();
+					if nodeChar then
+						local sIdentity = nodeChar.getName();
+						
+						draginfo.setType("shortcut");
+						draginfo.setTokenData(getPrototype ());
+						draginfo.setShortcutData("charsheet", "charsheet." .. sIdentity);
+
+						local base = draginfo.createBaseData();
+						base.setType("token");
+						base.setTokenData(getPrototype ());
+					end
+				
+					return true;
+				end
+				
+				function onDoubleClick(x, y)
+					CombatManager.openMap(window.getDatabaseNode());
+				end
+			</script>
+		</tokenfield>
+	</template>
+	<template name="portrait_char">
+		<genericcontrol>
+			<tooltip textres="char_tooltip_portrait"/>
+			<script>
+				function onInit()
+					local nodeChar = window.getDatabaseNode();
+					if nodeChar then
+						local nodeCharName = nodeChar.getName();
+						if nodeCharName then
+							setIcon("portrait_" .. nodeCharName .. "_charlist", true);
+						end
+					end
+				end
+				
+				function onDragStart(button, x, y, draginfo)
+					local nodeChar = window.getDatabaseNode();
+					if nodeChar then
+						local sIdentity = nodeChar.getName();
+						
+						draginfo.setType("shortcut");
+						draginfo.setIcon("portrait_" .. sIdentity .. "_charlist");
+						draginfo.setTokenData("portrait_" .. sIdentity .. "_token");
+						draginfo.setShortcutData("charsheet", "charsheet." .. sIdentity);
+
+						local base = draginfo.createBaseData();
+						base.setType("token");
+						base.setTokenData("portrait_" .. sIdentity .. "_token");
+					end
+				
+					return true;
+				end
+				
+				function onClickDown(button, x, y)
+					return true;
+				end
+				
+				function onClickRelease(button, x, y)
+					local nodeChar = window.getDatabaseNode();
+					if nodeChar then
+						local wnd = Interface.openWindow("portraitselection", "");
+						if wnd then
+							wnd.SetLocalNode(nodeChar);
+						end
+					end
+				end
+				
+				function onDrop(x, y, draginfo)
+					if Interface.getVersion() &lt; 4 then
+						window.token.setPrototype(draginfo.getTokenData());
+					else
+						local sPrototype = draginfo.getTokenData();
+						if (sPrototype or "") ~= "" then
+							CampaignDataManager.setCharPortrait(window.getDatabaseNode(), sPrototype);
+						end
+					end
+				end
+			</script>
+		</genericcontrol>
+	</template>
+
+	<template name="list_charmaincategory">
+		<windowlist>
+			<class>char_main_category</class>
+			<datasource>.maincategorylist</datasource> 
+			<columns width="222" filldown="true"/>
+			<allowcreate/>
+			<allowdelete/>
+			<sortby><field>label</field></sortby>
+			<script>
+				function onListChanged()
+					update();
+				end
+
+				function update()
+					local sEdit = getName() .. "_iedit";
+					if window[sEdit] then
+						local bEdit = (window[sEdit].getValue() == 1);
+						for _,wCategory in ipairs(getWindows()) do
+							wCategory.idelete.setVisibility(bEdit);
+							wCategory.attributes_iadd.setVisible(bEdit);
+							wCategory.attributes.update(bEdit);
+						end
+					end
+				end
+				
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.header.subwindow.label.setFocus();
+					end
+					return w;
+				end
+			</script>
+		</windowlist>
+	</template>
+
+	<template name="list_charmainattribute">
+		<windowlist>
+			<child/>
+			<child><backcolor>1A40301E</backcolor></child>
+			<datasource>.attributelist</datasource>
+			<class>char_attribute</class>
+			<allowcreate/>
+			<allowdelete/>
+			<noscroll/>
+			<sortby><field>label</field></sortby>
+			<script>
+				function onListChanged()
+					window.windowlist.onListChanged();
+				end
+				
+				function update(bEdit)
+					for _,wAttribute in ipairs(getWindows()) do
+						wAttribute.idelete.setVisibility(bEdit);
+					end
+				end
+				
+				function addEntry(bFocus)
+					local w = createWindow();
+					if bFocus then
+						w.label.setFocus();
+					end
+					return w;
+				end
+				
+				function onDrop(x, y, draginfo)
+					local sDragType = draginfo.getType();
+					if sDragType == "number" then
+						local w = addEntry(true);
+						if w then
+							w.label.setValue(draginfo.getDescription());
+							w.bonus.setValue(draginfo.getNumberData());
+						end
+						return true;
+					elseif sDragType == "dice" then
+						local aDropDice = draginfo.getDieList();
+						local w = getWindowAt(x,y);
+						if w then
+							for _,vDie in ipairs(aDropDice) do
+								w.dice.addDie(vDie.type);
+							end
+						end
+						return true;
+					end
+				end
+			</script>
+		</windowlist>
+	</template>
+
+	<template name="button_char_inv_carried">
+		<buttonfield>
+			<state icon="button_char_inv_none" tooltipres="char_tooltip_inv_none"/>
+			<state icon="button_char_inv_carried" tooltipres="char_tooltip_inv_carried"/>
+			<state icon="button_char_inv_equipped" tooltipres="char_tooltip_inv_equipped"/>
+			<default>1</default>
+		</buttonfield>
+	</template>
+	<template name="number_charinv">
+		<basicnumber>
+			<nodrag/>
+			<hideonvalue>0</hideonvalue>
+			<min>0</min>
+		</basicnumber>
+	</template>
+	<template name="string_charinvname">
+		<string_textlistitem>
+			<nodrop/>
+			<script file="campaign/scripts/char_invname.lua"/>
+		</string_textlistitem>
+	</template>
+	<template name="string_charinvloc">
+		<string_textlistitem>
+			<nodrop/>
+			<delaykeyupdate merge="delete"/>
+			<script file="campaign/scripts/char_invloc.lua"/>
+		</string_textlistitem>
+	</template>
+	<template name="list_charinv">
+		<windowlist>
+			<child/>
+			<child><backcolor>1A40301E</backcolor></child>
+			<datasource>.inventorylist</datasource>
+			<class>char_invitem</class>
+			<allowdelete/>
+			<script file="campaign/scripts/char_invlist.lua"/>
+		</windowlist>
+	</template>
+
+	<template name="list_language">
+		<list_text>
+			<datasource>.languagelist</datasource>
+			<class>char_language</class>
+			<sortby><control>name</control></sortby>
+			<newfocus>name</newfocus>
+			<allowcreate/>
+			<allowdelete/>
+			<script>
+				function onDrop(x, y, draginfo)
+					local sDragType = draginfo.getType();
+					if sDragType == "string" or sDragType == "language" then
+						local w = addEntry(true);
+						w.name.setValue(draginfo.getStringData());
+						return true;
+					end
+				end
+			</script>
+		</list_text>
+	</template>
+</root>

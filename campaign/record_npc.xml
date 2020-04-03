@@ -7,18 +7,26 @@
 
 <root>
 	<windowclass name="npc">
-		<frame>recordsheet</frame>
+		<frame>frame_troika_generic</frame>
+
 		<placement>
 			<size width="350" height="300" />
 		</placement>
+
 		<sizelimits>
 			<minimum width="350" height="300" />
 			<dynamic />
 		</sizelimits>
-		<minimize>minimized_npc</minimize>
+
+		<minimize>troika_icon_npc_minimized</minimize>
+
 		<tooltip field="name" />
+
+
 		<nodelete />
+
 		<script file="campaign/scripts/npc.lua" />
+
 		<sheetdata>
 			<sub_record_header name="header">
 				<class>npc_header</class>

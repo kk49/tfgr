@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<windowclass name="charsheet">
-		<frame>charsheet</frame>
+	<windowclass name="char_sheet">
+		<frame>frame_troika_generic</frame>
 
 		<placement>
 			<size width="525" height="568" />
@@ -13,7 +13,7 @@
 			<dynamic />
         </sizelimits>
 
-		<minimize>minimized_npc</minimize>
+		<minimize>troika_icon_char_minimized</minimize>
 
 		<tooltip field="name" />
 
@@ -28,7 +28,7 @@
 				if User.isLocal() then
 					speak.setVisible(false);
 					portrait.setVisible(false);
-					localportrait.setVisible(true);
+					portrait_local.setVisible(true);
 				end
 			end
 		</script>
@@ -48,7 +48,7 @@
 				<disabled />
 			</genericcontrol>
 
-			<portrait_charlocal name="localportrait">
+			<portrait_charlocal name="portrait_local">
 				<bounds>-137,21,45,45</bounds>
 				<invisible />
 			</portrait_charlocal>

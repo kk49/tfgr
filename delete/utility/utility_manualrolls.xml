@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="manualroll_die" merge="delete"/>
+	
+	<windowclass name="manualroll_entry" merge="delete"/>
+	
+	<windowclass name="manualrolls" merge="delete"/>
+</root>

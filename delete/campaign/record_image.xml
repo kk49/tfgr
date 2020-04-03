@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="imagewindow" version="&gt;=4" merge="delete"/>
+	<windowclass name="imagewindow" version="&lt;4" merge="delete"/>
+	<windowclass name="imagepanelwindow" merge="delete"/>
+
+	<windowclass name="imagewindow_header" merge="delete"/>
+	
+	<windowclass name="imagewindow_toolbar" version="&gt;=4" merge="delete"/>
+	<windowclass name="imagewindow_toolbar" version="&lt;4" merge="delete"/>
+</root>

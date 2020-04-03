@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<template name="label_ps">
+		<label/>
+	</template>
+	
+	<template name="sub_ps">
+		<subwindow>
+			<anchored to="contentanchor" position="below">
+				<bottom parent="" offset="-1"/>
+			</anchored>
+		</subwindow>
+	</template>
+</root>

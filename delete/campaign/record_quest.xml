@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="quest" merge="delete"/>
+
+	<windowclass name="quest_header" merge="delete"/>
+
+	<windowclass name="quest_stats" merge="delete"/>
+</root>
