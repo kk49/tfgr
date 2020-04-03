@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root version="3.0" release="4" logo="logo.png">
-	<!-- Attributes -->
-	<!-- Tabletop settings -->
 	<includefile source="delete/gameelements.xml"/>
 
-	<!-- Graphics -->
 	<includefile source="delete/graphics/graphics_fonts.xml"/>
 	<includefile source="delete/graphics/graphics_frames.xml"/>
 	<includefile source="delete/graphics/graphics_icons.xml"/>
@@ -13,14 +10,12 @@
 	<includefile source="delete/graphics/graphics_radial.xml"/>
 	<includefile source="delete/graphics/graphics_tabs.xml"/>
 	
-	<!-- String resources -->
 	<includefile source="delete/strings/strings_common.xml"/>
 	<includefile source="delete/strings/strings_utility.xml"/>
 	<includefile source="delete/strings/strings_campaign.xml"/>
 	<includefile source="delete/strings/strings_ct.xml"/>
 	<includefile source="delete/strings/strings_ps.xml"/>
 
-	<!-- Common templates -->
 	<includefile source="delete/common/template_common.xml"/>
 	<includefile source="delete/common/template_buttons.xml"/>
 	<includefile source="delete/common/template_windows.xml"/>
@@ -63,7 +58,6 @@
 
 	<script name="LibraryData" merge="delete"/>
 
-	<!-- Desktop -->
 	<includefile source="delete/desktop/template_desktop.xml"/>
 	<includefile source="delete/desktop/desktop_classes.xml"/>
 	<includefile source="delete/desktop/desktop_panels.xml"/>
@@ -76,7 +70,6 @@
 	<script name="DesktopManager" merge="delete"/>
 	<script name="Desktop" merge="delete"/>
 	
-	<!-- Utilities -->
 	<includefile source="delete/utility/template_utility.xml"/>
 	<includefile source="delete/utility/utility_calendar.xml"/>
 	<includefile source="delete/utility/utility_calendar_log.xml"/>
@@ -95,7 +88,6 @@
 	<includefile source="delete/utility/utility_tokenbag.xml"/>
 	<includefile source="delete/utility/utility_misc.xml"/>
 	
-	<!-- Campaign Records -->
 	<includefile source="delete/campaign/template_campaign.xml"/>
 	<includefile source="delete/campaign/template_char.xml"/>
 
@@ -123,19 +115,16 @@
 	<includefile source="delete/campaign/record_parcel.xml"/>
 	<includefile source="delete/campaign/record_vehicle.xml"/>
 	
-	<!-- REFERENCE -->
 	<includefile source="delete/ref/template_ref.xml"/>
 	<includefile source="delete/ref/ref_basicclasses.xml"/>
 	<includefile source="delete/ref/ref_simplelist.xml"/>
 	<includefile source="delete/ref/ref_groupedlist.xml"/>
 	<includefile source="delete/ref/ref_manual.xml"/>
 
-	<!-- Combat tracker -->
 	<includefile source="delete/ct/template_ct.xml"/>
 	<includefile source="delete/ct/ct_host.xml"/>
 	<includefile source="delete/ct/ct_client.xml"/>
 
-	<!-- Party sheet -->
 	<includefile source="delete/ps/template_ps.xml"/>
 	<includefile source="delete/ps/ps.xml"/>
 	<includefile source="delete/ps/ps_inventory.xml"/>

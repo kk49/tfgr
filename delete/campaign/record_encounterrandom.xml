@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<template name="battle_button_generate">
-		<button_text_sm>
-			<anchored to="npcs" width="100">
-				<top anchor="bottom" offset="20"/>
-				<left anchor="center" offset="-50"/>
-			</anchored>
-			<state textres="battle_button_generate"/>
-			<gmvisibleonly/>
-			<script>
-				function onButtonPress()
-					CampaignDataManager.generateEncounterFromRandom(window.getDatabaseNode());
-				end
-			</script>
-		</button_text_sm>
-	</template>
-	
 	<windowclass name="battlerandom" merge="delete"/>
 	
 	<windowclass name="battlerandom_header" merge="delete"/>

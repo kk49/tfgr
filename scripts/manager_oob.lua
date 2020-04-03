@@ -15,7 +15,7 @@ function processReceiveOOBMessage(msg)
 		return;
 	end
 
-	for kHandlerType, fHandler in pairs(aOOBMsgHandlers) do
+	for kHandlerType, fHandler in pairs(global_OOBMsgHandlers) do
 		if msg.type == kHandlerType then
 			fHandler(msg);
 			return true;

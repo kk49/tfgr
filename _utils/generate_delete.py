@@ -11,7 +11,11 @@ def process_element(ele, output_prefix, indent=0):
     erase_all_children = False
     if ele.tag == 'root':
         process_children = True
-    elif ele.tag in {'announcement', 'description', 'desktopframe', 'tokenroot', 'characterdbroot'}:
+    elif ele.tag in {
+        'announcement', 'description', 'desktopframe', 'tokenroot', 'characterdbroot', 'viewerlistsettings',
+        'tooltip', 'distance', 'imagesettings', 'textsettings', 'imageupdatefolder',
+        'template', 'framedef', 'font', 'icon', 'portraitset', 'string',
+    }:
         ele.getparent().remove(ele)
     elif ele.tag in {'windowclass', 'panel', 'die', 'customdie', 'diebox', 'pollbox', 'hotkeybar', 'menusettings'}:
         ele.set('merge', 'delete')
@@ -23,6 +27,10 @@ def process_element(ele, output_prefix, indent=0):
         org = ele.attrib['source']
         additional_files.append(org)
         ele.set('source', os.path.join(output_prefix, org))
+    elif hasattr(ele.tag, 'func_name') and ele.tag.func_name == 'Comment':
+        ele.getparent().remove(ele)
+    else:
+        raise NotImplementedError(f'Missing case: {ele.tag}')
 
     if process_children:
         children = list(ele)

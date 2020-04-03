@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<!-- Asset View (FGU) -->
 	<windowclass name="tokenbag" version="&gt;=4" merge="delete"/>
 	<windowclass name="assetview_path_item" version="&gt;=4" merge="delete"/>
 	<windowclass name="assetview_path_item_current" version="&gt;=4" merge="delete"/>
 	<windowclass name="assetview_path_filter" version="&gt;=4" merge="delete"/>
 	
-	<!-- Token Bag (FGC) -->
 	<windowclass name="tokenbag" version="&lt;4" merge="delete"/>
 </root>

@@ -11,14 +11,13 @@ end
 
 
 
-global_launchmsg = {};
+global_launch_messages = {};
 
 function registerLaunchMessage(msg)
 	Debug.console("manager_chat: registerLaunchMessage", msg)
-
-	table.insert(global_launchmsg, msg);
+	table.insert(global_launch_messages, msg);
 end
 
 function retrieveLaunchMessages()
-	return global_launchmsg;
+	return global_launch_messages;
 end

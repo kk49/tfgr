@@ -7,58 +7,6 @@
 
 	<windowclass name="table_column_headers" merge="delete"/>
 	
-	<template name="label_tablecolumn">
-		<stringfield>
-			<anchored width="100">
-				<top/>
-				<left offset="50"/>
-			</anchored>
-			<stateframe>
-				<keyedit name="fieldfocus" offset="7,5,7,5"/>
-			</stateframe>
-			<font>sheetlabel</font>
-			<empty textres="table_emptylabel"/>
-			<multilinespacing>20</multilinespacing>
-			<nodrag/>
-			<nodragselect/>
-			<center/>
-			<script>
-				function onInit()
-					registerMenuItem(Interface.getString("table_menu_coldelete"), "delete", 4);
-				end
-				
-				function onMenuSelection(selection)
-					if selection == 4 then
-						window.setColumns(window.getColumns() - 1);
-					end
-				end
-				
-				function onValueChanged()
-					window.updateColumns();
-				end
-			</script>
-		</stringfield>
-	</template>
-	<template name="string_tableresult">
-		<stringfield>
-			<stateframe>
-				<keyedit name="fieldfocus" offset="7,5,7,5"/>
-			</stateframe>
-			<font>sheettext</font>
-			<multilinespacing>20</multilinespacing>
-			<empty> -- </empty>
-			<nohighlight/>
-			<script file="common/scripts/list_textitem.lua"/>
-		</stringfield>
-	</template>
-	<template name="link_tableresult">
-		<windowreferencefield>
-			<anchored height="20" width="20"/>
-			<icon normal="button_link" pressed="button_link_down" empty="button_link_empty"/>
-			<description field="result"/>
-		</windowreferencefield>
-	</template>
-	
 	<windowclass name="table_result" merge="delete"/>
 	
 	<windowclass name="table_row" merge="delete"/>

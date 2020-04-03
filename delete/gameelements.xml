@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<!-- Can also use ARGB format for colors if you want to change transparency -->
 	<menusettings merge="delete"/>
 
 	<diebox version="&gt;=4" merge="delete"/>
@@ -11,41 +10,8 @@
 	<pollbox version="&gt;=4" merge="delete"/>
 	<pollbox version="&lt;4" merge="delete"/>
 	
-	<viewerlistsettings>
-		<portrait file="data\icons\mini_portrait.png" mask="data\icons\mini_portrait_mask.png"/>
-		<spacing value="0"/>
-	</viewerlistsettings>
-
 	<hotkeybar merge="delete"/>
 
-	<tooltip>
-		<frame name="tooltipbox" margins="7,4,10,7" wrapwidth="300"/>
-		<radial name="mini_name" margins="7,2,7,2"/>
-		<font name="mini_name"/>
-	</tooltip>
-	
-	<distance>
-		<font>distancelabel</font>
-	</distance>
-
-	<imagesettings>
-		<shortcut icon="image_pin" iconpublic="image_pin_public" hotspot="2,21"/>
-	</imagesettings>
-	
-	<textsettings>
-		<selectioncolor>BCD2E9</selectioncolor>
-		<icon link="button_link" linkshare="button_link_share" emptylink="button_link_empty" chat="button_speak"/>
-		<font simple="sheettext" normal="reference-r" bold="reference-b" italic="reference-i" bolditalic="reference-bi" title="reference-h"/>
-	</textsettings>
-
-	<imageupdatefolder>
-		<folder>images</folder>
-		<rootnode>image</rootnode>
-		<field>image</field>
-		<namefield>name</namefield>
-	</imageupdatefolder>
-
-	<!-- Desktop Dice -->
 	<die name="dF" merge="delete"/>
 	<die name="d4" merge="delete"/>
 	<die name="d6" merge="delete"/>
@@ -58,7 +24,6 @@
 	<customdie name="d3" merge="delete"/>
 	<customdie name="d2" merge="delete"/>
 
-	<!-- Colored Dice -->
 	<die name="rF" merge="delete"/>
 	<die name="r4" merge="delete"/>
 	<die name="r6" merge="delete"/>
