@@ -5,7 +5,7 @@ end
 
 function systemMessage(sText)
 	local msg = {font = "systemfont"};
-	msg.text = sText;
+	msg.text = "SystemMessage: " .. sText;
 	Comm.addChatMessage(msg);
 end
 

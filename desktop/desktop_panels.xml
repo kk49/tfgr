@@ -7,6 +7,22 @@
 		<disabled />
 	</panel>
 
+<!--	<panel name="shortcutsanchor">-->
+<!--		<class>shortcutsanchor</class>-->
+<!--		<bounds>-304,0,0,0</bounds>-->
+<!--		<disabled />-->
+<!--	</panel>-->
+<!--	<panel name="shortcuts">-->
+<!--		<class>shortcuts</class>-->
+<!--		<anchored>-->
+<!--			<top />-->
+<!--			<left parent="shortcutsanchor" anchor="right" />-->
+<!--			<right />-->
+<!--			<bottom offset="-33" />-->
+<!--		</anchored>-->
+<!--	</panel>-->
+
+
 	<panel name="chat" modes="all">
 		<class>chat</class>
 		<bounds>5,90,395,-130</bounds>
