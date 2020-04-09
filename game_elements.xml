@@ -5,7 +5,7 @@
 
 	<tokenroot source="tokens" />
 
-	<characterdbroot>char_sheet</characterdbroot>
+	<characterdbroot>character</characterdbroot>
 
 	<hotkeybar>
 		<frame>hotkeybox</frame>

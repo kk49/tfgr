@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <includefile source="core/template_object.xml" />
+    <includefile source="core/template_actor.xml" />
+</root>

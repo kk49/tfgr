@@ -18,6 +18,8 @@
   <framedef name="desktop" merge="delete" /> <!-- disable/remove background frame that was under the background image-->
   <framedef name="shortcuts" merge="delete" /> <!-- disable/remove shortcut frame that was under the shortcuts-->
 
+  <includefile source="core/base.xml" />
+
   <includefile source="game_elements.xml" />
 
   <!-- Graphics -->
@@ -37,17 +39,22 @@
   <script name="OOBManager" file="scripts/manager_oob.lua" />
   <script name="ChatManager" file="scripts/manager_chat.lua" />
   <script name="ModuleManager" file="scripts/manager_module.lua" />
+  <script name="Layout" file="scripts/manager_layout.lua" />
 
   <!-- Desktop -->
 <!--  <includefile source="desktop/template_desktop.xml" />-->
   <includefile source="desktop/desktop_classes.xml" />
   <includefile source="desktop/desktop_panels.xml" />
+  <includefile source="desktop/desktop_chat.xml" />
 
 
   <!-- Campaign Records -->
-  <includefile source="campaign/record_npc.xml" />
-  <includefile source="campaign/record_char.xml" />
+  <includefile source="campaign/npc_record.xml" />
+  <includefile source="campaign/character_record.xml" />
 
+  <!-- Campaign Viewers -->
+  <includefile source="campaign/npc_viewer.xml" />
+  <includefile source="campaign/character_viewer.xml" />
 
 
 

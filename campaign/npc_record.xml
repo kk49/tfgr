@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="npc">
+		<script file="campaign/scripts/npc.lua" />
+
+		<frame>frame_troika_generic</frame>
+
+		<placement>
+			<size width="350" height="300" />
+		</placement>
+
+		<sizelimits>
+			<dynamic />
+		</sizelimits>
+
+		<minimize>troika_icon_npc_minimized</minimize>
+
+		<tooltip field="name" />
+
+		<nodelete />
+
+		<sheetdata>
+			<Actor />
+
+			<label_column name="name_label">
+				<static textres="troika_name"/>
+			</label_column>
+			<string_columnh name="name">
+				<default>Enter Name...</default>
+			</string_columnh>
+
+			<label_column name="no_id_name_label">
+				<static textres="troika_no_id_name"/>
+			</label_column>
+			<string_columnh name="no_id_name">
+				<default>Enter No Id Name...</default>
+			</string_columnh>
+
+			<label_column name="skill_label">
+				<static textres="troika_skill"/>
+			</label_column>
+			<number_column name="skill">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="stamina_label">
+				<static textres="troika_stamina" />
+			</label_column>
+			<number_column name="stamina">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="initiative_label">
+				<static textres="troika_luck" />
+			</label_column>
+			<number_column name="initiative">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="armour_label">
+				<static textres="troika_armour" />
+			</label_column>
+			<number_column name="armour">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="damage_as_label">
+				<static textres="troika_damage_as" />
+			</label_column>
+			<string_columnh name="damage_as" />
+
+			<label_column name="description_label">
+				<static textres="troika_description" />
+			</label_column>
+			<string_columnh name="description" />
+
+			<label_column name="special_label">
+				<static textres="troika_special" />
+			</label_column>
+			<string_columnh name="special" />
+
+			<label_column name="mien_label">
+				<static textres="troika_mien" />
+			</label_column>
+			<string_columnh name="mien" />
+
+			<resize_recordsheet />
+			<close_recordsheet />
+		</sheetdata>
+	</windowclass>
+</root>

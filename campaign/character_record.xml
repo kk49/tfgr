@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="character">
+		<script file="campaign/scripts/character.lua" />
+
+		<frame>frame_troika_generic</frame>
+
+		<placement>
+			<size width="525" height="568" />
+		</placement>
+
+		<sizelimits>
+			<dynamic />
+        </sizelimits>
+
+<!--		<minimize>troika_icon_char_minimized</minimize>-->
+
+		<tooltip field="name" />
+
+		<nodelete />
+
+		<softclose />
+
+		<playercontrol />
+
+		<sheetdata>
+			<Actor/>
+
+			<anchor_column name="columnanchor" />
+
+			<label_column name="skill_name">
+				<static textres="troika_name"/>
+			</label_column>
+			<string_column name="name">
+				<default>Enter Name...</default>
+			</string_column>
+
+			<label_column name="skill_label">
+				<static textres="troika_skill"/>
+			</label_column>
+			<number_column name="skill">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="stamina_label">
+				<static textres="troika_stamina" />
+			</label_column>
+			<number_column name="stamina">
+				<default>1</default>
+			</number_column>
+
+			<label_column name="luck_label">
+				<static textres="troika_luck" />
+			</label_column>
+			<number_column name="luck">
+				<default>1</default>
+			</number_column>
+
+			<close_charsheet />
+			<resize_charsheet />
+		</sheetdata>
+	</windowclass>
+</root>

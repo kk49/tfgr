@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
+	<framedef name="frame_single_pixel">
+		<bitmap file="graphics/frames/single_pixel.png" />
+		<offset>1,1,1,1</offset>
+	</framedef>
+
 	<framedef name="frame_troika_generic">
 		<bitmap file="graphics/frames/troika_generic.png" />
 		<offset>8,8,8,8</offset>

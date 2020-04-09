@@ -101,7 +101,6 @@ def main():
         '--output-path', type=str, default=None,
         help='Directory into which output-prefix directory will be created in. If not specified it will be ./')
 
-
     args = parser.parse_args()
 
     root_file = os.path.abspath(args.root_file)
