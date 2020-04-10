@@ -14,7 +14,7 @@
 			<TypeLayout/>
 
 			<LayoutBeginHorizontal name ="8"/>
-				<buttoncontrol name="bttn_open">
+				<layout_buttoncontrol name="bttn_open">
 					<icon normal="arrow_sm_left" />
 					<anchored>
 						<size>
@@ -33,19 +33,19 @@
 							return true
 						end
 					</script>
-				</buttoncontrol>
+				</layout_buttoncontrol>
 
-				<stringcontrol name="l0"><static text="Name:" /></stringcontrol>
-				<stringfield name="name" ><disabled /></stringfield>
+				<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>
+				<layout_stringfield name="name" ><disabled /></layout_stringfield>
 
-				<stringcontrol name="l1"><static text="Skill:" /></stringcontrol>
-				<numberfield name="skill"><disabled /></numberfield>
+				<layout_stringcontrol name="l1"><static text="Skill:" /></layout_stringcontrol>
+				<layout_numberfield name="skill"><disabled /></layout_numberfield>
 
-				<stringcontrol name="l2"><static text="Stamina:" /></stringcontrol>
-				<numberfield name="stamina"><disabled /></numberfield>
+				<layout_stringcontrol name="l2"><static text="Stamina:" /></layout_stringcontrol>
+				<layout_numberfield name="stamina"><disabled /></layout_numberfield>
 
-				<stringcontrol name="l3"><static text="Initiative:" /></stringcontrol>
-				<numberfield name="initiative"><disabled /></numberfield>
+				<layout_stringcontrol name="l3"><static text="Initiative:" /></layout_stringcontrol>
+				<layout_numberfield name="initiative"><disabled /></layout_numberfield>
 			<LayoutEnd/>
 
 		</sheetdata>

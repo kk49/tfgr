@@ -3,7 +3,7 @@ local _layout_h_spacing = nil
 local _layout_v_spacing = nil
 
 function onInit()
-    Debug.console('TypeLayout.onInit')
+    --Debug.console('TypeLayout.onInit')
 end
 
 function setup()
@@ -83,9 +83,9 @@ end
 
 --a layout with two columns, the first for labels, the second for values
 function layout_form(controls, params)
-    Debug.console("TypeLayout.layout_form: window ", window)
-    Debug.console("TypeLayout.layout_form: controls ", controls)
-    Debug.console("TypeLayout.layout_form: params ", params)
+    --Debug.console("TypeLayout.layout_form: window ", window)
+    --Debug.console("TypeLayout.layout_form: controls ", controls)
+    --Debug.console("TypeLayout.layout_form: params ", params)
     h_spacing = params[1]
     v_spacing = params[2]
 
@@ -107,7 +107,7 @@ function layout_form(controls, params)
         end
     end
 
-    Debug.console("TypeLayout.layout_form: columns", col1, col2)
+    --Debug.console("TypeLayout.layout_form: columns", col1, col2)
     assert(#col1 == #col2)
 
     -- setup horizontal anchors
@@ -128,6 +128,6 @@ end
 
 --
 function onFirstLayout()
-    Debug.console("TypeLayout.onFirstLayout", window,  _layout_type, _layout_h_spacing)
+    --Debug.console("TypeLayout.onFirstLayout", window,  _layout_type, _layout_h_spacing)
     --Core.controlsList(window)
 end

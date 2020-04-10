@@ -20,26 +20,26 @@
 
 		<nodelete />
 
-		<softclose />
+<!--		<softclose />-->
 
 		<playercontrol />
 
 		<sheetdata>
-			<Actor/>
 			<TypeLayout/>
+			<Actor/>
 
 			<LayoutBeginForm name="8 8"/>
-				<stringcontrol name="l0"><static textres="troika_name" /></stringcontrol>
-				<stringfield name="name" ><default text="NAME ME!!!"/></stringfield>
+				<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
+				<layout_stringfield name="name" ><default text="NAME ME!!!"/></layout_stringfield>
 
-				<stringcontrol name="l1"><static textres="troika_skill" /></stringcontrol>
-				<numberfield name="skill"><default>1</default></numberfield>
+				<layout_stringcontrol name="l1"><static textres="troika_skill" /></layout_stringcontrol>
+				<layout_numberfield name="skill"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l2"><static textres="troika_stamina" /></stringcontrol>
-				<numberfield name="stamina"><default>1</default></numberfield>
+				<layout_stringcontrol name="l2"><static textres="troika_stamina" /></layout_stringcontrol>
+				<layout_numberfield name="stamina"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l3"><static textres="troika_luck" /></stringcontrol>
-				<numberfield name="luck"><default>1</default></numberfield>
+				<layout_stringcontrol name="l3"><static textres="troika_luck" /></layout_stringcontrol>
+				<layout_numberfield name="luck"><default>1</default></layout_numberfield>
 			<LayoutEnd/>
 
 			<close_charsheet />

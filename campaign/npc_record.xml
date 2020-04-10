@@ -14,47 +14,49 @@
 			<dynamic />
 		</sizelimits>
 
-		<minimize>troika_icon_npc_minimized</minimize>
+<!--		<minimize>troika_icon_npc_minimized</minimize>-->
 
 		<tooltip field="name" />
 
 		<nodelete />
 
+<!--		<softclose />-->
+
 		<sheetdata>
-			<Actor />
 			<TypeLayout/>
+			<Actor />
 
 			<LayoutBeginForm name="8 8"/>
 
-				<stringcontrol name="l0"><static textres="troika_name" /></stringcontrol>
-				<stringfield name="name" ><default text="NAME ME!!!"/></stringfield>
+				<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
+				<layout_stringfield name="name" ><default text="NAME ME!!!"/></layout_stringfield>
 
-				<stringcontrol name="l1"><static textres="troika_no_id_name" /></stringcontrol>
-				<stringfield name="no_id_name" ><default text="NAME ME A BIT LESS!!!"/></stringfield>
+				<layout_stringcontrol name="l1"><static textres="troika_no_id_name" /></layout_stringcontrol>
+				<layout_stringfield name="no_id_name" ><default text="NAME ME A BIT LESS!!!"/></layout_stringfield>
 
-				<stringcontrol name="l2"><static textres="troika_skill" /></stringcontrol>
-				<numberfield name="skill"><default>1</default></numberfield>
+				<layout_stringcontrol name="l2"><static textres="troika_skill" /></layout_stringcontrol>
+				<layout_numberfield name="skill"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l3"><static textres="troika_stamina" /></stringcontrol>
-				<numberfield name="stamina"><default>1</default></numberfield>
+				<layout_stringcontrol name="l3"><static textres="troika_stamina" /></layout_stringcontrol>
+				<layout_numberfield name="stamina"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l4"><static textres="troika_initiative" /></stringcontrol>
-				<numberfield name="initiative"><default>1</default></numberfield>
+				<layout_stringcontrol name="l4"><static textres="troika_initiative" /></layout_stringcontrol>
+				<layout_numberfield name="initiative"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l5"><static textres="troika_armour" /></stringcontrol>
-				<numberfield name="armour"><default>1</default></numberfield>
+				<layout_stringcontrol name="l5"><static textres="troika_armour" /></layout_stringcontrol>
+				<layout_numberfield name="armour"><default>1</default></layout_numberfield>
 
-				<stringcontrol name="l6"><static textres="troika_damage_as" /></stringcontrol>
-				<stringfield name="damage_as"><default>the wind</default></stringfield>
+				<layout_stringcontrol name="l6"><static textres="troika_damage_as" /></layout_stringcontrol>
+				<layout_stringfield name="damage_as"><default>the wind</default></layout_stringfield>
 
-				<stringcontrol name="l7"><static textres="troika_description" /></stringcontrol>
-				<stringfield name="description"><default>DESCRIBE ME!!!</default></stringfield>
+				<layout_stringcontrol name="l7"><static textres="troika_description" /></layout_stringcontrol>
+				<layout_stringfield name="description"><default>DESCRIBE ME!!!</default></layout_stringfield>
 
-				<stringcontrol name="l8"><static textres="troika_special" /></stringcontrol>
-				<stringfield name="special"><default>AM I SPECIAL?</default></stringfield>
+				<layout_stringcontrol name="l8"><static textres="troika_special" /></layout_stringcontrol>
+				<layout_stringfield name="special"><default>AM I SPECIAL?</default></layout_stringfield>
 
-				<stringcontrol name="l9"><static textres="troika_mien" /></stringcontrol>
-				<stringfield name="mien"><default>1,2,3,4,5,6</default></stringfield>
+				<layout_stringcontrol name="l9"><static textres="troika_mien" /></layout_stringcontrol>
+				<layout_stringfield name="mien"><default>1,2,3,4,5,6</default></layout_stringfield>
 
 			<LayoutEnd/>
 

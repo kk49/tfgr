@@ -45,4 +45,40 @@
         </stringcontrol>
     </template>
 
+    <template name="layout_stringcontrol">
+        <stringcontrol>
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+        </stringcontrol>
+    </template>
+
+    <template name="layout_stringfield">
+        <stringfield>
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+        </stringfield>
+    </template>
+
+    <template name="layout_numberfield">
+        <numberfield>
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+        </numberfield>
+    </template>
+
+    <template name="layout_buttoncontrol">
+        <buttoncontrol>
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+        </buttoncontrol>
+    </template>
+
 </root>
