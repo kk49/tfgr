@@ -1,14 +1,11 @@
-function classGet()
-    return "CharSheet";
+function onInit()
+    Debug.console('character.onInit')
+    TypeLayout.setup()
 end
 
-function onInit()
-    Debug.console("CharSheet::onInit")
-    if User.isLocal() then
-        speak.setVisible(false);
-        portrait.setVisible(false);
-        portrait_local.setVisible(true);
-    end
+
+function classGet()
+    return "CharSheet";
 end
 
 function actorStamina()

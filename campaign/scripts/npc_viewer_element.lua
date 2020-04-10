@@ -1,5 +1,5 @@
 function onInit()
-    Debug.console('character_viewer_element.onInit')
+    Debug.console('npc_viewer_element.onInit')
     TypeLayout.setup()
 end
 
@@ -9,7 +9,7 @@ function onDragStart(button, x, y, drag_info)
 end
 
 function elementOpen()
-	Interface.openWindow("character", getDatabaseNode().getNodeName())
+	Interface.openWindow("npc", getDatabaseNode().getNodeName())
 end
 
 function elementDrag(button, x, y, drag_info)

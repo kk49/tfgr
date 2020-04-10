@@ -1,4 +1,92 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
+    <windowclass name="npc_viewer_element">
+		<script file="campaign/scripts/npc_viewer_element.lua" />
+
+		<frame>frame_single_pixel</frame>
+
+		<sizelimits>
+			<dynamic />
+        </sizelimits>
+
+		<sheetdata>
+			<TypeLayout/>
+
+			<LayoutBeginHorizontal name ="8"/>
+				<buttoncontrol name="bttn_open">
+					<icon normal="arrow_sm_left" />
+					<anchored>
+						<size>
+						<width>16</width>
+						<height>16</height>
+						</size>
+					</anchored>
+					<script>
+						function onButtonPress()
+							window.elementOpen()
+							return true
+						end
+
+						function onDragStart(button, x, y, drag_info)
+							window.elementDrag(button, x, y, drag_info)
+							return true
+						end
+					</script>
+				</buttoncontrol>
+
+				<stringcontrol name="l0"><static text="Name:" /></stringcontrol>
+				<stringfield name="name" ><disabled /></stringfield>
+
+				<stringcontrol name="l1"><static text="Skill:" /></stringcontrol>
+				<numberfield name="skill"><disabled /></numberfield>
+
+				<stringcontrol name="l2"><static text="Stamina:" /></stringcontrol>
+				<numberfield name="stamina"><disabled /></numberfield>
+
+				<stringcontrol name="l3"><static text="Initiative:" /></stringcontrol>
+				<numberfield name="initiative"><disabled /></numberfield>
+			<LayoutEnd/>
+
+		</sheetdata>
+    </windowclass>
+
+	<windowclass name="npc_viewer">
+		<script file="common/scripts/npc_viewer.lua" />
+
+		<frame>frame_troika_generic</frame>
+
+		<sizelimits>
+			<dynamic />
+		</sizelimits>
+
+		<nodelete />
+		<softclose />
+
+		<sheetdata>
+			<windowlist name="list">
+				<datasource>.</datasource>
+				<class>npc_viewer_element</class>
+
+				<anchored position="below">
+					<top parent="" offset="8" />
+					<bottom parent="" offset="8" />
+					<left parent="" offset="8" />
+					<right parent="" offset="8" />
+				</anchored>
+				<allowcreate />
+				<allowdelete />
+				<columns width="400" filldown="true" />
+				<sortby><control>name</control></sortby>
+				<filter><control>filter</control></filter>
+				<filteron><control>name</control></filteron>
+			</windowlist>
+			<scrollbar>
+				<anchored to="list" />
+				<target>list</target>
+			</scrollbar>
+
+		</sheetdata>
+
+	</windowclass>
 </root>

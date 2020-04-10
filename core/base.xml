@@ -3,4 +3,5 @@
 <root>
     <includefile source="core/template_object.xml" />
     <includefile source="core/template_actor.xml" />
+    <includefile source="core/template_layout.xml" />
 </root>

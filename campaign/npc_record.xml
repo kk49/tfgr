@@ -22,68 +22,41 @@
 
 		<sheetdata>
 			<Actor />
+			<TypeLayout/>
 
-			<label_column name="name_label">
-				<static textres="troika_name"/>
-			</label_column>
-			<string_columnh name="name">
-				<default>Enter Name...</default>
-			</string_columnh>
+			<LayoutBeginForm name="8 8"/>
 
-			<label_column name="no_id_name_label">
-				<static textres="troika_no_id_name"/>
-			</label_column>
-			<string_columnh name="no_id_name">
-				<default>Enter No Id Name...</default>
-			</string_columnh>
+				<stringcontrol name="l0"><static textres="troika_name" /></stringcontrol>
+				<stringfield name="name" ><default text="NAME ME!!!"/></stringfield>
 
-			<label_column name="skill_label">
-				<static textres="troika_skill"/>
-			</label_column>
-			<number_column name="skill">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l1"><static textres="troika_no_id_name" /></stringcontrol>
+				<stringfield name="no_id_name" ><default text="NAME ME A BIT LESS!!!"/></stringfield>
 
-			<label_column name="stamina_label">
-				<static textres="troika_stamina" />
-			</label_column>
-			<number_column name="stamina">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l2"><static textres="troika_skill" /></stringcontrol>
+				<numberfield name="skill"><default>1</default></numberfield>
 
-			<label_column name="initiative_label">
-				<static textres="troika_luck" />
-			</label_column>
-			<number_column name="initiative">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l3"><static textres="troika_stamina" /></stringcontrol>
+				<numberfield name="stamina"><default>1</default></numberfield>
 
-			<label_column name="armour_label">
-				<static textres="troika_armour" />
-			</label_column>
-			<number_column name="armour">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l4"><static textres="troika_initiative" /></stringcontrol>
+				<numberfield name="initiative"><default>1</default></numberfield>
 
-			<label_column name="damage_as_label">
-				<static textres="troika_damage_as" />
-			</label_column>
-			<string_columnh name="damage_as" />
+				<stringcontrol name="l5"><static textres="troika_armour" /></stringcontrol>
+				<numberfield name="armour"><default>1</default></numberfield>
 
-			<label_column name="description_label">
-				<static textres="troika_description" />
-			</label_column>
-			<string_columnh name="description" />
+				<stringcontrol name="l6"><static textres="troika_damage_as" /></stringcontrol>
+				<stringfield name="damage_as"><default>the wind</default></stringfield>
 
-			<label_column name="special_label">
-				<static textres="troika_special" />
-			</label_column>
-			<string_columnh name="special" />
+				<stringcontrol name="l7"><static textres="troika_description" /></stringcontrol>
+				<stringfield name="description"><default>DESCRIBE ME!!!</default></stringfield>
 
-			<label_column name="mien_label">
-				<static textres="troika_mien" />
-			</label_column>
-			<string_columnh name="mien" />
+				<stringcontrol name="l8"><static textres="troika_special" /></stringcontrol>
+				<stringfield name="special"><default>AM I SPECIAL?</default></stringfield>
+
+				<stringcontrol name="l9"><static textres="troika_mien" /></stringcontrol>
+				<stringfield name="mien"><default>1,2,3,4,5,6</default></stringfield>
+
+			<LayoutEnd/>
 
 			<resize_recordsheet />
 			<close_recordsheet />

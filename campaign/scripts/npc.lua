@@ -1,8 +1,11 @@
-function classGet()
-    return "Npc";
+function onInit()
+    Debug.console('npc.onInit')
+    TypeLayout.setup()
 end
 
-function onInit()
+
+function classGet()
+    return "Npc";
 end
 
 function actorStamina()

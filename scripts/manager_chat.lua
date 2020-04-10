@@ -75,6 +75,8 @@ function debug_db(command, params)
 		Debug.chat(v)
 	elseif command == "vc" then
 		Interface.openWindow('character_viewer', 'character')
+	elseif command == "vn" then
+		Interface.openWindow('npc_viewer', 'npc')
 	end
 end
 

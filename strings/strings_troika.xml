@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
+	<string name="troika_name">Name</string>
+	<string name="troika_no_id_name">No ID Name</string>
 	<string name="troika_skill">Skill</string>
 	<string name="troika_stamina">Stamina</string>
 	<string name="troika_initiative">Initiative</string>

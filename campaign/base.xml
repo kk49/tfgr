@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+  <includefile source="campaign/npc_record.xml" />
+  <includefile source="campaign/npc_viewer.xml" />
+
+  <includefile source="campaign/character_record.xml" />
+  <includefile source="campaign/character_viewer.xml" />
+</root>

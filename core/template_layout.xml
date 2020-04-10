@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <template name="TypeLayout">
+        <genericcontrol name="TypeLayout" >
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+            <script file="core/scripts/layout.lua" />
+            <invisible/>
+        </genericcontrol>
+    </template>
+
+    <template name="LayoutEnd">
+        <stringcontrol name="LayoutEnd" >
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+            <static text="LayoutEnd"/>
+            <invisible/>
+        </stringcontrol>
+    </template>
+
+    <template name="LayoutBeginHorizontal">
+        <stringcontrol name="LayoutBeginHorizontal" >
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+            <static text="LayoutBeginHorizontal"/>
+            <invisible/>
+        </stringcontrol>
+    </template>
+
+    <template name="LayoutBeginForm">
+        <stringcontrol name="LayoutBeginForm" >
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+            <static text="LayoutBeginForm"/>
+            <invisible/>
+        </stringcontrol>
+    </template>
+
+</root>

@@ -26,36 +26,21 @@
 
 		<sheetdata>
 			<Actor/>
+			<TypeLayout/>
 
-			<anchor_column name="columnanchor" />
+			<LayoutBeginForm name="8 8"/>
+				<stringcontrol name="l0"><static textres="troika_name" /></stringcontrol>
+				<stringfield name="name" ><default text="NAME ME!!!"/></stringfield>
 
-			<label_column name="skill_name">
-				<static textres="troika_name"/>
-			</label_column>
-			<string_column name="name">
-				<default>Enter Name...</default>
-			</string_column>
+				<stringcontrol name="l1"><static textres="troika_skill" /></stringcontrol>
+				<numberfield name="skill"><default>1</default></numberfield>
 
-			<label_column name="skill_label">
-				<static textres="troika_skill"/>
-			</label_column>
-			<number_column name="skill">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l2"><static textres="troika_stamina" /></stringcontrol>
+				<numberfield name="stamina"><default>1</default></numberfield>
 
-			<label_column name="stamina_label">
-				<static textres="troika_stamina" />
-			</label_column>
-			<number_column name="stamina">
-				<default>1</default>
-			</number_column>
-
-			<label_column name="luck_label">
-				<static textres="troika_luck" />
-			</label_column>
-			<number_column name="luck">
-				<default>1</default>
-			</number_column>
+				<stringcontrol name="l3"><static textres="troika_luck" /></stringcontrol>
+				<numberfield name="luck"><default>1</default></numberfield>
+			<LayoutEnd/>
 
 			<close_charsheet />
 			<resize_charsheet />

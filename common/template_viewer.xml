@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <template name="CommonViewer">
+        <windowclass name="common_viewer">
+            <script file="common/scripts/common_viewer.lua" />
+
+            <frame>frame_troika_generic</frame>
+
+            <sizelimits>
+                <dynamic />
+            </sizelimits>
+
+            <nodelete />
+            <softclose />
+
+            <sheetdata>
+                <windowlist name="list">
+                    <anchored position="below">
+                        <top parent="" offset="8" />
+                        <bottom parent="" offset="8" />
+                        <left parent="" offset="8" />
+                        <right parent="" offset="8" />
+                    </anchored>
+                    <allowcreate />
+                    <allowdelete />
+                    <columns width="400" filldown="true" />
+                    <sortby><control>name</control></sortby>
+                    <filter><control>filter</control></filter>
+                    <filteron><control>name</control></filteron>
+                </windowlist>
+                <scrollbar>
+                    <anchored to="list" />
+                    <target>list</target>
+                </scrollbar>
+
+            </sheetdata>
+
+        </windowclass>
+    </template>
+
+</root>

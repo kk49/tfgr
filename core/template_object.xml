@@ -5,6 +5,7 @@
         <genericcontrol name="_type" >
             <script file="core/scripts/object.lua" />
 			<anchored> <top/> <left/> </anchored>
+            <invisible/>
         </genericcontrol>
     </template>
 </root>
