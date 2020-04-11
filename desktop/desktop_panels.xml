@@ -30,4 +30,11 @@
 		<locked />
 	</panel>
 
+	<panel name="shortcuts" modes="all">
+		<class>shortcuts</class>
+		<bounds>-116,16,100,-64</bounds>
+		<dynamic />
+		<locked />
+	</panel>
+
 </root>

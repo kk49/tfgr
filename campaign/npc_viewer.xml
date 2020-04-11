@@ -52,7 +52,7 @@
     </windowclass>
 
 	<windowclass name="npc_viewer">
-		<script file="common/scripts/npc_viewer.lua" />
+		<script file="campaign/scripts/npc_viewer.lua" />
 
 		<frame>frame_troika_generic</frame>
 
@@ -85,6 +85,9 @@
 				<anchored to="list" />
 				<target>list</target>
 			</scrollbar>
+
+			<close_charsheet />
+			<resize_charsheet />
 
 		</sheetdata>
 

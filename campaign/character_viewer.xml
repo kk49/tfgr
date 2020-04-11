@@ -86,6 +86,9 @@
 				<target>list</target>
 			</scrollbar>
 
+			<close_charsheet />
+			<resize_charsheet />
+
 		</sheetdata>
 
 	</windowclass>

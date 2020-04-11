@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+  <includefile source="desktop/desktop_classes.xml" />
+  <includefile source="desktop/desktop_panels.xml" />
+  <includefile source="desktop/desktop_chat.xml" />
+  <includefile source="desktop/desktop_shortcuts.xml" />
+</root>

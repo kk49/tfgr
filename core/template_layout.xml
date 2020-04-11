@@ -45,6 +45,15 @@
         </stringcontrol>
     </template>
 
+    <template name="layout_genericcontrol">
+        <genericcontrol>
+            <anchored>
+                <top/>
+                <left/>
+            </anchored>
+        </genericcontrol>
+    </template>
+
     <template name="layout_stringcontrol">
         <stringcontrol>
             <anchored>

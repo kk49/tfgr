@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<character>
+		<id-00001>
+			<luck type="number">10</luck>
+			<name type="string">name 1</name>
+			<skill type="number">11</skill>
+			<stamina type="number">12</stamina>
+			<token type="token"></token>
+		</id-00001>
+		<id-00002>
+			<luck type="number">20</luck>
+			<name type="string">name 2</name>
+			<skill type="number">21</skill>
+			<stamina type="number">22</stamina>
+			<token type="token"></token>
+		</id-00002>
+	</character>
+	<npc>
+		<id-00002>
+			<armour type="number">4</armour>
+			<damage_as type="string">Gigantic Beast</damage_as>
+			<description type="string">DESCRIBE ME!!!</description>
+			<initiative type="number">8</initiative>
+			<isidentified type="number">1</isidentified>
+			<locked type="number">0</locked>
+			<luck type="number">1</luck>
+			<mien type="string">Sleeping, &#34;Playful&#34;, Hungry, Quizzical, Aggressive, Paranoid</mien>
+			<name type="string">Dragon</name>
+			<no_id_name type="string">Something really big</no_id_name>
+			<nonid_name type="string">something real big</nonid_name>
+			<notes type="formattedtext">
+				<p></p>
+			</notes>
+			<skill type="number">16</skill>
+			<special type="string">AM I SPECIAL?</special>
+			<stamina type="number">32</stamina>
+			<token type="token"></token>
+		</id-00002>
+	</npc>
+	<shortcuts>
+		<id-00001>
+			<name type="string">Character List</name>
+			<order type="number">0</order>
+			<shortcut_class type="string">character_viewer</shortcut_class>
+			<shortcut_db type="string">character</shortcut_db>
+		</id-00001>
+		<id-00002>
+			<name type="string">NPC List</name>
+			<order type="number">1</order>
+			<shortcut_class type="string">npc_viewer</shortcut_class>
+			<shortcut_db type="string">npc</shortcut_db>
+		</id-00002>
+	</shortcuts>
+</root>

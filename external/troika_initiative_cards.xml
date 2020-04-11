@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
+<!--
+Place the card images in the `directory` and TFGR will be able to use them
+* `directory` - external/troika_initiative_cards/
+* `source` - https://melsonian-arts-council.itch.io/troika-initiative-cards
+-->
+
 <root>
 	<icon name="troika_card_back" file="external/troika_initiative_cards/Card Back.png" />
-	<icon name="troika_card_eor" file="external/troika_initiative_cards/End of round.png" />
+	<icon name="troika_card_end_of_round" file="external/troika_initiative_cards/End of round.png" />
 	<icon name="troika_card_enemy" file="external/troika_initiative_cards/Enemy.png" />
 	<icon name="troika_card_henchman" file="external/troika_initiative_cards/Henchman.png" />
 	<icon name="troika_card_comet" file="external/troika_initiative_cards/Comet.png" />
 	<icon name="troika_card_key" file="external/troika_initiative_cards/Key.png" />
 	<icon name="troika_card_palace" file="external/troika_initiative_cards/Palace.png" />
-	<icon name="troika_card_piginboots" file="external/troika_initiative_cards/Piginboots.png" />
+	<icon name="troika_card_pig_in_boots" file="external/troika_initiative_cards/Piginboots.png" />
 	<icon name="troika_card_samovar" file="external/troika_initiative_cards/Samovar.png" />
-	<icon name="troika_card_thingengine" file="external/troika_initiative_cards/Thinking Engine.png" />
+	<icon name="troika_card_thinking_engine" file="external/troika_initiative_cards/Thinking Engine.png" />
 </root>
