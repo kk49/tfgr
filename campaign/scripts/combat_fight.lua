@@ -98,7 +98,6 @@ function fightDisplayState()
         chits_used = db_actor_chits_used[link_db_ref]
         chits_remaining = chits_available - chits_used
 
-        Debug.console(node, chits_remaining)
         DB.setValue(node, 'initiative_cur', 'number', chits_remaining)
     end
 end
@@ -158,7 +157,10 @@ end
 
 function fightActonPerform(action)
     if turn_id then
-        DB.setValue(turn_id .. '.action', 'string', action)
+        last_action = DB.getValue(turn_id .. '.action')
+        if last_action == '' then
+            DB.setValue(turn_id .. '.action', 'string', action)
+        end
     end
     processNextTurn()
 end
@@ -198,6 +200,12 @@ function cmdTurnAim()
 end
 
 
+function onInit()
+    fightProcessDatabase()
+    fightDisplayState()
+end
+
+
 function onDrop(x, y, drag_info)
     --Debug.console('combat_fight.onDrop ', x, y, drag_info)
 
@@ -219,9 +227,7 @@ function onDrop(x, y, drag_info)
             end
 
             id_number = string.match(actor_id, 'id%-(%d+)')
-            Debug.console('#1 ', actor_id, id_number)
             id_number = tonumber(id_number)
-            Debug.console('#2 ', id_number, max_id)
             if id_number and id_number > max_id then
                 max_id = id_number
             end
@@ -240,7 +246,6 @@ function onDrop(x, y, drag_info)
                 add_actor = true
             end
         end
-        Debug.console('Actors = ', add_actor, name, initiative)
 
         if add_actor then
             actor_new = combat_actors .. string.format('.id-%05d', max_id + 1)
