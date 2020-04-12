@@ -1,8 +1,16 @@
 local combat_actors = 'combat.fight.id-00001.actor'
 local combat_turns = 'combat.fight.id-00001.round.id-00001.turn'
 
+local k_action_aim = 'AIM'
+local k_action_delay = 'DELAY'
+local k_action_done = 'DONE'
+local k_action_end_of_round = 'EOR'
+
+
 local turn_count = 0
 local turn_id = nil
+
+-- Turn state
 local db_actor_chits = {}
 local db_actor_chits_used = {}
 local db_actor_is_enemy = {}
@@ -13,13 +21,8 @@ local end_of_round_occurred = false
 local total_chits = 0
 local total_chits_used = 0
 
-local k_action_aim = 'AIM'
-local k_action_delay = 'DELAY'
-local k_action_done = 'DONE'
-local k_action_end_of_round = 'EOR'
 
-
-function processNextTurn()
+function fightProcessDatabase()
     -- calculate state
     db_actor_chits = {}
     db_actor_chits_used = {}
@@ -32,6 +35,7 @@ function processNextTurn()
     end_of_round_occurred = false
     total_chits = 0
     total_chits_used = 0
+
 
     actors = DB.getChildren(combat_actors)
     --Debug.console('actors', actors)
@@ -54,6 +58,8 @@ function processNextTurn()
             db_actor_is_enemy[link_db_ref] = false
         end
     end
+    total_chits = total_chits + 1  -- add one chit for the end of round
+
 
     turns = DB.getChildren(combat_turns)
     --Debug.console('turns', turns)
@@ -79,10 +85,28 @@ function processNextTurn()
             end
         end
     end
+end
 
+
+function fightDisplayState()
+    actors = DB.getChildren(combat_actors)
+    --Debug.console('actors', actors)
+    for id, node in pairs(actors) do
+        link_db_ref = DB.getValue(node, 'link_db_ref')
+
+        chits_available = db_actor_chits[link_db_ref]
+        chits_used = db_actor_chits_used[link_db_ref]
+        chits_remaining = chits_available - chits_used
+
+        Debug.console(node, chits_remaining)
+        DB.setValue(node, 'initiative_cur', 'number', chits_remaining)
+    end
+end
+
+
+function processNextTurn()
     if not end_of_round_occurred then
         -- calculate next chit
-        total_chits = total_chits + 1  -- add one chit for the end of round
         active_chits = total_chits - total_chits_used
 
         chit_number = math.random(active_chits)
@@ -126,45 +150,53 @@ function processNextTurn()
         DB.setValue(turn_id .. '.link_db_ref', 'string', link_db_ref)
         DB.setValue(turn_id .. '.link_window', 'string', link_window)
 
-        -- calculate state
-        --actors = DB.getChildren(combat_actors)
-        --for actor_id, actor_node in pairs(actors) do
-        --
-        --end
+        fightProcessDatabase()
+        fightDisplayState()
     end
 end
 
-function cmdRoundNext()
-    print('cmdRoundNext')
-    DB.deleteChildren(combat_turns)
+
+function fightActonPerform(action)
+    if turn_id then
+        DB.setValue(turn_id .. '.action', 'string', action)
+    end
+    processNextTurn()
+end
+
+
+function fightRoundReset()
     turn_count = 0
     turn_id = nil
     end_of_round_occurred = false
+    DB.deleteChildren(combat_turns)
+    fightProcessDatabase()
+    fightDisplayState()
 end
+
+
+function cmdRoundNext()
+    print('cmdRoundNext')
+    fightRoundReset()
+end
+
 
 function cmdTurnNext()
     print('cmdTurnNext')
-    if turn_id then
-        DB.setValue(turn_id .. '.action', 'string', k_action_done)
-    end
-    processNextTurn()
+    fightActonPerform(k_action_done)
 end
+
 
 function cmdTurnDelay()
     print('cmdTurnDelay')
-    if turn_id then
-        DB.setValue(turn_id .. '.action', 'string', k_action_delay)
-    end
-    processNextTurn()
+    fightActonPerform(k_action_delay)
 end
+
 
 function cmdTurnAim()
     print('cmdTurnAim')
-    if turn_id then
-        DB.setValue(turn_id .. '.action', 'string', k_action_aim)
-    end
-    processNextTurn()
+    fightActonPerform(k_action_aim)
 end
+
 
 function onDrop(x, y, drag_info)
     --Debug.console('combat_fight.onDrop ', x, y, drag_info)

@@ -75,7 +75,7 @@
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
-                    <text>Next Round</text>
+                    <textres>troika_next_round</textres>
                     <anchored>
                         <size>
                             <width>80</width>
@@ -90,7 +90,7 @@
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
-                    <text>Next Turn</text>
+                    <textres>troika_next_turn</textres>
                     <anchored>
                         <size>
                             <width>80</width>
@@ -105,7 +105,7 @@
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
-                    <text>Delay...</text>
+                    <textres>troika_delay</textres>
                     <anchored>
                         <size>
                             <width>80</width>
@@ -120,7 +120,7 @@
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
-                    <text>AIM!</text>
+                    <textres>troika_aim</textres>
                     <anchored>
                         <size>
                             <width>80</width>

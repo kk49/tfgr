@@ -13,4 +13,9 @@
 	<string name="troika_special">Special</string>
 	<string name="troika_possessions">Possessions</string>
 	<string name="troika_luck">Luck</string>
+
+	<string name="troika_next_round">Next Round</string>
+	<string name="troika_next_turn">Next Turn</string>
+	<string name="troika_delay">Delay...</string>
+	<string name="troika_aim">AIM!</string>
 </root>
