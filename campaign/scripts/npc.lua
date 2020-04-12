@@ -1,5 +1,5 @@
 function onInit()
-    Debug.console('npc.onInit')
+    Debug.console('npc_sheet.onInit')
     TypeLayout.setup()
 end
 

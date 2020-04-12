@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<windowclass name="character">
+	<windowclass name="character_sheet">
 		<script file="campaign/scripts/character.lua" />
 
 		<frame>frame_troika_generic</frame>

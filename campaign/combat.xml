@@ -15,12 +15,15 @@
 				<viewer_button_open/>
 
 				<layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
-				<layout_stringfield name="actor" ><!--disabled /--></layout_stringfield>
+				<layout_stringfield name="name" ><!--disabled /--></layout_stringfield>
 				<layout_stringcontrol name="l1"><static text="Initiative:" /></layout_stringcontrol>
 				<layout_numberfield name="initiative_cur" ><!--disabled /--></layout_numberfield>
 				<layout_stringcontrol name="l2"><static text="/" /></layout_stringcontrol>
 				<layout_numberfield name="initiative_max" ><!--disabled /--></layout_numberfield>
             <LayoutEnd/>
+            <layout_stringfield name="link_window" ><invisible/></layout_stringfield>
+            <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
+
         </sheetdata>
 
     </windowclass>
@@ -36,12 +39,98 @@
 			<TypeLayout/>
 
 			<LayoutBeginHorizontal name ="8"/>
-                <layout_numberfield name="turn_number"><invisble/></layout_numberfield>
 				<layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
-				<layout_stringfield name="combat_actor" ><!--disabled /--></layout_stringfield>
+				<layout_stringfield name="name" ><!--disabled /--></layout_stringfield>
 				<layout_stringcontrol name="l1"><static text="Acton:" /></layout_stringcontrol>
 				<layout_stringfield name="action" ><!--disabled /--></layout_stringfield>
             <LayoutEnd/>
+            <layout_numberfield name="turn_number"><invisible/></layout_numberfield>
+            <layout_stringfield name="link_window" ><invisible/></layout_stringfield>
+            <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
+        </sheetdata>
+    </windowclass>
+
+    <windowclass name="combat_commands">
+        <script>
+            function onInit()
+                TypeLayout.setup()
+            end
+
+            function onFirstLayout()
+                TypeLayout.doAdjustLayout()
+            end
+        </script>
+        <frame>frame_single_pixel</frame>
+        <sizelimits>
+            <dynamic/>
+        </sizelimits>
+        <sheetdata>
+			<TypeLayout/>
+
+			<LayoutBeginHorizontal name ="8"/>
+                <layout_buttoncontrol name="bttn_next_round">
+                    <script>
+                        function onButtonPress()
+                            return window.parentcontrol.window.cmdRoundNext()
+                        end
+                    </script>
+                    <frame>frame_single_pixel</frame>
+                    <text>Next Round</text>
+                    <anchored>
+                        <size>
+                            <width>80</width>
+                            <height>20</height>
+                        </size>
+                    </anchored>
+                </layout_buttoncontrol>
+				<layout_buttoncontrol name="bttn_next_turn">
+                    <script>
+                        function onButtonPress()
+                            return window.parentcontrol.window.cmdTurnNext()
+                        end
+                    </script>
+                    <frame>frame_single_pixel</frame>
+                    <text>Next Turn</text>
+                    <anchored>
+                        <size>
+                            <width>80</width>
+                            <height>20</height>
+                        </size>
+                    </anchored>
+                </layout_buttoncontrol>
+				<layout_buttoncontrol name="bttn_delay">
+                    <script>
+                        function onButtonPress()
+                            return window.parentcontrol.window.cmdTurnDelay()
+                        end
+                    </script>
+                    <frame>frame_single_pixel</frame>
+                    <text>Delay...</text>
+                    <anchored>
+                        <size>
+                            <width>80</width>
+                            <height>20</height>
+                        </size>
+                    </anchored>
+                </layout_buttoncontrol>
+				<layout_buttoncontrol name="bttn_aim">
+                    <script>
+                        function onButtonPress()
+                            return window.parentcontrol.window.cmdTurnAim()
+                        end
+                    </script>
+                    <frame>frame_single_pixel</frame>
+                    <text>AIM!</text>
+                    <anchored>
+                        <size>
+                            <width>80</width>
+                            <height>20</height>
+                        </size>
+                    </anchored>
+                </layout_buttoncontrol>
+
+            <LayoutEnd/>
+
         </sheetdata>
     </windowclass>
 
@@ -90,8 +179,22 @@
                 <normal name="frame_single_pixel"/>
             </scrollbar>
 
+            <subwindow name="combat_commands">
+                <class>combat_commands</class>
+                <activate/>
+                <fastinit/>
+                <anchored>
+                    <top parent="combat_actor_list" anchor="bottom" offset="8" />
+                    <left parent="" offset="8" />
+                    <right parent="" offset="-32" />
+                    <size>
+                        <height>20</height>
+                    </size>
+                </anchored>
+            </subwindow>
+
             <windowlist name="combat_turn_list">
-                <datasource>.turn</datasource>
+                <datasource>.round.id-00001.turn</datasource>
                 <class>combat_turn</class>
         		<frame>frame_single_pixel</frame>
 
@@ -99,7 +202,7 @@
                     <dynamic />
                 </sizelimits>
                 <anchored>
-                    <top parent="combat_actor_list" anchor="bottom" offset="8" />
+                    <top parent="combat_commands" anchor="bottom" offset="8" />
                     <left parent="" offset="8" />
                     <right parent="" offset="-32" />
                     <bottom parent="" anchor="bottom" offset="-8" />
@@ -119,6 +222,7 @@
                 <target>combat_turn_list</target>
                 <normal name="frame_single_pixel"/>
             </scrollbar>
+
 
 			<close/>
 			<resize/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-	<windowclass name="npc">
+	<windowclass name="npc_sheet">
 		<script file="campaign/scripts/npc.lua" />
 
 		<frame>frame_troika_generic</frame>

@@ -31,8 +31,8 @@ function printControls()
 end
 
 function doLayout()
-    Debug.console("TypeLayout.doLayout", window)
-    printControls()
+    --Debug.console("TypeLayout.doLayout", window)
+    --printControls()
 
     controls = {}
     layout_stack = {}
@@ -40,10 +40,7 @@ function doLayout()
 
         add_to_stack = true
 
-        Debug.console('--- 1', v)
-
         if v.getValue and v.getValue() then
-            Debug.console('--- 2', v)
             value = v.getValue()
             name = v.getName()
             if value == 'LayoutEnd' then
@@ -67,22 +64,19 @@ function doLayout()
                 --Debug.console("TypeLayout.doLayout: LayoutBeginForm", params)
                 table.insert(layout_stack, {{}, layout_form, params})
             end
-            Debug.console('--- 3', v)
         end
 
         if add_to_stack and #layout_stack > 0 then
             layout_controls = layout_stack[#layout_stack][1]
             table.insert(layout_controls, v)
         end
-        Debug.console('--- 4', v)
     end
-    Debug.console('--- 5')
 end
 
 -- adjust form layout to get labels aligned
 function doAdjustLayout()
-    Debug.console("TypeLayout.doAdjustLayoutHandler", window,  _layout_type)
-    printControls()
+    --Debug.console("TypeLayout.doAdjustLayoutHandler", window,  _layout_type)
+    --printControls()
 end
 
 -- a layout where everything is horizontal

@@ -1,5 +1,5 @@
 function onInit()
-    Debug.console('character.onInit')
+    Debug.console('character_sheet.onInit')
     TypeLayout.setup()
 end
 

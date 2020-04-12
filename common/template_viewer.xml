@@ -50,13 +50,11 @@
             </anchored>
             <script>
                 function onButtonPress()
-                    window.elementOpen()
-                    return true
+                    return window.elementOpen()
                 end
 
                 function onDragStart(button, x, y, drag_info)
-                    window.elementDrag(button, x, y, drag_info)
-                    return true
+                    return window.elementDrag(button, x, y, drag_info)
                 end
             </script>
         </layout_buttoncontrol>
