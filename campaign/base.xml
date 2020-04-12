@@ -6,4 +6,6 @@
 
   <includefile source="campaign/character_record.xml" />
   <includefile source="campaign/character_viewer.xml" />
+
+  <includefile source="campaign/combat.xml" />
 </root>

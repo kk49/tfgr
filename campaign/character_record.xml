@@ -28,7 +28,7 @@
 			<TypeLayout/>
 			<Actor/>
 
-			<LayoutBeginForm name="8 8"/>
+			<LayoutBeginForm name="8 8 80 0"/>
 				<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
 				<layout_stringfield name="name" ><default text="NAME ME!!!"/></layout_stringfield>
 
@@ -42,8 +42,9 @@
 				<layout_numberfield name="luck"><default>1</default></layout_numberfield>
 			<LayoutEnd/>
 
-			<close_charsheet />
-			<resize_charsheet />
+			<close/>
+			<resize/>
+
 		</sheetdata>
 	</windowclass>
 </root>

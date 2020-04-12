@@ -1,18 +1,38 @@
 local _layout_type = nil
 local _layout_h_spacing = nil
 local _layout_v_spacing = nil
+local _layout_top_spacing = 0
+local _layout_right_spacing = 0
+
+--<LayoutBeginHorizontal name="8">
+--	<layout>
+--		<h_spacing>8</h_spacing>
+--	</layout>
+--</LayoutBeginHorizontal>
+
 
 function onInit()
     --Debug.console('TypeLayout.onInit')
 end
 
+--
+--function onFirstLayout()
+--    doAdjustLayout() -- adjust form layout to get labels aligned
+--end
+
 function setup()
     doLayout()
-    -- maybe hook into other window events
+end
+
+function printControls()
+    for k,v in ipairs(window.getControls()) do
+        Debug.console(k, v)
+    end
 end
 
 function doLayout()
     Debug.console("TypeLayout.doLayout", window)
+    printControls()
 
     controls = {}
     layout_stack = {}
@@ -20,7 +40,10 @@ function doLayout()
 
         add_to_stack = true
 
+        Debug.console('--- 1', v)
+
         if v.getValue and v.getValue() then
+            Debug.console('--- 2', v)
             value = v.getValue()
             name = v.getName()
             if value == 'LayoutEnd' then
@@ -39,18 +62,27 @@ function doLayout()
                 add_to_stack = false
                 params = {}
                 for i in string.gmatch(name, "%S+") do
-                    table.insert(params, i)
+                    table.insert(params, tonumber(i))
                 end
                 --Debug.console("TypeLayout.doLayout: LayoutBeginForm", params)
-                table.insert(layout_stack, {{}, layout_form, {tonumber(params[1]), tonumber(params[2])}})
+                table.insert(layout_stack, {{}, layout_form, params})
             end
+            Debug.console('--- 3', v)
         end
 
         if add_to_stack and #layout_stack > 0 then
             layout_controls = layout_stack[#layout_stack][1]
             table.insert(layout_controls, v)
         end
+        Debug.console('--- 4', v)
     end
+    Debug.console('--- 5')
+end
+
+-- adjust form layout to get labels aligned
+function doAdjustLayout()
+    Debug.console("TypeLayout.doAdjustLayoutHandler", window,  _layout_type)
+    printControls()
 end
 
 -- a layout where everything is horizontal
@@ -75,7 +107,7 @@ function layout_horizontal(controls, params)
         --last.setAnchor('right', '', 'right', 'relative', -spacing)
 
         for k,v in ipairs(controls) do
-            v.setAnchor('top', '', 'top', 'relative')
+            v.setAnchor('top', '', 'top', 'relative', _layout_top_spacing)
             --v.setAnchor('bottom', '', 'bottom', 'relative')
         end
     end
@@ -88,6 +120,16 @@ function layout_form(controls, params)
     --Debug.console("TypeLayout.layout_form: params ", params)
     h_spacing = params[1]
     v_spacing = params[2]
+    col1_width = params[3]
+    col2_width = params[4]
+
+    if col1_width == 0 then
+        col1_width = nil
+    end
+
+    if col2_width == 0 then
+        col2_width = nil
+    end
 
     _layout_type = 'form'
     _layout_h_spacing = h_spacing
@@ -115,6 +157,12 @@ function layout_form(controls, params)
         for i = 1,#col1 do
             col1[i].setAnchor('left', '', 'left', 'relative', h_spacing)
             col2[i].setAnchor('left', col1[i].getName(), 'right', 'relative', h_spacing)
+            if col1_width then
+                col1[i].setAnchoredWidth(col1_width)
+            end
+            if col2_width then
+                col2[i].setAnchoredWidth(col2_width)
+            end
         end
 
         for i = 2,#col1 do
@@ -126,8 +174,3 @@ function layout_form(controls, params)
     end
 end
 
---
-function onFirstLayout()
-    --Debug.console("TypeLayout.onFirstLayout", window,  _layout_type, _layout_h_spacing)
-    --Core.controlsList(window)
-end

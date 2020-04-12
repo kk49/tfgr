@@ -1,5 +1,5 @@
 function classGet()
-    return "Object"
+    return 'Object'
 end
 
 function classesGet(obj)
@@ -29,4 +29,3 @@ function onInit()
     if super and super.onInit then super.onInit() end
     Debug.console(classGet() .. "::onInit")
 end
-

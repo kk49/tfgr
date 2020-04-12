@@ -13,27 +13,8 @@
 		<sheetdata>
 			<TypeLayout/>
 
-			<LayoutBeginHorizontal name ="8"/>
-				<layout_buttoncontrol name="bttn_open">
-					<icon normal="arrow_sm_left" />
-					<anchored>
-						<size>
-						<width>16</width>
-						<height>16</height>
-						</size>
-					</anchored>
-					<script>
-						function onButtonPress()
-							window.elementOpen()
-							return true
-						end
-
-						function onDragStart(button, x, y, drag_info)
-							window.elementDrag(button, x, y, drag_info)
-							return true
-						end
-					</script>
-				</layout_buttoncontrol>
+			<LayoutBeginHorizontal name="8"/>
+				<viewer_button_open/>
 
 				<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>
 				<layout_stringfield name="name" ><disabled /></layout_stringfield>
@@ -69,7 +50,7 @@
 				<class>npc_viewer_element</class>
 
 				<anchored position="below">
-					<top parent="" offset="8" />
+					<top parent="" offset="24" />
 					<bottom parent="" offset="8" />
 					<left parent="" offset="8" />
 					<right parent="" offset="8" />
@@ -86,8 +67,9 @@
 				<target>list</target>
 			</scrollbar>
 
-			<close_charsheet />
-			<resize_charsheet />
+			<close/>
+			<resize/>
+
 
 		</sheetdata>
 

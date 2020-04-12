@@ -16,6 +16,12 @@ local default_db =
                 {'shortcut_class', 'string', 'npc_viewer'},
                 {'shortcut_db', 'string', 'npc'},
             }},
+            {'id-00003.', {
+                {'name', 'string', 'Combat'},
+                {'order', 'number', 2},
+                {'shortcut_class', 'string', 'combat_fight'},
+                {'shortcut_db', 'string', 'combat.fight.id-00001'},
+            }},
         }},
         {'character.', {
             {'id-00001.', {
@@ -37,10 +43,10 @@ local default_db =
                 {'damage_as', 'string', 'Gigantic Beast'},
                 {'description', 'string', 'DESCRIBE ME!!!'},
                 {'initiative', 'number', 8},
-                {'isidentified', 'number', 1},
+                {'is_identified', 'number', 1},
                 {'locked', 'number', 0},
                 {'luck', 'number', 1},
-                {'mien', 'string', 'Sleeping, &#34;Playful&#34;, Hungry, Quizzical, Aggressive, Paranoid'},
+                {'miens', 'string', 'M1, M2, M3, M4, M5, M6'},
                 {'name', 'string', 'Dragon'},
                 {'no_id_name', 'string', 'Something really big'},
                 {'skill', 'number', 16},

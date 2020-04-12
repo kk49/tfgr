@@ -3,6 +3,10 @@ function onInit()
     TypeLayout.setup()
 end
 
+function onFirstLayout()
+    TypeLayout.doAdjustLayout()
+end
+
 function onDragStart(button, x, y, drag_info)
     elementDrag(button, x, y, drag_info)
     return true

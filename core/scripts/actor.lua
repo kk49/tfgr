@@ -1,5 +1,5 @@
 function classGet()
-    return "Actor"
+    return 'Actor'
 end
 
 function onInit()

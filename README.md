@@ -9,6 +9,7 @@ Troika! ruleset implemented in fantasy grounds
 - Damage as dropdown based on values from table
 - options!!!
   - Background
+
   
 
 * Object
@@ -19,7 +20,7 @@ Troika! ruleset implemented in fantasy grounds
 ## Reference info
 * EquipRef
   * Name
-  * Desc
+  * Description
   
 * WeaponRef(EquipRef)
   * DamageTable[7]
@@ -44,7 +45,7 @@ Troika! ruleset implemented in fantasy grounds
   * Initiative
   * Armour
   * Damage as
-  * Mien[6]
+  * Mien[6]  # reference to Generic table?
   * Special
 
 * BackgroundRef
@@ -54,6 +55,9 @@ Troika! ruleset implemented in fantasy grounds
   * EquipRef[]
   * AdvSkillsRef[]
   * Special
+
+* CharacterSheetRef
+
   
 ## Runtime
 * Equip

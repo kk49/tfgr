@@ -39,4 +39,27 @@
         </windowclass>
     </template>
 
+    <template name="viewer_button_open">
+        <layout_buttoncontrol name="viewer_button_open">
+            <icon normal="arrow_sm_left" />
+            <anchored>
+                <size>
+                <width>16</width>
+                <height>16</height>
+                </size>
+            </anchored>
+            <script>
+                function onButtonPress()
+                    window.elementOpen()
+                    return true
+                end
+
+                function onDragStart(button, x, y, drag_info)
+                    window.elementDrag(button, x, y, drag_info)
+                    return true
+                end
+            </script>
+        </layout_buttoncontrol>
+    </template>
+
 </root>

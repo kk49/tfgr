@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
+<!-- REFERENCE
+https://www.fantasygrounds.com/wiki/index.php/Developer_Guide_-_Rulesets_-_Settings
+-->
+
 <root>
-	<desktopframe>desktop</desktopframe>
-
-	<tokenroot source="tokens" />
-
+	<!--Campaign Data-->
 	<characterdbroot>character</characterdbroot>
+	<tokenroot source="tokens" />
+	<imageupdatefolder>
+	  	<folder>images</folder>
+	  	<rootnode>image</rootnode>
+	  	<field>image</field>
+	  	<namefield>name</namefield>
+	</imageupdatefolder>
 
+	<!--Desktop Interface-->
+	<desktopframe>desktop</desktopframe>
 	<hotkeybar>
 		<frame>hotkeybox</frame>
 		<location offset="0" height="33" />

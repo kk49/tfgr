@@ -14,6 +14,7 @@
 
     <template name="LayoutEnd">
         <stringcontrol name="LayoutEnd" >
+            <_class>LayoutEnd</_class>
             <anchored>
                 <top/>
                 <left/>
@@ -25,6 +26,7 @@
 
     <template name="LayoutBeginHorizontal">
         <stringcontrol name="LayoutBeginHorizontal" >
+            <_class>LayoutBeginHorizontal</_class>
             <anchored>
                 <top/>
                 <left/>
@@ -36,6 +38,7 @@
 
     <template name="LayoutBeginForm">
         <stringcontrol name="LayoutBeginForm" >
+            <_class>LayoutBeginForm</_class>
             <anchored>
                 <top/>
                 <left/>

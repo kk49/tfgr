@@ -3,6 +3,9 @@ function onInit()
     TypeLayout.setup()
 end
 
+function onFirstLayout()
+    TypeLayout.doAdjustLayout()
+end
 
 function classGet()
     return "CharSheet";
