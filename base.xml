@@ -34,6 +34,7 @@
   <script name="OOBManager" file="scripts/manager_oob.lua" />
   <script name="ChatManager" file="scripts/manager_chat.lua" />
   <script name="ModuleManager" file="scripts/manager_module.lua" />
+  <script name="CombatManager" file="scripts/manager_combat.lua" />
 
   <includefile source="desktop/base.xml" />
   <includefile source="campaign/base.xml" />

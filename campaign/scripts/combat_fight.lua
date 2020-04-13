@@ -1,12 +1,6 @@
 local combat_actors = 'combat.fight.id-00001.actor'
 local combat_turns = 'combat.fight.id-00001.round.id-00001.turn'
 
-local k_action_aim = 'AIM'
-local k_action_delay = 'DELAY'
-local k_action_done = 'DONE'
-local k_action_end_of_round = 'EOR'
-
-
 local turn_count = 0
 local turn_id = nil
 
@@ -38,7 +32,6 @@ function fightProcessDatabase()
 
 
     actors = DB.getChildren(combat_actors)
-    --Debug.console('actors', actors)
     for id, node in pairs(actors) do
         link_db_ref = DB.getValue(node, 'link_db_ref')
         link_window = DB.getValue(node, 'link_window')
@@ -62,7 +55,6 @@ function fightProcessDatabase()
 
 
     turns = DB.getChildren(combat_turns)
-    --Debug.console('turns', turns)
     for id, node in pairs(turns) do
         name = DB.getValue(node, 'name')
         action = DB.getValue(node, 'action')
@@ -70,16 +62,16 @@ function fightProcessDatabase()
         link_window = DB.getValue(node, 'link_window')
         link_db_ref = DB.getValue(node, 'link_db_ref')
 
-        if k_action_end_of_round == action then
+        if CombatManager.k_action_end_of_round == action then
             end_of_round_occurred = true
             total_chits_used = total_chits_used + 1
         else
-            if k_action_aim == action then
+            if CombatManager.k_action_aim == action then
                 total_chits_used = total_chits_used + 1
                 db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
-            elseif k_action_delay == action then
+            elseif CombatManager.k_action_delay == action then
                 -- pass
-            elseif k_action_done == action then
+            elseif CombatManager.k_action_done == action then
                 total_chits_used = total_chits_used + 1
                 db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
             end
@@ -90,7 +82,6 @@ end
 
 function fightDisplayState()
     actors = DB.getChildren(combat_actors)
-    --Debug.console('actors', actors)
     for id, node in pairs(actors) do
         link_db_ref = DB.getValue(node, 'link_db_ref')
 
@@ -112,16 +103,13 @@ function processNextTurn()
         print(string.format('Rolled %d of %d out of %d', chit_number, active_chits, total_chits))
 
         winner = nil
-        --Debug.console(db_actor_chits)
         for link_db_ref, chits_available in pairs(db_actor_chits) do
             chits_used = db_actor_chits_used[link_db_ref]
+
             chits_remaining = chits_available - chits_used
             chit_number = chit_number - chits_remaining
             if chit_number <= 0 then
                 winner = link_db_ref
-                init_str = combat_actors .. '.' .. db_actor_to_combat_actor[winner] .. '.initiative_cur'
-                print(init_str, chits_remaining)
-                DB.setValue(init_str, 'number', chits_remaining - 1)
                 break
             end
         end
@@ -138,7 +126,7 @@ function processNextTurn()
         else
             print(string.format('Turn %d: END OF ROUND', turn_count))
             name = 'END OF ROUND'
-            action = k_action_end_of_round
+            action = CombatManager.k_action_end_of_round
             link_db_ref = ''
             link_window = ''
         end
@@ -158,9 +146,10 @@ end
 function fightActonPerform(action)
     if turn_id then
         last_action = DB.getValue(turn_id .. '.action')
-        if last_action == '' then
+        if not last_action or last_action == '' then
             DB.setValue(turn_id .. '.action', 'string', action)
         end
+        fightProcessDatabase()
     end
     processNextTurn()
 end
@@ -184,19 +173,19 @@ end
 
 function cmdTurnNext()
     print('cmdTurnNext')
-    fightActonPerform(k_action_done)
+    fightActonPerform (CombatManager.k_action_done)
 end
 
 
 function cmdTurnDelay()
     print('cmdTurnDelay')
-    fightActonPerform(k_action_delay)
+    fightActonPerform (CombatManager.k_action_delay)
 end
 
 
 function cmdTurnAim()
     print('cmdTurnAim')
-    fightActonPerform(k_action_aim)
+    fightActonPerform (CombatManager.k_action_aim)
 end
 
 
@@ -207,8 +196,6 @@ end
 
 
 function onDrop(x, y, drag_info)
-    --Debug.console('combat_fight.onDrop ', x, y, drag_info)
-
     if drag_info.isType('shortcut') then
         link_window, link_db_ref = drag_info.getShortcutData()
         prefix = string.match(link_db_ref, '^([^.]*)')
@@ -249,7 +236,6 @@ function onDrop(x, y, drag_info)
 
         if add_actor then
             actor_new = combat_actors .. string.format('.id-%05d', max_id + 1)
-            --Debug.console('Actor New ', actor_new)
             DB.setValue(actor_new .. '.name', 'string', name)
             DB.setValue(actor_new .. '.initiative_cur', 'number', initiative)
             DB.setValue(actor_new .. '.initiative_max', 'number', initiative)
