@@ -40,9 +40,10 @@ function doLayout()
 
         add_to_stack = true
 
-        if v.getValue and v.getValue() then
-            value = v.getValue()
+        if v._class and v._class[1] then
+            value = v._class[1]
             name = v.getName()
+
             if value == 'LayoutEnd' then
                 add_to_stack = false
                 if #layout_stack == 0 then

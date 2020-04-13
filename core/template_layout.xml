@@ -3,93 +3,65 @@
 <root>
     <template name="TypeLayout">
         <genericcontrol name="TypeLayout" >
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>LayoutBeginHorizontal</_class>
+            <anchored><top/><left/></anchored><invisible/>
             <script file="core/scripts/layout.lua" />
-            <invisible/>
         </genericcontrol>
     </template>
 
     <template name="LayoutEnd">
-        <stringcontrol name="LayoutEnd" >
+        <genericcontrol name="LayoutEnd" >
             <_class>LayoutEnd</_class>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
-            <static text="LayoutEnd"/>
-            <invisible/>
-        </stringcontrol>
+            <anchored><top/><left/></anchored><invisible/>
+        </genericcontrol>
     </template>
 
     <template name="LayoutBeginHorizontal">
-        <stringcontrol name="LayoutBeginHorizontal" >
+        <genericcontrol name="LayoutBeginHorizontal" >
             <_class>LayoutBeginHorizontal</_class>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
-            <static text="LayoutBeginHorizontal"/>
-            <invisible/>
-        </stringcontrol>
+            <anchored><top/><left/></anchored><invisible/>
+        </genericcontrol>
     </template>
 
     <template name="LayoutBeginForm">
-        <stringcontrol name="LayoutBeginForm" >
+        <genericcontrol name="LayoutBeginForm" >
             <_class>LayoutBeginForm</_class>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
-            <static text="LayoutBeginForm"/>
-            <invisible/>
-        </stringcontrol>
+            <anchored><top/><left/></anchored><invisible/>
+        </genericcontrol>
     </template>
 
     <template name="layout_genericcontrol">
         <genericcontrol>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>genericcontrol</_class>
+            <anchored><top/><left/></anchored>
         </genericcontrol>
     </template>
 
     <template name="layout_stringcontrol">
         <stringcontrol>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>stringcontrol</_class>
+            <anchored><top/><left/></anchored>
         </stringcontrol>
     </template>
 
     <template name="layout_stringfield">
         <stringfield>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>stringfield</_class>
+            <anchored><top/><left/></anchored>
         </stringfield>
     </template>
 
     <template name="layout_numberfield">
         <numberfield>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>numberfield</_class>
+            <anchored><top/><left/></anchored>
         </numberfield>
     </template>
 
     <template name="layout_buttoncontrol">
         <buttoncontrol>
-            <anchored>
-                <top/>
-                <left/>
-            </anchored>
+            <_class>buttoncontrol</_class>
+            <anchored><top/><left/></anchored>
         </buttoncontrol>
     </template>
 
