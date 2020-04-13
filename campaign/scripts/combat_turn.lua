@@ -1,14 +1,18 @@
 local action_path = nil
 
 function onInit()
-    action_path = getDatabaseNode().getPath() .. '.action'
+    Core.onInitEntered('combat_turn', self)
     doUpdate()
-    TypeLayout.setup()
+    action_path = getDatabaseNode().getPath() .. '.action'
     DB.addHandler(action_path, 'onUpdate', doUpdate)
 end
 
 function onClose()
     DB.removeHandler(action_path, 'onUpdate', doUpdate)
+end
+
+function onFirstLayout()
+    Core.onFirstLayoutEntered('combat_turn', self)
 end
 
 function doUpdate()

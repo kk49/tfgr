@@ -1,10 +1,9 @@
 function onInit()
-    Debug.console('character_sheet.onInit')
-    TypeLayout.setup()
+    Core.onInitEntered('character_sheet', self)
 end
 
 function onFirstLayout()
-    TypeLayout.doAdjustLayout()
+    Core.onFirstLayoutEntered('character_sheet', self)
 end
 
 function classGet()

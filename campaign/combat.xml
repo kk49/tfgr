@@ -53,11 +53,11 @@
     <windowclass name="combat_commands">
         <script>
             function onInit()
-                TypeLayout.setup()
+                Core.onInitEntered('combat_commands', self)
             end
 
             function onFirstLayout()
-                TypeLayout.doAdjustLayout()
+                Core.onFirstLayoutEntered('combat_commands', self)
             end
         </script>
         <frame>frame_single_pixel</frame>

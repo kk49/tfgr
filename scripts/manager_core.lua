@@ -1,3 +1,30 @@
+function onInit()
+    Interface.onWindowOpened = onWindowOpenedHandler
+    Interface.onWindowClosed = onWindowClosedHandler
+end
+
+function onWindowOpenedHandler(wi)
+    Debug.console('onWindowOpenedHandler', wi)
+end
+
+function onWindowClosedHandler(wi)
+    Debug.console('onWindowClosedHandler', wi)
+end
+
+function onInitEntered(name, obj)
+    Debug.console(name .. '.onInit', obj)
+    if obj.TypeLayout then
+        obj.TypeLayout.setup()
+    end
+end
+
+function onFirstLayoutEntered(name, obj)
+    Debug.console(name .. '.onFirstLayout', obj)
+    if obj.TypeLayout then
+        obj.TypeLayout.doAdjustLayout()
+    end
+end
+
 function isType(name)
     i,j = string.find(name, 'Type')
     if i == 1 and j == 4 then

@@ -1,10 +1,9 @@
 function onInit()
-    Debug.console('character_viewer_element.onInit')
-    TypeLayout.setup()
+    Core.onInitEntered('character_viewer_element', self)
 end
 
 function onFirstLayout()
-    TypeLayout.doAdjustLayout()
+    Core.onFirstLayoutEntered('character_viewer_element', self)
 end
 
 function onDragStart(button, x, y, drag_info)

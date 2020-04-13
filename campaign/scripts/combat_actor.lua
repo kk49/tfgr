@@ -1,5 +1,9 @@
 function onInit()
-    TypeLayout.setup()
+    Core.onInitEntered('combat_actor', self)
+end
+
+function onFirstLayout()
+    Core.onFirstLayoutEntered('combat_actor', self)
 end
 
 function elementOpen()
