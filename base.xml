@@ -18,7 +18,19 @@
   <framedef name="desktop" merge="delete" /> <!-- disable/remove background frame that was under the background image-->
   <framedef name="shortcuts" merge="delete" /> <!-- disable/remove shortcut frame that was under the shortcuts-->
 
+  <script name="Core" file="scripts/manager_core.lua" />
+  <script name="DBManager" file="scripts/manager_db.lua" />
+  <script name="OOBManager" file="scripts/manager_oob.lua" />
+  <script name="ChatManager" file="scripts/manager_chat.lua" />
+  <script name="ModuleManager" file="scripts/manager_module.lua" />
+  <script name="Gui" file="scripts/manager_gui.lua" />
+
+  <script name="CombatManager" file="scripts/manager_combat.lua" />
+  <script name="CharacterManager" file="scripts/manager_character.lua" />
+  <script name="NpcManager" file="scripts/manager_npc.lua" />
+
   <includefile source="core/base.xml" />
+
   <includefile source="common/base.xml" />
 
   <includefile source="game_elements.xml" />
@@ -29,12 +41,6 @@
 
   <!--script name="NPCManager" file="scripts/manager_npc.lua" /-->
 
-  <script name="Core" file="scripts/manager_core.lua" />
-  <script name="DBManager" file="scripts/manager_db.lua" />
-  <script name="OOBManager" file="scripts/manager_oob.lua" />
-  <script name="ChatManager" file="scripts/manager_chat.lua" />
-  <script name="ModuleManager" file="scripts/manager_module.lua" />
-  <script name="CombatManager" file="scripts/manager_combat.lua" />
 
   <includefile source="desktop/base.xml" />
   <includefile source="campaign/base.xml" />

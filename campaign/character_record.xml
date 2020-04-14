@@ -2,7 +2,7 @@
 
 <root>
 	<windowclass name="character_sheet">
-		<script file="campaign/scripts/character.lua" />
+		<script file="campaign/scripts/character_sheet.lua" />
 
 		<frame>frame_troika_generic</frame>
 
@@ -26,7 +26,6 @@
 
 		<sheetdata>
 			<TypeLayout/>
-			<Actor/>
 
 			<LayoutBeginForm name="8 8 80 0"/>
 				<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>

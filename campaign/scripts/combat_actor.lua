@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('combat_actor', self)
+    Gui.onInitEntered('combat_actor', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('combat_actor', self)
+    Gui.onFirstLayoutEntered('combat_actor', self)
 end
 
 function elementOpen()

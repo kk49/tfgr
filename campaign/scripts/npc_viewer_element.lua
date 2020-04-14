@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('npc_viewer_element', self)
+    Gui.onInitEntered('npc_viewer_element', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('npc_viewer_element', self)
+    Gui.onFirstLayoutEntered('npc_viewer_element', self)
 end
 
 function onDragStart(button, x, y, drag_info)

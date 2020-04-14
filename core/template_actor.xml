@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-    <template name="Actor">
-        <Object>
-            <script file="core/scripts/actor.lua" />
-        </Object>
-    </template>
-</root>

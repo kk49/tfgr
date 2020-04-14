@@ -16,13 +16,13 @@ local total_chits = 0
 local total_chits_used = 0
 
 function onInit()
-    Core.onInitEntered('combat_fight', self)
+    Gui.onInitEntered('combat_fight', self)
     fightProcessDatabase()
     fightDisplayState()
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('combat_fight', self)
+    Gui.onFirstLayoutEntered('combat_fight', self)
 end
 
 function fightProcessDatabase()

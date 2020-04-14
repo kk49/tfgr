@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('character_viewer', self)
+    Gui.onInitEntered('character_viewer', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('character_viewer', self)
+    Gui.onFirstLayoutEntered('character_viewer', self)
 end
 
 function onListChanged(node, child)

@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('npc_sheet', self)
+    Gui.onInitEntered('npc_sheet', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('npc_sheet', self)
+    Gui.onFirstLayoutEntered('npc_sheet', self)
 end
 
 function classGet()

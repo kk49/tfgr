@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('npc_viewer', self)
+    Gui.onInitEntered('npc_viewer', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('npc_viewer', self)
+    Gui.onFirstLayoutEntered('npc_viewer', self)
 end
 
 function onClose()

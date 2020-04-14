@@ -1,9 +1,9 @@
 function onInit()
-    Core.onInitEntered('character_sheet', self)
+    Gui.onInitEntered('character_sheet', self)
 end
 
 function onFirstLayout()
-    Core.onFirstLayoutEntered('character_sheet', self)
+    Gui.onFirstLayoutEntered('character_sheet', self)
 end
 
 function classGet()
