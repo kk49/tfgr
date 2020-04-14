@@ -1,4 +1,5 @@
 function onInit()
+	Debug.console("manager_gui: onInit")
     Interface.onWindowOpened = onWindowOpenedHandler
     Interface.onWindowClosed = onWindowClosedHandler
 end

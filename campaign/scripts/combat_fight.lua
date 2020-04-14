@@ -29,7 +29,6 @@ function fightProcessDatabase()
     -- calculate state
     db_actor_chits = {}
     db_actor_chits_used = {}
-    db_actor_is_enemy = {}
 
     db_actor_to_combat_actor = {}
     db_actor_to_name = {}
@@ -46,7 +45,6 @@ function fightProcessDatabase()
         link_window = DB.getValue(node, 'link_window')
         name = DB.getValue(node, 'name')
         initiative = DB.getValue(node, 'initiative_max')
-        prefix = string.match(link_db_ref, '^([^.]*)')
 
         db_actor_to_combat_actor[link_db_ref] = id
         db_actor_to_link_window[link_db_ref] = link_window
@@ -54,11 +52,6 @@ function fightProcessDatabase()
         db_actor_chits[link_db_ref] = initiative
         db_actor_chits_used[link_db_ref] = 0
         total_chits = total_chits + initiative
-        if prefix == 'npc' then
-            db_actor_is_enemy[link_db_ref] = true
-        elseif prefix == 'character' then
-            db_actor_is_enemy[link_db_ref] = false
-        end
     end
     total_chits = total_chits + 1  -- add one chit for the end of round
 
@@ -71,18 +64,22 @@ function fightProcessDatabase()
         link_window = DB.getValue(node, 'link_window')
         link_db_ref = DB.getValue(node, 'link_db_ref')
 
-        if CombatManager.k_action_end_of_round == action then
+        if Combat.k_action_end_of_round == action then
             end_of_round_occurred = true
             total_chits_used = total_chits_used + 1
         else
-            if CombatManager.k_action_aim == action then
-                total_chits_used = total_chits_used + 1
-                db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
-            elseif CombatManager.k_action_delay == action then
-                -- pass
-            elseif CombatManager.k_action_done == action then
-                total_chits_used = total_chits_used + 1
-                db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
+            if db_actor_chits_used[link_db_ref] then
+                if Combat.k_action_aim == action then
+                    total_chits_used = total_chits_used + 1
+                    db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
+                elseif Combat.k_action_delay == action then
+                    -- pass
+                elseif Combat.k_action_done == action then
+                    total_chits_used = total_chits_used + 1
+                    db_actor_chits_used[link_db_ref] = db_actor_chits_used[link_db_ref] + 1
+                end
+            else
+                -- handle case where actors were removed and turns were left
             end
         end
     end
@@ -135,7 +132,7 @@ function processNextTurn()
         else
             print(string.format('Turn %d: END OF ROUND', turn_count))
             name = 'END OF ROUND'
-            action = CombatManager.k_action_end_of_round
+            action = Combat.k_action_end_of_round
             link_db_ref = ''
             link_window = ''
         end
@@ -182,22 +179,20 @@ end
 
 function cmdTurnNext()
     print('cmdTurnNext')
-    fightActonPerform (CombatManager.k_action_done)
+    fightActonPerform (Combat.k_action_done)
 end
 
 
 function cmdTurnDelay()
     print('cmdTurnDelay')
-    fightActonPerform (CombatManager.k_action_delay)
+    fightActonPerform (Combat.k_action_delay)
 end
 
 
 function cmdTurnAim()
     print('cmdTurnAim')
-    fightActonPerform (CombatManager.k_action_aim)
+    fightActonPerform (Combat.k_action_aim)
 end
-
-
 
 
 function onDrop(x, y, drag_info)
@@ -225,21 +220,15 @@ function onDrop(x, y, drag_info)
             end
         end
 
+        actor = nil
         if add_actor then
-            if 'npc' == prefix then
-                name = DB.getValue(link_db_ref .. '.name')
-                initiative = DB.getValue(link_db_ref .. '.initiative')
-
-                add_actor = true
-            elseif 'character' == prefix then
-                name = DB.getValue(link_db_ref .. '.name')
-                initiative = 2
-
-                add_actor = true
-            end
+            actor = Core.dbCast(link_db_ref, Combat.k_interface_combat_actor)
         end
 
-        if add_actor then
+        if actor then
+            name = actor:nameGet()
+            initiative = actor:initiativeGet()
+
             actor_new = combat_actors .. string.format('.id-%05d', max_id + 1)
             DB.setValue(actor_new .. '.name', 'string', name)
             DB.setValue(actor_new .. '.initiative_cur', 'number', initiative)

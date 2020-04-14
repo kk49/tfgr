@@ -1,6 +1,17 @@
 local rules_name = "TroikaRPG";
 local rules_major_version = 1;
 
+function onInit()
+	local _, _, aMajor, aMinor = DB.getRulesetVersion()
+    Debug.console("manager_db.onInit", aMajor, aMinor)
+	if User.isHost() then
+		updateCampaign()
+	end
+
+	Module.onModuleLoad = onModuleLoad;
+end
+
+
 local default_db =
 {
     ['shortcuts'] = {
@@ -57,15 +68,7 @@ local default_db =
 }
 
 
-function onInit()
-	local _, _, aMajor, aMinor = DB.getRulesetVersion()
-    Debug.console("manager_db.onInit", aMajor, aMinor)
-	if User.isHost() then
-		updateCampaign()
-	end
 
-	Module.onModuleLoad = onModuleLoad;
-end
 
 function onModuleLoad(sModule)
 	local _, _, aMajor, aMinor = DB.getRulesetVersion(sModule)

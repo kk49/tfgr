@@ -16,7 +16,7 @@ function onFirstLayout()
 end
 
 function doUpdate()
-    visible = not (action.getValue() == CombatManager.k_action_end_of_round)
+    visible = not (action.getValue() == Combat.k_action_end_of_round)
     action.setVisible(visible)
     l0.setVisible(visible)
     l1.setVisible(visible)

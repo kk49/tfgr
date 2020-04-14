@@ -25,9 +25,9 @@
   <script name="ModuleManager" file="scripts/manager_module.lua" />
   <script name="Gui" file="scripts/manager_gui.lua" />
 
-  <script name="CombatManager" file="scripts/manager_combat.lua" />
-  <script name="CharacterManager" file="scripts/manager_character.lua" />
-  <script name="NpcManager" file="scripts/manager_npc.lua" />
+  <script name="Combat" file="scripts/manager_combat.lua" />
+  <script name="Character" file="scripts/manager_character.lua" />
+  <script name="Npc" file="scripts/manager_npc.lua" />
 
   <includefile source="core/base.xml" />
 

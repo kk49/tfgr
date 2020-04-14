@@ -1,4 +1,3 @@
-
 function onInit()
 	Debug.console("manager_chat: onInit")
 	Comm.registerSlashHandler("vc", debug_db)
