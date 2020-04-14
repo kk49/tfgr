@@ -1,6 +1,7 @@
 function onInit()
 	Debug.console("manager_character: onInit")
 	Core.classRegister('character..[^.]+', objectCast)
+	Core.editorRegister('character..[^.]+', 'character_sheet')
 end
 
 function objectCast(db_path, cast_to)

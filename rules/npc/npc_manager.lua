@@ -1,6 +1,7 @@
 function onInit()
     Debug.console("manager_npc: onInit");
 	Core.classRegister('npc..[^.]+', objectCast)
+    Core.editorRegister('npc..[^.]+', 'npc_sheet')
 end
 
 function objectCast(db_path, cast_to)

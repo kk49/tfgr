@@ -11,7 +11,6 @@ local db_actor_stamina = {}
 local db_actor_stamina_lost = {}
 local db_actor_to_combat_actor = {}
 local db_actor_to_name = {}
-local db_actor_to_link_window = {}
 local end_of_round_occurred = false
 local total_chits = 0
 local total_chits_used = 0
@@ -33,7 +32,6 @@ function fightProcessDatabase()
 
     db_actor_to_combat_actor = {}
     db_actor_to_name = {}
-    db_actor_to_link_window = {}
 
     end_of_round_occurred = false
     total_chits = 0
@@ -43,7 +41,6 @@ function fightProcessDatabase()
     actors = DB.getChildren(combat_actors)
     for id, node in pairs(actors) do
         link_db_ref = DB.getValue(node, 'link_db_ref')
-        link_window = DB.getValue(node, 'link_window')
 
         actor = Core.dbCast(link_db_ref, Combat.k_interface_combat_actor)
         name = actor:nameGet()
@@ -52,7 +49,6 @@ function fightProcessDatabase()
         stamina_lost = actor:staminaLostGet()
 
         db_actor_to_combat_actor[link_db_ref] = id
-        db_actor_to_link_window[link_db_ref] = link_window
         db_actor_to_name[link_db_ref] = name
         db_actor_chits[link_db_ref] = initiative
         db_actor_chits_used[link_db_ref] = 0
@@ -136,13 +132,11 @@ function processNextTurn()
             name = db_actor_to_name[winner]
             action = ''
             link_db_ref = winner
-            link_window = db_actor_to_link_window[winner]
         else
             print(string.format('Turn %d: END OF ROUND', turn_count))
             name = 'END OF ROUND'
             action = Combat.k_action_end_of_round
             link_db_ref = ''
-            link_window = ''
         end
 
         turn_db = DB.createNode(turn_id)
@@ -150,7 +144,6 @@ function processNextTurn()
         DB.setValue(turn_db, 'action', 'string', action)
         DB.setValue(turn_db, 'turn_number', 'number', turn_count)
         DB.setValue(turn_db, 'link_db_ref', 'string', link_db_ref)
-        DB.setValue(turn_db, 'link_window', 'string', link_window)
 
         fightProcessDatabase()
         fightDisplayState()
@@ -206,16 +199,15 @@ end
 
 function onDrop(x, y, drag_info)
     if drag_info.isType('shortcut') then
-        link_window, link_db_ref = drag_info.getShortcutData()
-        prefix = string.match(link_db_ref, '^([^.]*)')
+        _, link_db_ref = drag_info.getShortcutData()  -- we are tracking the link window thru core
 
         -- check to make sure combat_actor does not exist for this add_actor
-
         new_index, new_id = DbManager.generateNextId(
             combat_actors,
             function (dbn) return not (link_db_ref == DB.getValue(dbn, 'link_db_ref')) end
         )
 
+        -- "cast" db link to combat actor object
         actor = nil
         if new_index then
             actor = Core.dbCast(link_db_ref, Combat.k_interface_combat_actor)
@@ -233,7 +225,6 @@ function onDrop(x, y, drag_info)
             DB.setValue(actor_db, 'initiative_max', 'number', initiative)
             DB.setValue(actor_db, 'stamina_cur', 'number', stamina - stamina_lost)
             DB.setValue(actor_db, 'stamina_max', 'number', stamina)
-            DB.setValue(actor_db, 'link_window', 'string', link_window)
             DB.setValue(actor_db, 'link_db_ref', 'string', link_db_ref)
 
             return true

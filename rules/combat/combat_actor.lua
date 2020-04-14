@@ -7,11 +7,13 @@ function onFirstLayout()
 end
 
 function elementOpen()
-	Interface.openWindow(link_window.getValue(), link_db_ref.getValue())
+    db_ref = link_db_ref.getValue()
+    Interface.openWindow(Core.editorFind(db_ref), db_ref)
 end
 
 function elementDrag(button, x, y, drag_info)
     --Debug.console('elementDrag', button, x, y, drag_info)
-	drag_info.setShortcutData(link_window.getValue(), link_db_ref.getValue())
+    db_ref = link_db_ref.getValue()
+    drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
     drag_info.setType('shortcut')
 end

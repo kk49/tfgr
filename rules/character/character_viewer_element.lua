@@ -11,13 +11,15 @@ function onDragStart(button, x, y, drag_info)
 end
 
 function elementOpen()
-	Interface.openWindow("character_sheet", getDatabaseNode().getNodeName())
+    db_ref = getDatabaseNode().getNodeName()
+    Interface.openWindow(Core.editorFind(db_ref), db_ref)
     return true
 end
 
 function elementDrag(button, x, y, drag_info)
     --Debug.console('elementDrag', button, x, y, drag_info)
-	drag_info.setShortcutData("character_sheet", getDatabaseNode().getNodeName())
+    db_ref = getDatabaseNode().getNodeName()
+    drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
     drag_info.setType('shortcut')
     return true
 end

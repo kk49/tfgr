@@ -25,7 +25,6 @@
 				<layout_stringcontrol name="l4"><static text="/" /></layout_stringcontrol>
 				<layout_numberfield name="stamina_max" ><!--disabled /--></layout_numberfield>
             <LayoutEnd/>
-            <layout_stringfield name="link_window" ><invisible/></layout_stringfield>
             <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
 
         </sheetdata>
@@ -49,7 +48,6 @@
 				<layout_stringfield name="action" ><disabled /></layout_stringfield>
             <LayoutEnd/>
             <layout_numberfield name="turn_number"><invisible/></layout_numberfield>
-            <layout_stringfield name="link_window" ><invisible/></layout_stringfield>
             <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
         </sheetdata>
     </windowclass>
