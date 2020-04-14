@@ -40,11 +40,12 @@ function editorFind(db_path, default)
         end
     end
 
-    if not editor then
+    if editor then
+        return editor[#editor]  -- return top of stack
+    else
         Core.error('manager_core.editorFind: could not match %s to any class', db_path)
+        return nil
     end
-
-    return editor[#editor]  --return top of stack
 end
 
 -- class

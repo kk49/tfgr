@@ -1,5 +1,5 @@
 function onInit()
-    Debug.console("manager_module: onInit");
+    Debug.console("manager_module.onInit");
 
 	Module.onUnloadedReference = onUnloadedReferenceHandler;
 end
