@@ -2,16 +2,14 @@ function onInit()
 	Debug.console("manager_core: onInit")
 end
 
-local class_registry = {}
-local editor_registry = {}
-
 --
 function error(...)
     Debug.console('Error: ' .. string.format(unpack(arg)))
 end
 
 -- editor
--- TODO make this a stack so if extension is unloaded previous behavior returns
+local editor_registry = {}
+
 function editorRegister(db_path_pattern, editor_name)
     stored_names = editor_registry[db_path_pattern]
     if not stored_names then
@@ -50,6 +48,8 @@ function editorFind(db_path, default)
 end
 
 -- class
+local class_registry = {}
+
 function classRegister(db_path_pattern, class_object)
     if class_registry[db_path_pattern] then
         Core.error('manager_core.classRegister: class already registered %s', db_path_pattern)

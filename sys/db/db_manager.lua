@@ -1,6 +1,8 @@
 local rules_name = "TroikaRPG";
 local rules_major_version = 1;
 
+--TODO the troika specific stuff should go to rules/campaign
+
 function onInit()
 	local _, _, aMajor, aMinor = DB.getRulesetVersion()
     Debug.console("manager_db.onInit", aMajor, aMinor)
