@@ -10,7 +10,13 @@ Troika! ruleset implemented in fantasy grounds
 - options!!!
   - Background
 
-  
+-- OOB_COMBAT_ACTION
+-- aim, delay, hit(with_what), shoot(with_what), 
+-- spell(with_what), move(...), item_use(...), item_retrieve(...), grapple(...)
+
+Weapons have ammunition / rounds / charge etc... reloading take getting the items out of your bag
+Armour
+Encomberance
 
 * Object
   * classGet() -> str
