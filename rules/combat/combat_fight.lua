@@ -201,27 +201,14 @@ function onDrop(x, y, drag_info)
         prefix = string.match(link_db_ref, '^([^.]*)')
 
         -- check to make sure combat_actor does not exist for this add_actor
-        actors = DB.getChildren(combat_actors)
 
-        add_actor = true
-        max_id = -1
-        for actor_id, actor_node in pairs(actors) do
-            db_ref = DB.getValue(actor_node, 'link_db_ref')
-            if db_ref == link_db_ref then
-                Debug.console('Actor already exists: ', link_db_ref)
-                add_actor = false
-                break
-            end
-
-            id_number = string.match(actor_id, 'id%-(%d+)')
-            id_number = tonumber(id_number)
-            if id_number and id_number > max_id then
-                max_id = id_number
-            end
-        end
+        new_index, new_id = DbManager.generateNextId(
+            combat_actors,
+            function (dbn) return not (link_db_ref == DB.getValue(dbn, 'link_db_ref')) end
+        )
 
         actor = nil
-        if add_actor then
+        if new_index then
             actor = Core.dbCast(link_db_ref, Combat.k_interface_combat_actor)
         end
 
@@ -229,12 +216,12 @@ function onDrop(x, y, drag_info)
             name = actor:nameGet()
             initiative = actor:initiativeGet()
 
-            actor_new = combat_actors .. string.format('.id-%05d', max_id + 1)
-            DB.setValue(actor_new .. '.name', 'string', name)
-            DB.setValue(actor_new .. '.initiative_cur', 'number', initiative)
-            DB.setValue(actor_new .. '.initiative_max', 'number', initiative)
-            DB.setValue(actor_new .. '.link_window', 'string', link_window)
-            DB.setValue(actor_new .. '.link_db_ref', 'string', link_db_ref)
+            DB.setValue(new_id .. '.name', 'string', name)
+            DB.setValue(new_id .. '.initiative_cur', 'number', initiative)
+            DB.setValue(new_id .. '.initiative_max', 'number', initiative)
+            DB.setValue(new_id .. '.link_window', 'string', link_window)
+            DB.setValue(new_id .. '.link_db_ref', 'string', link_db_ref)
+
             return true
         end
     end

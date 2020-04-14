@@ -21,7 +21,7 @@
   <includefile source="game_elements.xml" />
 
   <script name="Core" file="sys/core/core_manager.lua" />
-  <script name="DBManager" file="sys/db/db_manager.lua" />
+  <script name="DbManager" file="sys/db/db_manager.lua" />
   <script name="OOBManager" file="sys/oob/oob_manager.lua" />
   <script name="ChatManager" file="sys/chat/chat_manager.lua" />
   <script name="ModuleManager" file="sys/module/module_manager.lua" />

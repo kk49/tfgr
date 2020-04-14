@@ -6,7 +6,7 @@ local class_registry = {}
 
 --
 function error(...)
-    Debug.console('Error: ' .. string.format(unpack(args)))
+    Debug.console('Error: ' .. string.format(unpack(arg)))
 end
 
 -- class
