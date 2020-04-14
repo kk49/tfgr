@@ -20,6 +20,10 @@
 				<layout_numberfield name="initiative_cur" ><!--disabled /--></layout_numberfield>
 				<layout_stringcontrol name="l2"><static text="/" /></layout_stringcontrol>
 				<layout_numberfield name="initiative_max" ><!--disabled /--></layout_numberfield>
+				<layout_stringcontrol name="l3"><static text="Stamina:" /></layout_stringcontrol>
+				<layout_numberfield name="stamina_cur" ><!--disabled /--></layout_numberfield>
+				<layout_stringcontrol name="l4"><static text="/" /></layout_stringcontrol>
+				<layout_numberfield name="stamina_max" ><!--disabled /--></layout_numberfield>
             <LayoutEnd/>
             <layout_stringfield name="link_window" ><invisible/></layout_stringfield>
             <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>

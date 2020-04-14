@@ -7,7 +7,8 @@ local turn_id = nil
 -- Turn state
 local db_actor_chits = {}
 local db_actor_chits_used = {}
-local db_actor_is_enemy = {}
+local db_actor_stamina = {}
+local db_actor_stamina_lost = {}
 local db_actor_to_combat_actor = {}
 local db_actor_to_name = {}
 local db_actor_to_link_window = {}
@@ -43,14 +44,20 @@ function fightProcessDatabase()
     for id, node in pairs(actors) do
         link_db_ref = DB.getValue(node, 'link_db_ref')
         link_window = DB.getValue(node, 'link_window')
-        name = DB.getValue(node, 'name')
-        initiative = DB.getValue(node, 'initiative_max')
+
+        actor = Core.dbCast(link_db_ref, Combat.k_interface_combat_actor)
+        name = actor:nameGet()
+        initiative = actor:initiativeGet()
+        stamina = actor:staminaGet()
+        stamina_lost = actor:staminaLostGet()
 
         db_actor_to_combat_actor[link_db_ref] = id
         db_actor_to_link_window[link_db_ref] = link_window
         db_actor_to_name[link_db_ref] = name
         db_actor_chits[link_db_ref] = initiative
         db_actor_chits_used[link_db_ref] = 0
+        db_actor_stamina[link_db_ref] = stamina
+        db_actor_stamina_lost[link_db_ref] = stamina_lost
         total_chits = total_chits + initiative
     end
     total_chits = total_chits + 1  -- add one chit for the end of round
@@ -58,10 +65,7 @@ function fightProcessDatabase()
 
     turns = DB.getChildren(combat_turns)
     for id, node in pairs(turns) do
-        name = DB.getValue(node, 'name')
         action = DB.getValue(node, 'action')
-        turn_number = DB.getValue(node, 'turn_number')
-        link_window = DB.getValue(node, 'link_window')
         link_db_ref = DB.getValue(node, 'link_db_ref')
 
         if Combat.k_action_end_of_round == action then
@@ -94,8 +98,12 @@ function fightDisplayState()
         chits_available = db_actor_chits[link_db_ref]
         chits_used = db_actor_chits_used[link_db_ref]
         chits_remaining = chits_available - chits_used
-
         DB.setValue(node, 'initiative_cur', 'number', chits_remaining)
+
+        stamina = db_actor_stamina[link_db_ref]
+        stamina_lost = db_actor_stamina_lost[link_db_ref]
+        stamina_remaining = stamina - stamina_lost
+        DB.setValue(node, 'stamina_cur', 'number', stamina_remaining)
     end
 end
 
@@ -137,11 +145,12 @@ function processNextTurn()
             link_window = ''
         end
 
-        DB.setValue(turn_id .. '.name', 'string', name)
-        DB.setValue(turn_id .. '.action', 'string', action)
-        DB.setValue(turn_id .. '.turn_number', 'number', turn_count)
-        DB.setValue(turn_id .. '.link_db_ref', 'string', link_db_ref)
-        DB.setValue(turn_id .. '.link_window', 'string', link_window)
+        turn_db = DB.createNode(turn_id)
+        DB.setValue(turn_db, 'name', 'string', name)
+        DB.setValue(turn_db, 'action', 'string', action)
+        DB.setValue(turn_db, 'turn_number', 'number', turn_count)
+        DB.setValue(turn_db, 'link_db_ref', 'string', link_db_ref)
+        DB.setValue(turn_db, 'link_window', 'string', link_window)
 
         fightProcessDatabase()
         fightDisplayState()
@@ -215,12 +224,17 @@ function onDrop(x, y, drag_info)
         if actor then
             name = actor:nameGet()
             initiative = actor:initiativeGet()
+            stamina = actor:staminaGet()
+            stamina_lost = actor:staminaLostGet()
 
-            DB.setValue(new_id .. '.name', 'string', name)
-            DB.setValue(new_id .. '.initiative_cur', 'number', initiative)
-            DB.setValue(new_id .. '.initiative_max', 'number', initiative)
-            DB.setValue(new_id .. '.link_window', 'string', link_window)
-            DB.setValue(new_id .. '.link_db_ref', 'string', link_db_ref)
+            actor_db = DB.createNode(new_id)
+            DB.setValue(actor_db, 'name', 'string', name)
+            DB.setValue(actor_db, 'initiative_cur', 'number', initiative)
+            DB.setValue(actor_db, 'initiative_max', 'number', initiative)
+            DB.setValue(actor_db, 'stamina_cur', 'number', stamina - stamina_lost)
+            DB.setValue(actor_db, 'stamina_max', 'number', stamina)
+            DB.setValue(actor_db, 'link_window', 'string', link_window)
+            DB.setValue(actor_db, 'link_db_ref', 'string', link_db_ref)
 
             return true
         end
