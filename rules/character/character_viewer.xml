@@ -2,7 +2,7 @@
 
 <root>
     <windowclass name="character_viewer_element">
-		<script file="campaign/scripts/character_viewer_element.lua" />
+		<script file="rules/character/character_viewer_element.lua" />
 
 		<frame>frame_single_pixel</frame>
 
@@ -33,7 +33,7 @@
     </windowclass>
 
 	<windowclass name="character_viewer">
-		<script file="campaign/scripts/character_viewer.lua" />
+		<script file="rules/character/character_viewer.lua" />
 
 		<frame>frame_troika_generic</frame>
 

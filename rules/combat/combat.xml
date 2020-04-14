@@ -2,7 +2,7 @@
 
 <root>
     <windowclass name="combat_actor">
-		<script file="campaign/scripts/combat_actor.lua" />
+		<script file="rules/combat/combat_actor.lua" />
 		<frame>frame_single_pixel</frame>
 		<sizelimits>
 			<dynamic />
@@ -29,7 +29,7 @@
     </windowclass>
 
     <windowclass name="combat_turn">
-		<script file="campaign/scripts/combat_turn.lua" />
+		<script file="rules/combat/combat_turn.lua" />
 		<frame>frame_single_pixel</frame>
 		<sizelimits>
 			<dynamic />
@@ -135,7 +135,7 @@
     </windowclass>
 
     <windowclass name="combat_fight">
-		<script file="campaign/scripts/combat_fight.lua" />
+		<script file="rules/combat/combat_fight.lua" />
 
 		<frame>frame_troika_generic</frame>
 

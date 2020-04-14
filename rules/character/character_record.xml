@@ -2,7 +2,7 @@
 
 <root>
 	<windowclass name="character_sheet">
-		<script file="campaign/scripts/character_sheet.lua" />
+		<script file="rules/character/character_sheet.lua" />
 
 		<frame>frame_troika_generic</frame>
 

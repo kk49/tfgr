@@ -5,7 +5,7 @@
         <genericcontrol name="TypeLayout" >
             <_class>LayoutBeginHorizontal</_class>
             <anchored><top/><left/></anchored><invisible/>
-            <script file="core/scripts/layout.lua" />
+            <script file="sys/gui/layout.lua" />
         </genericcontrol>
     </template>
 

@@ -3,7 +3,7 @@
 <root>
     <template name="CommonViewer">
         <windowclass name="common_viewer">
-            <script file="common/scripts/common_viewer.lua" />
+            <script file="sys/gui/common_viewer.lua" />
 
             <frame>frame_troika_generic</frame>
 
