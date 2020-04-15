@@ -68,23 +68,42 @@ function classUnregister(db_path_pattern, class_object)
     end
 end
 
-function dbCast(db_path, cast_to)
-    cr = nil
-    for k,v in pairs(class_registry) do
-        if string.match(db_path, k) then
-            cr = v
-            break
+function dbCast(node, cast_to)
+    if not node then
+        Core.error('manager_core.dbCast: node is nil')
+    elseif not cast_to then
+        Core.error('manager_core.dbCast: cast_to is nil')
+    else
+        if type(node) == 'string' then
+            db_path = node
+            node = nil
+        else
+            db_path = node.getPath()
+        end
+
+        cr = nil
+        for k,v in pairs(class_registry) do
+            if string.match(db_path, k) then
+                cr = v
+                break
+            end
+        end
+
+        if cr then
+            if not node then
+                node = DB.findNode(db_path)
+            end
+
+            obj = cr(node, cast_to)
+            if obj then
+                return obj
+            else
+                Core.error('manager_core.dbCast: could not match case %s to %s', db_path, cast_to)
+            end
+        else
+            Core.error('manager_core.dbCast: could not match %s to any class', db_path)
         end
     end
 
-    if cr then
-        obj = cr(db_path, cast_to)
-        if obj then
-            return obj
-        else
-            Core.error('manager_core.dbCast: could not match case %s to %s', db_path, cast_to)
-        end
-    else
-        Core.error('manager_core.dbCast: could not match %s to any class', db_path)
-    end
+    return nil
 end

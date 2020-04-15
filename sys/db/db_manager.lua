@@ -7,7 +7,7 @@ function generateNextId(container_path, check_function, verbose_error)
     add_actor = true
     max_id = -1
     for id, node in pairs(children) do
-        if not check_function(node) then
+        if check_function and not check_function(node) then
             if verbose_error then
                 Core.error('DbManager.generateNextId(%s) check failed', container_path)
             end

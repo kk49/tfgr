@@ -4,15 +4,17 @@ function onInit()
 	Core.editorRegister('character..[^.]+', 'character_sheet')
 end
 
-function objectCast(db_path, cast_to)
+function objectCast(db_node, cast_to)
     if Combat.k_interface_combat_actor then
         return {
-            db_node = DB.findNode(db_path),
+            db_node = db_node,
             nameGet = nameGet,
             initiativeGet = initiativeGet,
+            initiativeUsedGet = initiativeUsedGet,
+            initiativeUsedSet = initiativeUsedSet,
             staminaGet = staminaGet,
-            staminaLostGet = staminaLostGet,
-            staminaLostSet = staminaLostSet,
+            staminaUsedGet = staminaUsedGet,
+            staminaUsedSet = staminaUsedSet,
         }
     end
 end
@@ -26,20 +28,33 @@ end
 function initiativeGet(self)
     return 2
 end
--- :staminaGet()
-function staminaGet(self)
-    return DB.getValue(self.db_node,'stamina')
-end
--- :staminaLostGet()
-function staminaLostGet(self)
-    stamina_lost = DB.getValue(self.db_node,'stamina_lost')
-    if stamina_lost then
-        return stamina_lost
+-- :initiativeUsedGet()
+function initiativeUsedGet(self)
+    used = DB.getValue(self.db_node,'initiative_used')
+    if used then
+        return used
     else
         return 0
     end
 end
--- :staminaLostSet()
-function staminaLostSet(self, v)
-    return DB.setValue(self.db_node, 'stamina_lost', 'number', v)
+-- :initiativeUsedSet()
+function initiativeUsedSet(self, v)
+    return DB.setValue(self.db_node, 'initiative_used', 'number', v)
+end
+-- :staminaGet()
+function staminaGet(self)
+    return DB.getValue(self.db_node,'stamina')
+end
+-- :staminaUsedGet()
+function staminaUsedGet(self)
+    used = DB.getValue(self.db_node,'stamina_used')
+    if used then
+        return used
+    else
+        return 0
+    end
+end
+-- :staminaUsedSet()
+function staminaUsedSet(self, v)
+    return DB.setValue(self.db_node, 'stamina_used', 'number', v)
 end

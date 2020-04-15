@@ -73,7 +73,7 @@
                 <layout_buttoncontrol name="bttn_next_round">
                     <script>
                         function onButtonPress()
-                            return window.parentcontrol.window.cmdRoundNext()
+                            return Combat.requestRoundReset()
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
@@ -88,7 +88,7 @@
 				<layout_buttoncontrol name="bttn_next_turn">
                     <script>
                         function onButtonPress()
-                            return window.parentcontrol.window.cmdTurnNext()
+                            return Combat.requestFightAction(Combat.k_action_done)
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
@@ -103,7 +103,7 @@
 				<layout_buttoncontrol name="bttn_delay">
                     <script>
                         function onButtonPress()
-                            return window.parentcontrol.window.cmdTurnDelay()
+                            return Combat.requestFightAction(Combat.k_action_delay)
                         end
                     </script>
                     <frame>frame_single_pixel</frame>
@@ -118,7 +118,7 @@
 				<layout_buttoncontrol name="bttn_aim">
                     <script>
                         function onButtonPress()
-                            return window.parentcontrol.window.cmdTurnAim()
+                            return Combat.requestFightAction(Combat.k_action_aim)
                         end
                     </script>
                     <frame>frame_single_pixel</frame>

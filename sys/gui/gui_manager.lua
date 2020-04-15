@@ -13,14 +13,14 @@ function onWindowClosedHandler(wi)
 end
 
 function onInitEntered(name, obj)
-    Debug.console(name .. '.onInit', obj)
+--     Debug.console(name .. '.onInit', obj)
     if obj.TypeLayout then
         obj.TypeLayout.setup()
     end
 end
 
 function onFirstLayoutEntered(name, obj)
-    Debug.console(name .. '.onFirstLayout', obj)
+--     Debug.console(name .. '.onFirstLayout', obj)
     if obj.TypeLayout then
         obj.TypeLayout.doAdjustLayout()
     end

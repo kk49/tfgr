@@ -15,14 +15,14 @@ function processReceiveOOBMessage(msg)
 		return;
 	end
 
-	for kHandlerType, fHandler in pairs(global_OOBMsgHandlers) do
-		if msg.type == kHandlerType then
-			fHandler(msg);
+	for handler_type, handler in pairs(global_OOBMsgHandlers) do
+		if msg.type == handler_type then
+			handler(msg);
 			return true;
 		end
 	end
 
-	Debug.chat("manager_oob: error_oob_msg_unknown: "  .. msg.type);
+	Core.error("manager_oob: error_oob_msg_unknown: "  .. msg.type);
 
 	return true;
 end
