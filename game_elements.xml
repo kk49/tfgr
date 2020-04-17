@@ -5,9 +5,11 @@ https://www.fantasygrounds.com/wiki/index.php/Developer_Guide_-_Rulesets_-_Setti
 -->
 
 <root>
-	<!--Campaign Data-->
+	<!-- Campaign Data -->
 	<characterdbroot>character</characterdbroot>
+
 	<tokenroot source="tokens" />
+
 	<imageupdatefolder>
 	  	<folder>images</folder>
 	  	<rootnode>image</rootnode>
@@ -15,31 +17,101 @@ https://www.fantasygrounds.com/wiki/index.php/Developer_Guide_-_Rulesets_-_Setti
 	  	<namefield>name</namefield>
 	</imageupdatefolder>
 
-	<!--Desktop Interface-->
+	<!-- Desktop Interface -->
 	<desktopframe>desktop</desktopframe>
+
 	<hotkeybar>
-		<frame>hotkeybox</frame>
+		<frame>frame_hot_key_box</frame>
 		<location offset="0" height="33" />
-<!--		<title frame="hotkeytitlebox" frameoffset="2,-2,5,2" margin="2,1" font="hotkey" />-->
-		<label margin="10,12" font="hotkey" />
+		<title frame="frame_hot_key_title_box" frameoffset="2,-2,5,2" margin="2,1" font="font_hot_key" />
+		<label margin="10,12" font="font_hot_key" />
 		<iconmargins>0,10,0,3</iconmargins>
 	</hotkeybar>
 
+	<menusettings>
+		<radial>
+			<hubicon>icon_menu_hub</hubicon>
+			<backicon>icon_menu_back</backicon>
+			<background>icon_menu_background</background>
+			<close>icon_menu_close</close>
+
+			<hubcolor>A08080</hubcolor>
+			<backgroundcolor>B0B0FF</backgroundcolor>
+			<iconcolor>FFFFFF</iconcolor>
+		</radial>
+	</menusettings>
+
 	<tooltip>
-		<frame name="tooltipbox" margins="7,4,10,7" wrapwidth="300" />
-		<radial name="mini_name" margins="7,2,7,2" />
-		<font name="mini_name" />
+		<frame name="frame_tool_tip_box" margins="7,4,10,7" wrapwidth="300" />
+		<radial name="frame_mini_name" margins="7,2,7,2" />
+		<font name="font_mini_name" />
 	</tooltip>
 
+	<!-- Window and Control Interfaces -->
+	<textsettings>
+		<selectioncolor>BCD2E9</selectioncolor>
+		<icon link="icon_button_link"
+			  linkshare="icon_button_link_share"
+			  emptylink="icon_button_link_empty"
+			  chat="icon_button_speak"
+		/>
+		<font simple="font_controls"
+			  normal="font_formatted_normal"
+			  bold="font_formatted_bold"
+			  italic="font_formatted_italic"
+			  bolditalic="font_formatted_bold_italic"
+			  title="font_formatted_title"
+		/>
+	</textsettings>
+
+	<imagesettings>
+		<shortcut icon="image_pin"
+				  iconpublic="image_pin_public"
+				  hotspot="2,21"
+		/>
+<!--		<pointer>-->
+	</imagesettings>
+
+	<distance>
+		<font>font_distance_label</font>
+<!--		<diagmult>-->
+<!--		<suffix>-->
+<!--		<pointer>-->
+<!--		<base>-->
+	</distance>
+
+	<diebox version="&gt;=4">
+		<frame name="frame_die_box" offset="9,4,9,4" />
+		<font expression="font_dice_expr" total="font_die_mod" dieresult="font_die_result"/>
+		<icons secret="icon_die_gm" defaultdie="icon_die_general" />
+	</diebox>
+	<diebox version="&lt;4">
+		<frame name="frame_die_box" />
+		<margin value="16" numbertailmargin="10" />
+		<secreticon name="die_gm" />
+		<font>
+			<modifier>font_die_mod</modifier>
+			<total>font_die_mod</total>
+			<dieresult>font_die_result</dieresult>
+		</font>
+	</diebox>
+	<die name="die_gm" version="&lt;4">
+		<icon>icon_die_gm</icon>
+	</die>
+
 	<pollbox version="&gt;=4">
-		<frame name="diebox" offset="4,4,4,4" />
-		<icons empty="poll_empty" positive="poll_check" negative="poll_negative" />
+		<frame name="frame_die_box" offset="4,4,4,4" />
+		<icons empty="icon_poll_empty" positive="icon_poll_check" negative="icon_poll_negative" />
 	</pollbox>
 	<pollbox version="&lt;4">
-		<frame name="diebox" />
+		<frame name="frame_die_box" />
 		<margin value="21" numbertailmargin="10" />
-		<icons empty="poll_empty" positive="poll_check" negative="poll_negative" />
+		<icons empty="icon_poll_empty" positive="icon_poll_check" negative="icon_poll_negative" />
 	</pollbox>
 
+<!--	<viewerlistsettings>-->
+<!--		<portrait file="data\icons\mini_portrait.png" mask="data\icons\mini_portrait_mask.png" />-->
+<!--		<spacing value="0" />-->
+<!--	</viewerlistsettings>-->
 
 </root>

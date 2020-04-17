@@ -1,9 +1,9 @@
 function onInit()
-    Gui.onInitEntered('npc_viewer', self)
+    Gui.onInit_handle('npc_viewer', self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayoutEntered('npc_viewer', self)
+    Gui.onFirstLayout_handle('npc_viewer', self)
 end
 
 function onClose()

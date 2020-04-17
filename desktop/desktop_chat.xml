@@ -3,6 +3,7 @@
 <root>
 	<windowclass name="chat">
 		<frame>frame_troika_generic</frame>
+
 		<noclose />
 		<sizelimits>
 			<minimum width="350" height="350" />
@@ -10,13 +11,15 @@
 		</sizelimits>
 		<script>
 			function onInit()
-				onLockStateChanged();
+				Gui.onInit_handle('chat', self)
 			end
 			function onLockStateChanged()
-				resize.setVisible(not getLockState());
+				Gui.onLockStateChanged_handle(self)
 			end
 		</script>
 		<sheetdata>
+			<window_resize/>
+
 			<chatentry name="entry">
 <!--				<frame>troika_frame_thin</frame>-->
 				<multilinespacing>20</multilinespacing>
@@ -41,7 +44,7 @@
 <!--				<modeframe mode="story" name="troika_frame_story"/>-->
 <!--				<modeframe mode="whisper" name="troika_frame_whispter"/>-->
 				<linkcolor>0000FF</linkcolor>
-				<linkicon normal="button_link" pressed="button_link_down" />
+				<linkicon normal="icon_button_link" pressed="icon_button_link_down" />
 				<droptypes>
 					<type>dice</type>
 					<type>number</type>
@@ -83,8 +86,6 @@
 					end
 				</script>
 			</genericcontrol>
-
-			<resize name="resize"/>
 		</sheetdata>
 	</windowclass>
 </root>

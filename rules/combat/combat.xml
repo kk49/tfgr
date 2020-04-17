@@ -55,11 +55,11 @@
     <windowclass name="combat_commands">
         <script>
             function onInit()
-                Gui.onInitEntered('combat_commands', self)
+                Gui.onInit_handle('combat_commands', self)
             end
 
             function onFirstLayout()
-                Gui.onFirstLayoutEntered('combat_commands', self)
+                Gui.onFirstLayout_handle('combat_commands', self)
             end
         </script>
         <frame>frame_single_pixel</frame>
@@ -139,7 +139,7 @@
     <windowclass name="combat_fight">
 		<script file="rules/combat/combat_fight.lua" />
 
-		<frame>frame_troika_generic</frame>
+		<frame>frame_window</frame>
 
 		<sizelimits>
 			<dynamic />
@@ -149,6 +149,9 @@
 		<softclose />
 
 		<sheetdata>
+            <window_close/>
+			<window_resize/>
+
             <windowlist name="combat_actor_list">
                 <datasource>.actor</datasource>
                 <class>combat_actor</class>
@@ -224,11 +227,6 @@
                 <target>combat_turn_list</target>
                 <normal name="frame_single_pixel"/>
             </scrollbar>
-
-
-			<close/>
-			<resize/>
-
 		</sheetdata>
 
     </windowclass>

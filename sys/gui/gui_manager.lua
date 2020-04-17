@@ -1,35 +1,42 @@
 function onInit()
 	Debug.console("manager_gui: onInit")
-    Interface.onWindowOpened = onWindowOpenedHandler
-    Interface.onWindowClosed = onWindowClosedHandler
+    Interface.onWindowOpened = onWindowOpened_handle
+    Interface.onWindowClosed = onWindowClosed_handle
 end
 
-function onWindowOpenedHandler(wi)
+function onWindowOpened_handle(wi)
     Debug.console('onWindowOpenedHandler', wi)
 end
 
-function onWindowClosedHandler(wi)
+function onWindowClosed_handle(wi)
     Debug.console('onWindowClosedHandler', wi)
 end
 
-function onInitEntered(name, obj)
+function onInit_handle(name, obj)
 --     Debug.console(name .. '.onInit', obj)
     if obj.TypeLayout then
         obj.TypeLayout.setup()
     end
+    onLockStateChanged_handle(obj)
 end
 
-function onFirstLayoutEntered(name, obj)
---     Debug.console(name .. '.onFirstLayout', obj)
+function onFirstLayout_handle(name, obj)
+    Debug.console(name .. '.onFirstLayout', obj)
     if obj.TypeLayout then
         obj.TypeLayout.doAdjustLayout()
+    end
+end
+
+function onLockStateChanged_handle(obj)
+    if obj and obj.window_resize then
+        obj.window_resize.setVisible(not obj.getLockState());
     end
 end
 
 -- utils
 function controlsList(window)
     controls = window.getControls()
-    for k,v in ipairs(controls) do
+    for k,v in pairs(controls) do
         Debug.console(k,v, v.getName())
     end
 end

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <template name="scrollbar">
+		<scrollbarcontrol>
+			<anchored position="right" offset="-5,-5" width="20" />
+			<frame name="frame_scrollbar_base" offset="0,12,0,12" />
+			<normal name="frame_scrollbutton_normal">
+				<minimum height="40" />
+			</normal>
+		</scrollbarcontrol>
+	</template>
+
+    <template name="window_resize">
+        <genericcontrol name="window_resize">
+			<_class>window_resize</_class>
+            <anchored height="18" width="18">
+				<right />
+				<bottom />
+			</anchored>
+			<icon>icon_window_resize</icon>
+
+			<disabled />
+        </genericcontrol>
+    </template>
+
+    <template name="window_close">
+        <buttoncontrol name="window_close">
+			<_class>window_close</_class>
+            <anchored height="18" width="18">
+				<right />
+				<top />
+			</anchored>
+
+			<icon normal="icon_window_close_normal"
+				  pressed="icon_window_close_pressed"
+				  hover="icon_window_close_hover"
+			/>
+			<script>
+				function onButtonPress()
+                    return window.close()
+                end
+			</script>
+        </buttoncontrol>
+    </template>
+
+    <template name="window_minimize">
+        <buttoncontrol name="window_minimize">
+			<_class>window_minimize</_class>
+            <anchored height="18" width="18">
+				<right offset="-20"/>
+				<top />
+			</anchored>
+			<icon normal="icon_window_minimize_normal"
+				  pressed="icon_window_minimize_pressed"
+				  hover="icon_window_minimize_hover"
+			/>
+        </buttoncontrol>
+    </template>
+
+	<template name="window_link">
+        <layout_buttoncontrol name="window_link">
+			<_class>window_minimize</_class>
+            <anchored height="18" width="18">
+				<left offset="2"/>
+				<top />
+			</anchored>
+			<icon normal="icon_window_link_normal"
+				  pressed="icon_window_link_pressed"
+				  hover="icon_window_link_hover"
+			/>
+            <script>
+                function onButtonPress()
+					db_ref = window.getDatabaseNode().getNodeName()
+					Interface.openWindow(Core.editorFind(db_ref), db_ref)
+					return true
+                end
+
+                function onDragStart(button, x, y, drag_info)
+					db_ref = window.getDatabaseNode().getNodeName()
+					drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
+					drag_info.setType('shortcut')
+					return true
+                end
+            </script>
+        </layout_buttoncontrol>
+    </template>
+
+</root>

@@ -28,7 +28,7 @@
 
 			<genericcontrol>
 				<bounds>0,0,16,16</bounds>
-				<icon>arrow_sm_left</icon>
+				<icon>icon_triangle_31_left</icon>
 				<disabled />
 			</genericcontrol>
 

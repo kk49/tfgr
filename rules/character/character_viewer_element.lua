@@ -1,9 +1,9 @@
 function onInit()
-    Gui.onInitEntered('character_viewer_element', self)
+    Gui.onInit_handle('character_viewer_element', self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayoutEntered('character_viewer_element', self)
+    Gui.onFirstLayout_handle('character_viewer_element', self)
 end
 
 function onDragStart(button, x, y, drag_info)

@@ -41,7 +41,7 @@
 
     <template name="viewer_button_open">
         <layout_buttoncontrol name="viewer_button_open">
-            <icon normal="arrow_sm_left" />
+            <icon normal="icon_triangle_15_left" />
             <anchored>
                 <size>
                 <width>16</width>

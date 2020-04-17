@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+
+	<!-- Default fonts - REQUIRED -->
+	<font name="defaultstringcontrol">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
+		<color value="#000000" />
+	</font>
+	<font name="defaultnumbercontrol">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Distance font - REQUIRED -->
+	<font name="distancelabel">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="18" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Chat fonts - REQUIRED -->
+	<font name="chatfont">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
+		<color value="#261A12" />
+	</font>
+<!--	<font name="emotefont">-->
+<!--		<fgffile name="graphics/fonts/regular-10.fgf" />-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />-->
+<!--		<color value="#880000" />-->
+<!--	</font>-->
+	<font name="narratorfont">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="16" />
+		<color value="#261A12" />
+	</font>
+	<font name="systemfont">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
+		<color value="#660066" />
+	</font>
+<!--	<font name="msgfont">-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />-->
+<!--		<color value="#660066" />-->
+<!--	</font>-->
+<!--	<font name="oocfont">-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />-->
+<!--		<color value="#005500" />-->
+<!--	</font>-->
+
+	<!-- Drag fonts - REQUIRED -->
+    <!-- TODO is "draglabel" hardcoded in FG? -->
+	<font name="draglabel">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="32" />
+		<color value="#000000" />
+	</font>
+
+	<!-- TODO is a default for image control ? -->
+	<font name="modcollectorlabel">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="10" />
+		<color value="#000000" />
+	</font>
+
+	<!-- Dice fonts -->
+	<font name="font_dice_expr" version="&gt;=4">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />
+		<color value="#000000" />
+	</font>
+	<font name="font_die_mod">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="18" />
+		<color value="#000000" />
+	</font>
+	<font name="font_die_result">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />
+		<color value="#ffffff" />
+	</font>
+
+
+	<font name="font_hot_key">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="20" />
+		<color value="FFFFFF" />
+		<shadow offset="1,1" color="000000" />
+	</font>
+
+	<font name="font_mini_name">
+		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />
+		<color value="#000000" />
+	</font>
+
+
+	<!-- Radial Icons -->
+<!--    <icon name="icon_menu_background" file="graphics/radial/menubackground.png" />-->
+<!--	<icon name="icon_menu_hub" file="graphics/radial/menuhub.png" />-->
+<!--	<icon name="icon_menu_back" file="graphics/radial/menuback.png" />-->
+
+
+	<icon name="icon_die_gm" file="themes/basic/graphics/streamline/48w/casino-player-dice.png" />
+	<icon name="icon_button_speak" file="themes/basic/graphics/streamline/48w/messages-bubble-alternate.png"/>
+	<icon name="icon_button_link" file="themes/basic/graphics/streamline/24w/hyperlink-2.png"/>
+
+	<icon name="icon_button_link_share" file="themes/basic/graphics/template.png"/>
+	<icon name="icon_button_link_empty" file="themes/basic/graphics/template.png"/>
+	<icon name="icon_poll_empty" file="themes/basic/graphics/template.png" />
+	<icon name="icon_poll_check" file="themes/basic/graphics/template.png" />
+
+	<!-- Radial Icons -->
+	<!-- TODO hardcoded? -->
+	<icon name="icon_menu_background" file="themes/basic/graphics/menu_background.png" />
+	<icon name="icon_menu_hub" file="themes/basic/graphics/streamline/48w/skull.png" />
+	<icon name="icon_menu_back" file="themes/basic/graphics/streamline/48w/move-back.png" />
+	<icon name="closeprogram" file="themes/basic/graphics/streamline/48w/safety-exit-door.png"/>
+	<icon name="maximizewindow" file="themes/basic/graphics/streamline/48w/expand-5.png"/>
+	<icon name="restorewindow" file="themes/basic/graphics/streamline/48w/shrink-4.png"/>
+	<icon name="indicator_stop" file="themes/basic/graphics/streamline/48w/light/hand-expand.png"/>
+	<icon name="indicator_prompt" file="themes/basic/graphics/streamline/48w/messages-bubble-alternate.png"/>
+	<icon name="close" file="themes/basic/graphics/streamline/48w/close.png"/>
+	<icon name="lock" file="themes/basic/graphics/streamline/48w/lock-1.png"/>
+	<icon name="unlock" file="themes/basic/graphics/streamline/48w/lock-unlock.png"/>
+	<icon name="prompt" file="themes/basic/graphics/streamline/48w/programming-keyboard-type.png"/>
+	<icon name="hand" file="themes/basic/graphics/streamline/48w/hand-expand.png"/>
+	<icon name="logoff" file="themes/basic/graphics/streamline/48w/logout-2.png"/>
+	<icon name="log" file="themes/basic/graphics/streamline/48w/login-3.png"/>
+
+	<icon name="arrangedice" file="themes/basic/graphics/template.png"/>
+	<icon name="lockdice" file="themes/basic/graphics/template.png"/>
+	<icon name="unlockdice" file="themes/basic/graphics/template.png"/>
+
+
+	<!-- OUR icons -->
+	<icon name="icon_window_resize" file="themes/basic/graphics/window_resize.png"/>
+	<icon name="icon_window_close_normal" file="themes/basic/graphics/window_close_normal.png"/>
+	<icon name="icon_window_close_pressed" file="themes/basic/graphics/window_close_pressed.png"/>
+	<icon name="icon_window_close_hover" file="themes/basic/graphics/window_close_hover.png"/>
+
+	<icon name="icon_window_minimize_normal" file="themes/basic/graphics/window_minimize_normal.png"/>
+	<icon name="icon_window_minimize_pressed" file="themes/basic/graphics/window_minimize_pressed.png"/>
+	<icon name="icon_window_minimize_hover" file="themes/basic/graphics/window_minimize_hover.png"/>
+
+	<icon name="icon_window_maximize_normal" file="themes/basic/graphics/window_maximize_normal.png"/>
+	<icon name="icon_window_maximize_pressed" file="themes/basic/graphics/window_maximize_pressed.png"/>
+	<icon name="icon_window_maximize_hover" file="themes/basic/graphics/window_maximize_hover.png"/>
+
+	<icon name="icon_window_link_normal" file="themes/basic/graphics/window_link_normal.png"/>
+	<icon name="icon_window_link_pressed" file="themes/basic/graphics/window_link_pressed.png"/>
+	<icon name="icon_window_link_hover" file="themes/basic/graphics/window_link_hover.png"/>
+
+	<icon name="icon_triangle_15_left" file="themes/basic/graphics/triangle_15_left.png"/>
+	<icon name="icon_triangle_31_left" file="themes/basic/graphics/triangle_31_left.png"/>
+
+	<framedef name="frame_window">
+		<bitmap file="themes/basic/graphics/window_frame.png" />
+		<offset>19,19,19,19</offset>
+	</framedef>
+</root>

@@ -1,7 +1,7 @@
 function onInit()
     DB.addHandler(link_db_ref.getValue(), 'onUpdate', onUpdateHandler)
     DB.addHandler(link_db_ref.getValue(), 'onChildUpdate', onUpdateHandler)
-    Gui.onInitEntered('combat_actor', self)
+    Gui.onInit_handle('combat_actor', self)
 end
 
 function onClose()
@@ -10,7 +10,7 @@ function onClose()
 end
 
 function onFirstLayout()
-    Gui.onFirstLayoutEntered('combat_actor', self)
+    Gui.onFirstLayout_handle('combat_actor', self)
 end
 
 function onUpdateHandler(actor_node, child_node)

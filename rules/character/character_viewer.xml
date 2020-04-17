@@ -45,6 +45,9 @@
 		<softclose />
 
 		<sheetdata>
+			<window_close/>
+			<window_resize/>
+
 			<windowlist name="list">
 				<datasource>.</datasource>
 				<class>character_viewer_element</class>
@@ -66,10 +69,6 @@
 				<anchored to="list" />
 				<target>list</target>
 			</scrollbar>
-
-			<close/>
-			<resize/>
-
 		</sheetdata>
 
 	</windowclass>

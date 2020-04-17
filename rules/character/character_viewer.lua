@@ -1,9 +1,9 @@
 function onInit()
-    Gui.onInitEntered('character_viewer', self)
+    Gui.onInit_handle('character_viewer', self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayoutEntered('character_viewer', self)
+    Gui.onFirstLayout_handle('character_viewer', self)
 end
 
 function onListChanged(node, child)

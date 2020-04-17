@@ -25,6 +25,10 @@
 		<playercontrol />
 
 		<sheetdata>
+			<window_close/>
+			<window_resize/>
+			<window_link/>
+
 			<TypeLayout/>
 
 			<LayoutBeginForm name="8 8 80 0"/>
@@ -41,8 +45,6 @@
 				<layout_numberfield name="luck"><default>1</default></layout_numberfield>
 			<LayoutEnd/>
 
-			<close/>
-			<resize/>
 
 		</sheetdata>
 	</windowclass>

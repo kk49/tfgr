@@ -11,14 +11,16 @@
           font="troika_font_bold"
           icon="troika_icon_compatibility_small"
   />
+  <announcement
+          text="Free Icons from the Streamline Icons Pack https://www.streamlineicons.com/"
+          link="https://www.streamlineicons.com/"
+  />
 
-  <importruleset source="CoreRPG" />
+<!--  <importruleset source="CoreRPG" />-->
 
-  <includefile source="delete/base.xml" />
-  <framedef name="desktop" merge="delete" /> <!-- disable/remove background frame that was under the background image-->
-  <framedef name="shortcuts" merge="delete" /> <!-- disable/remove shortcut frame that was under the shortcuts-->
-
-  <includefile source="game_elements.xml" />
+<!--  <includefile source="delete/base.xml" />-->
+<!--  <framedef name="desktop" merge="delete" /> &lt;!&ndash; disable/remove background frame that was under the background image&ndash;&gt;-->
+<!--  <framedef name="shortcuts" merge="delete" /> &lt;!&ndash; disable/remove shortcut frame that was under the shortcuts&ndash;&gt;-->
 
   <script name="Core" file="sys/core/core_manager.lua" />
   <script name="DbManager" file="sys/db/db_manager.lua" />
@@ -49,5 +51,9 @@
 
   <includefile source="desktop/base.xml" />
   <includefile source="external/base.xml" />
+
+  <includefile source="themes/basic/base.xml" />
+
+  <includefile source="game_elements.xml" />
 
 </root>

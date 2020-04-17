@@ -32,7 +32,7 @@
 
 	<panel name="shortcuts" modes="all">
 		<class>shortcuts</class>
-		<bounds>-116,16,100,-64</bounds>
+		<bounds>-216,16,-32,-64</bounds>
 		<dynamic />
 		<locked />
 	</panel>

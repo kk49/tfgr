@@ -7,6 +7,7 @@
 		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
 		<color value="#261A12" />
 	</font>
+
 	<font name="troika_font_bold">
 		<!-- fgffile name="graphics/fonts/troika-10.fgf" /-->
 		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="16" />
@@ -30,31 +31,14 @@
 <!--		<color value="#000000" />-->
 <!--	</font>-->
 	
-	<!-- Dice fonts - REQUIRED -->
-<!--	<font name="diceexpr" version="&gt;=4">-->
-<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />-->
-<!--		<color value="#000000" />-->
-<!--	</font>-->
-	<font name="diemod">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="18" />
-		<color value="#000000" />
-	</font>
-	<font name="dieresult">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />
-		<color value="#ffffff" />
-	</font>
-	
-	<!-- Drag fonts - REQUIRED -->
-	<font name="draglabel">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="32" />
-		<color value="#000000" />
-	</font>
+
+
 
 	<!-- Chat fonts - REQUIRED -->
-	<font name="chatfont">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
-		<color value="#261A12" />
-	</font>
+<!--	<font name="chatfont">-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />-->
+<!--		<color value="#261A12" />-->
+<!--	</font>-->
 <!--	<font name="emotefont">-->
 <!--		<fgffile name="graphics/fonts/regular-10.fgf" />-->
 <!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />-->
@@ -78,28 +62,24 @@
 <!--	</font>-->
 
 
-	<!-- Hot keys -->
-	<font name="hotkey">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="20" />
-		<color value="FFFFFF" />
-		<shadow offset="1,1" color="000000" />
-	</font>
+
 
 	<!-- Modifier stack -->
 <!--	<font name="modcollector">-->
 <!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="18" />-->
 <!--		<color value="#000000" />-->
 <!--	</font>-->
-	<font name="modcollectorlabel">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="10" />
-		<color value="#000000" />
-	</font>
+<!--	<font name="modcollectorlabel">-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="10" />-->
+<!--		<color value="#000000" />-->
+<!--	</font>-->
 
 	<!-- Radial menus and character list -->
-	<font name="mini_name">
-		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />
-		<color value="#000000" />
-	</font>
+<!--	<font name="mini_name">-->
+<!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="12" />-->
+<!--		<color value="#000000" />-->
+<!--	</font>-->
+
 <!--	<font name="mini_name_selected">-->
 <!--		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Bold.ttf" name="Averia Libre" size="12" />-->
 <!--		<color value="#000000" />-->
