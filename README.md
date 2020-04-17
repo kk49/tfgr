@@ -118,3 +118,6 @@ record has cached display values, actual records should be in Actor
 * CombatTracker
   * rounds: CombatRound[]
   
+## Assets
+### Streamline Icons
+[Free Icons from the Streamline Icons Pack](https://www.streamlineicons.com/)
