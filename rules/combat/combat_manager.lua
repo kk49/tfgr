@@ -26,9 +26,12 @@ k_OOB_COMBAT_ACTION = 'OOB_COMBAT_ACTION'
 local combat_actors = 'combat.fight.id-00001.actor'
 local combat_turns = 'combat.fight.id-00001.round.id-00001.turn'
 
--- Turn state
+-- Round State, tracks state of turns so turn id and turn count does not have to be redetermined every time
 local turn_count = nil
 local turn_id = nil
+
+
+-- Round Info to pass data between state determination and display
 local total_initiative = 0
 local total_initiative_used = 0
 local db_actor_initiative = {}
@@ -86,6 +89,8 @@ end
 -- ## Server
 function combatHandleReset(msg)
     if msg.what == k_what_combat_round then
+        turn_count = nil
+        turn_id = nil
         DB.deleteChildren(combat_turns)
         fightProcessDatabase()
     end
