@@ -97,8 +97,9 @@
 
 	<icon name="icon_button_link_share" file="themes/basic/graphics/template.png"/>
 	<icon name="icon_button_link_empty" file="themes/basic/graphics/template.png"/>
-	<icon name="icon_poll_empty" file="themes/basic/graphics/template.png" />
-	<icon name="icon_poll_check" file="themes/basic/graphics/template.png" />
+	<icon name="icon_poll_empty" file="themes/basic/graphics/icon_poll_empty.png" />
+	<icon name="icon_poll_positive" file="themes/basic/graphics/icon_poll_positive.png" />
+	<icon name="icon_poll_negative" file="themes/basic/graphics/icon_poll_negative.png" />
 
 	<!-- Radial Icons -->
 	<!-- TODO hardcoded? -->
@@ -118,9 +119,9 @@
 	<icon name="logoff" file="themes/basic/graphics/streamline/48w/logout-2.png"/>
 	<icon name="log" file="themes/basic/graphics/streamline/48w/login-3.png"/>
 
-	<icon name="arrangedice" file="themes/basic/graphics/template.png"/>
-	<icon name="lockdice" file="themes/basic/graphics/template.png"/>
-	<icon name="unlockdice" file="themes/basic/graphics/template.png"/>
+	<icon name="arrangedice" file="themes/basic/graphics/menu_dice_arrange.png"/>
+	<icon name="lockdice" file="themes/basic/graphics/menu_dice_lock.png"/>
+	<icon name="unlockdice" file="themes/basic/graphics/menu_dice_unlock.png"/>
 
 
 	<!-- OUR icons -->

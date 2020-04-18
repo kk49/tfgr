@@ -101,12 +101,12 @@ https://www.fantasygrounds.com/wiki/index.php/Developer_Guide_-_Rulesets_-_Setti
 
 	<pollbox version="&gt;=4">
 		<frame name="frame_die_box" offset="4,4,4,4" />
-		<icons empty="icon_poll_empty" positive="icon_poll_check" negative="icon_poll_negative" />
+		<icons empty="icon_poll_empty" positive="icon_poll_positive" negative="icon_poll_negative" />
 	</pollbox>
 	<pollbox version="&lt;4">
 		<frame name="frame_die_box" />
 		<margin value="21" numbertailmargin="10" />
-		<icons empty="icon_poll_empty" positive="icon_poll_check" negative="icon_poll_negative" />
+		<icons empty="icon_poll_empty" positive="icon_poll_positive" negative="icon_poll_negative" />
 	</pollbox>
 
 <!--	<viewerlistsettings>-->
