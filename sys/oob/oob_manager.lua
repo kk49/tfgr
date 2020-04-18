@@ -15,6 +15,8 @@ function processReceiveOOBMessage(msg)
 		return;
 	end
 
+    Debug.console('OOB: ', msg)
+
 	for handler_type, handler in pairs(global_OOBMsgHandlers) do
 		if msg.type == handler_type then
 			handler(msg);

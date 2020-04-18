@@ -4,7 +4,7 @@
 	<windowclass name="npc_sheet">
 		<script file="rules/npc/npc_sheet.lua" />
 
-		<frame>frame_troika_generic</frame>
+		<frame>frame_window</frame>
 
 		<placement>
 			<size width="350" height="300" />

@@ -4,7 +4,7 @@
 	<windowclass name="character_sheet">
 		<script file="rules/character/character_sheet.lua" />
 
-		<frame>frame_troika_generic</frame>
+		<frame>frame_window</frame>
 
 		<placement>
 			<size width="525" height="568" />

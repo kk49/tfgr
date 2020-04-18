@@ -35,7 +35,7 @@
 	<windowclass name="npc_viewer">
 		<script file="rules/npc/npc_viewer.lua" />
 
-		<frame>frame_troika_generic</frame>
+		<frame>frame_window</frame>
 
 		<sizelimits>
 			<dynamic />
@@ -62,8 +62,6 @@
 				<allowdelete />
 				<columns width="400" filldown="true" />
 				<sortby><control>name</control></sortby>
-				<filter><control>filter</control></filter>
-				<filteron><control>name</control></filteron>
 			</windowlist>
 			<scrollbar>
 				<anchored to="list" />

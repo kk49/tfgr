@@ -29,13 +29,9 @@ function onUpdateHandler(actor_node, child_node)
 end
 
 function elementOpen()
-    db_ref = link_db_ref.getValue()
-    Interface.openWindow(Core.editorFind(db_ref), db_ref)
+    return Core.openWindow(link_db_ref.getValue())
 end
 
 function elementDrag(button, x, y, drag_info)
-    --Debug.console('elementDrag', button, x, y, drag_info)
-    db_ref = link_db_ref.getValue()
-    drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
-    drag_info.setType('shortcut')
+    return Core.dragInfoGet(link_db_ref.getValue(), button, x, y, drag_info)
 end

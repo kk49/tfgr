@@ -1,7 +1,17 @@
 function onInit()
     Debug.console("manager_npc.onInit");
 	Core.classRegister('npc..[^.]+', objectCast)
+    Core.dragInfoRegister('npc..[^.]+', dragInfoGet)
     Core.editorRegister('npc..[^.]+', 'npc_sheet')
+end
+
+function dragInfoGet(db_ref, button, x, y, drag_info)
+    --Debug.console('elementDrag', button, x, y, drag_info)
+    name = DB.getValue(db_ref .. '.name')
+    drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
+    drag_info.setDescription('NPC: ' .. name)
+    drag_info.setType('shortcut')
+    return true
 end
 
 function objectCast(db_node, cast_to)

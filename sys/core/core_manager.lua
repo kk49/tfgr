@@ -48,16 +48,58 @@ function editorFind(db_path, default)
     end
 end
 
+function openWindow(db_ref)
+    editor = editorFind(db_ref)
+    if editor then
+        return Interface.openWindow(editor, db_ref)
+    else
+        return nil
+    end
+end
+
+-- drag info
+drag_info_registry = {}
+function dragInfoRegister(db_path_pattern, handler)
+    if drag_info_registry[db_path_pattern] then
+        Core.error('manager_core.dragInfoRegister: %s already registered', db_path_pattern)
+    else
+        drag_info_registry[db_path_pattern] = handler
+    end
+end
+
+function dragInfoUnregister(db_path_pattern, handler)
+    if handler == drag_info_registry[db_path_pattern] then
+        drag_info_registry[db_path_pattern] = nil
+    else
+        Core.error('manager_core.dragInfoUnregister: handler does not match stored value for %s', db_path_pattern)
+    end
+end
+
+function dragInfoGet(db_path, button, x, y, drag_info)
+    handler = nil
+    for k,v in pairs(drag_info_registry) do
+        if string.match(db_path, k) then
+            handler = v
+            break
+        end
+    end
+
+    if handler then
+        return handler(db_path, button, x, y, drag_info)
+    else
+        return false
+    end
+end
+
 -- class
 local class_registry = {}
 
 function classRegister(db_path_pattern, class_object)
     if class_registry[db_path_pattern] then
-        Core.error('manager_core.classRegister: class already registered %s', db_path_pattern)
+        Core.error('manager_core.classRegister: %s already registered', db_path_pattern)
     else
         class_registry[db_path_pattern] = class_object
     end
-
 end
 
 function classUnregister(db_path_pattern, class_object)

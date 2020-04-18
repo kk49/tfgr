@@ -35,7 +35,7 @@
 	<windowclass name="character_viewer">
 		<script file="rules/character/character_viewer.lua" />
 
-		<frame>frame_troika_generic</frame>
+		<frame>frame_window</frame>
 
 		<sizelimits>
 			<dynamic />

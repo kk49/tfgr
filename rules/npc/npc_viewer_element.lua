@@ -17,10 +17,6 @@ function elementOpen()
 end
 
 function elementDrag(button, x, y, drag_info)
-    --Debug.console('elementDrag', button, x, y, drag_info)
-    db_ref = getDatabaseNode().getNodeName()
-    drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
-    drag_info.setType('shortcut')
-    return true
+    return Core.dragInfoGet(getDatabaseNode().getNodeName(), button, x, y, drag_info)
 end
 

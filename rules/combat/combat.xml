@@ -173,9 +173,7 @@
 				<allowdelete />
 
                 <columns width="400" filldown="true" />
-                <sortby><control>actor</control></sortby>
-                <filter><control>filter</control></filter>
-                <filteron><control>name</control></filteron>
+                <sortby><control>link_db_ref</control></sortby>
             </windowlist>
 
             <scrollbar name="combat_actor_list_sb">
@@ -218,8 +216,6 @@
 
                 <columns width="400" filldown="true" />
                 <sortby><control>turn_number</control></sortby>
-                <filter><control>filter</control></filter>
-                <filteron><control>name</control></filteron>
             </windowlist>
 
             <scrollbar name="combat_turn_list_sb">

@@ -77,10 +77,7 @@
                 end
 
                 function onDragStart(button, x, y, drag_info)
-					db_ref = window.getDatabaseNode().getNodeName()
-					drag_info.setShortcutData(Core.editorFind(db_ref), db_ref)
-					drag_info.setType('shortcut')
-					return true
+					return window.elementDrag(button, x, y, drag_info)
                 end
             </script>
         </layout_buttoncontrol>
