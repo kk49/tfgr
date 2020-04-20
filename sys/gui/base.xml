@@ -2,6 +2,7 @@
 
 <root>
     <includefile source="sys/gui/template_base.xml" />
+    <includefile source="sys/gui/template_window.xml" />
     <includefile source="sys/gui/template_layout.xml" />
     <includefile source="sys/gui/template_viewer.xml" />
 </root>

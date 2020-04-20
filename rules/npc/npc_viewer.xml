@@ -45,6 +45,7 @@
 		<softclose />
 
 		<sheetdata>
+			<window_title><static textres="troika_npc_window_title"/></window_title>
 			<window_close/>
 			<window_resize/>
 

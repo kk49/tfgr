@@ -18,4 +18,8 @@
 	<string name="troika_next_turn">Next Turn</string>
 	<string name="troika_delay">Delay...</string>
 	<string name="troika_aim">AIM!</string>
+
+	<string name="troika_character_window_title">Character List</string>
+	<string name="troika_npc_window_title">NPC List</string>
+
 </root>

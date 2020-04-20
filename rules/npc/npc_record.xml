@@ -23,6 +23,7 @@
 <!--		<softclose />-->
 
 		<sheetdata>
+			<window_title_field/>
 			<window_close/>
 			<window_resize/>
 			<window_link/>
