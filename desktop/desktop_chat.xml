@@ -43,6 +43,7 @@
 <!--				<modeframe mode="chat" name="troika_frame_chat"/>-->
 <!--				<modeframe mode="story" name="troika_frame_story"/>-->
 <!--				<modeframe mode="whisper" name="troika_frame_whispter"/>-->
+
 				<linkcolor>0000FF</linkcolor>
 				<linkicon normal="icon_button_link" pressed="icon_button_link_down" />
 				<droptypes>

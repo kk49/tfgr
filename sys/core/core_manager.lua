@@ -27,7 +27,7 @@ function editorUnregister(db_path_pattern, editor_name)
         table.remove(stored_names)
         editor_registry[db_path_pattern] = nil
     else
-        Core.error('manager_core.editorUnregister: editor_name does not match top of stack for %s', db_path_pattern)
+        Core.error('manager_core.editorUnregister: editor_name does not match top of stack for <%s>', db_path_pattern)
     end
 end
 
@@ -43,7 +43,7 @@ function editorFind(db_path, default)
     if editor then
         return editor[#editor]  -- return top of stack
     else
-        Core.error('manager_core.editorFind: could not match %s to any class', db_path)
+        Core.error('manager_core.editorFind: could not match <%s> to any class', db_path)
         return nil
     end
 end
@@ -61,7 +61,7 @@ end
 drag_info_registry = {}
 function dragInfoRegister(db_path_pattern, handler)
     if drag_info_registry[db_path_pattern] then
-        Core.error('manager_core.dragInfoRegister: %s already registered', db_path_pattern)
+        Core.error('manager_core.dragInfoRegister: <%s> already registered', db_path_pattern)
     else
         drag_info_registry[db_path_pattern] = handler
     end
@@ -71,7 +71,7 @@ function dragInfoUnregister(db_path_pattern, handler)
     if handler == drag_info_registry[db_path_pattern] then
         drag_info_registry[db_path_pattern] = nil
     else
-        Core.error('manager_core.dragInfoUnregister: handler does not match stored value for %s', db_path_pattern)
+        Core.error('manager_core.dragInfoUnregister: handler does not match stored value for <%s>', db_path_pattern)
     end
 end
 
@@ -140,10 +140,10 @@ function dbCast(node, cast_to)
             if obj then
                 return obj
             else
-                Core.error('manager_core.dbCast: could not match case %s to %s', db_path, cast_to)
+                Core.error('manager_core.dbCast: could not match case <%s> to "%s"', db_path, cast_to)
             end
         else
-            Core.error('manager_core.dbCast: could not match %s to any class', db_path)
+            Core.error('manager_core.dbCast: could not match <%s> to any class', db_path)
         end
     end
 

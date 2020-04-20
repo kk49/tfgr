@@ -2,6 +2,7 @@ function onInit()
 	Debug.console("manager_chat: onInit")
 	Comm.registerSlashHandler("vc", debug_db)
 	Comm.registerSlashHandler("vn", debug_db)
+	Comm.registerSlashHandler("dd", debug_db)
 end
 
 function systemMessage(sText)
@@ -17,6 +18,7 @@ function debug_db(command, params)
 		Interface.openWindow('character_viewer', 'character')
 	elseif command == "vn" then
 		Interface.openWindow('npc_viewer', 'npc')
+	elseif command == "dd" then
 	end
 end
 

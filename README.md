@@ -2,13 +2,19 @@
 Troika! ruleset implemented in fantasy grounds
 
 # TODO
+- Gui
+  - still missing at least two icons
+  - window title text
+  - window title icon?
+  - layout engine update
+  - scroll bar graphics
 - Setup Character
 - Setup Combat tracker
 - Make Enemy sheet look like main rule book layout
 - Mien should be per enemy table, with role button?
 - Damage as dropdown based on values from table
 - options!!!
-  - Background
+- Background
 
 -- OOB_COMBAT_ACTION
 -- aim, delay, hit(with_what), shoot(with_what), 
@@ -121,3 +127,9 @@ record has cached display values, actual records should be in Actor
 ## Assets
 ### Streamline Icons
 [Free Icons from the Streamline Icons Pack](https://www.streamlineicons.com/)
+
+# Notes
+- It would be good if the database had transactions
+- transactions could be used to make an UNDO / REDO stack
+- That would require all state to be in the DB to prevent the logic from not getting out of sync
+- Functional programming language, that is passed the DB and returns a change list?
