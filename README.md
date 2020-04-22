@@ -30,24 +30,25 @@ Encomberance
   * classesGet() -> {str}
 
 ## Reference info
-* EquipRef
+* DamageTable
+  * name
+  * damage[7]
+  * ignore_1_ap  // ignore 1 point of armour
+  
+* EquipWeaponRef
   * Name
   * Description
+  * Special {Text, code?}
+  * two_plus_handed T/F
+  * OPTIONAL: DamageTable
   
-* WeaponRef(EquipRef)
-  * DamageTable[7]
-   
-* AdvSkillsRef
+* AdvSkillSpellRef
   * Name
   * Description
   * RefTables
+  * OPTIONAL: SpellCost
+  * OPTIONAL: DamageTable
   
-* SpellsRef
-  * Name
-  * Description
-  * Cost
-  * RefTables
-
 * BestiaryRef
   * Name
   * TagLine
@@ -128,8 +129,3 @@ record has cached display values, actual records should be in Actor
 ### Streamline Icons
 [Free Icons from the Streamline Icons Pack](https://www.streamlineicons.com/)
 
-# Notes
-- It would be good if the database had transactions
-- transactions could be used to make an UNDO / REDO stack
-- That would require all state to be in the DB to prevent the logic from not getting out of sync
-- Functional programming language, that is passed the DB and returns a change list?
