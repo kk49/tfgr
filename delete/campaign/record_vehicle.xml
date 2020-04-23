@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-	<windowclass name="vehicle" merge="delete"/>
-	
-	<windowclass name="vehicle_header" merge="delete"/>
-	
-	<windowclass name="vehicle_main" merge="delete"/>
-</root>

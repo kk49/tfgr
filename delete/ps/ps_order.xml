@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-	<windowclass name="ps_order" merge="delete"/>
-
-	<windowclass name="ps_watchitem" merge="delete"/>		
-</root>

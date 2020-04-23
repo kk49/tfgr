@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-	<windowclass name="combattracker_client" merge="delete"/>
-
-	<windowclass name="client_ct_entry" merge="delete"/>
-
-	<windowclass name="clientct_effect" merge="delete"/>
-</root>

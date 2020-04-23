@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-	<windowclass name="select_dialog" merge="delete"/>
-
-	<windowclass name="select_dialog_entry" merge="delete"/>
-</root>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>
-	<windowclass name="encounter" merge="delete"/>
-
-	<windowclass name="encounter_header" merge="delete"/>
-</root>
