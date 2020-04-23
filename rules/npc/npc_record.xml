@@ -25,44 +25,48 @@
 		<sheetdata>
 			<window_title_field/>
 			<window_close/>
+			<window_minimize/>
 			<window_resize/>
 			<window_link/>
 
-			<TypeLayout/>
+			<LayoutForm>
+				<v_spacing>8</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>8</v_margin>
+				<h_margin>8</h_margin>
+				<col_widths>80,0</col_widths>
+			</LayoutForm>
 
-			<LayoutBeginForm name="8 8 80 0"/>
+			<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
+			<layout_stringfield name="name" ><default text="NAME ME!!!"/></layout_stringfield>
 
-				<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
-				<layout_stringfield name="name" ><default text="NAME ME!!!"/></layout_stringfield>
+			<layout_stringcontrol name="l1"><static textres="troika_no_id_name" /></layout_stringcontrol>
+			<layout_stringfield name="no_id_name" ><default text="NAME ME A BIT LESS!!!"/></layout_stringfield>
 
-				<layout_stringcontrol name="l1"><static textres="troika_no_id_name" /></layout_stringcontrol>
-				<layout_stringfield name="no_id_name" ><default text="NAME ME A BIT LESS!!!"/></layout_stringfield>
+			<layout_stringcontrol name="l2"><static textres="troika_skill" /></layout_stringcontrol>
+			<layout_numberfield name="skill"><default>1</default></layout_numberfield>
 
-				<layout_stringcontrol name="l2"><static textres="troika_skill" /></layout_stringcontrol>
-				<layout_numberfield name="skill"><default>1</default></layout_numberfield>
+			<layout_stringcontrol name="l3"><static textres="troika_stamina" /></layout_stringcontrol>
+			<layout_numberfield name="stamina"><default>1</default></layout_numberfield>
 
-				<layout_stringcontrol name="l3"><static textres="troika_stamina" /></layout_stringcontrol>
-				<layout_numberfield name="stamina"><default>1</default></layout_numberfield>
+			<layout_stringcontrol name="l4"><static textres="troika_initiative" /></layout_stringcontrol>
+			<layout_numberfield name="initiative"><default>1</default></layout_numberfield>
 
-				<layout_stringcontrol name="l4"><static textres="troika_initiative" /></layout_stringcontrol>
-				<layout_numberfield name="initiative"><default>1</default></layout_numberfield>
+			<layout_stringcontrol name="l5"><static textres="troika_armour" /></layout_stringcontrol>
+			<layout_numberfield name="armour"><default>1</default></layout_numberfield>
 
-				<layout_stringcontrol name="l5"><static textres="troika_armour" /></layout_stringcontrol>
-				<layout_numberfield name="armour"><default>1</default></layout_numberfield>
+			<layout_stringcontrol name="l6"><static textres="troika_damage_as" /></layout_stringcontrol>
+			<layout_stringfield name="damage_as"><default>the wind</default></layout_stringfield>
 
-				<layout_stringcontrol name="l6"><static textres="troika_damage_as" /></layout_stringcontrol>
-				<layout_stringfield name="damage_as"><default>the wind</default></layout_stringfield>
+			<layout_stringcontrol name="l7"><static textres="troika_description" /></layout_stringcontrol>
+			<layout_stringfield name="description"><default>DESCRIBE ME!!!</default></layout_stringfield>
 
-				<layout_stringcontrol name="l7"><static textres="troika_description" /></layout_stringcontrol>
-				<layout_stringfield name="description"><default>DESCRIBE ME!!!</default></layout_stringfield>
+			<layout_stringcontrol name="l8"><static textres="troika_special" /></layout_stringcontrol>
+			<layout_stringfield name="special"><default>AM I SPECIAL?</default></layout_stringfield>
 
-				<layout_stringcontrol name="l8"><static textres="troika_special" /></layout_stringcontrol>
-				<layout_stringfield name="special"><default>AM I SPECIAL?</default></layout_stringfield>
+			<layout_stringcontrol name="l9"><static textres="troika_mien" /></layout_stringcontrol>
+			<layout_stringfield name="miens"><default>M1,M2,M3,M4,M5,M6</default></layout_stringfield>
 
-				<layout_stringcontrol name="l9"><static textres="troika_mien" /></layout_stringcontrol>
-				<layout_stringfield name="miens"><default>M1,M2,M3,M4,M5,M6</default></layout_stringfield>
-
-			<LayoutEnd/>
 		</sheetdata>
 	</windowclass>
 </root>

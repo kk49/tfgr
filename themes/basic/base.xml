@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-
 	<!-- Default fonts - REQUIRED -->
 	<font name="defaultstringcontrol">
 		<ttf file="graphics/fonts/Averia_Libre/AveriaLibre-Regular.ttf" name="Averia Libre" size="16" />
@@ -145,8 +144,5 @@
 	<icon name="icon_triangle_15_left" file="themes/basic/graphics/triangle_15_left.png"/>
 	<icon name="icon_triangle_31_left" file="themes/basic/graphics/triangle_31_left.png"/>
 
-	<framedef name="frame_window">
-		<bitmap file="themes/basic/graphics/window_frame.png" />
-		<offset>19,19,19,19</offset>
-	</framedef>
+	<includefile source="themes/basic/template_window.xml" />
 </root>

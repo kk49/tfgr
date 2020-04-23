@@ -9,23 +9,27 @@
 		</sizelimits>
 
 		<sheetdata>
-			<TypeLayout/>
+			<LayoutHorizontal>
+				<v_spacing>0</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>0</v_margin>
+				<h_margin>0</h_margin>
+			</LayoutHorizontal>
 
-			<LayoutBeginHorizontal name ="8"/>
-				<viewer_button_open/>
+            <viewer_button_open/>
 
-				<layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
-				<layout_stringfield name="name" ><!--disabled /--></layout_stringfield>
-				<layout_stringcontrol name="l1"><static text="Initiative:" /></layout_stringcontrol>
-				<layout_numberfield name="initiative_cur" ><!--disabled /--></layout_numberfield>
-				<layout_stringcontrol name="l2"><static text="/" /></layout_stringcontrol>
-				<layout_numberfield name="initiative_max" ><!--disabled /--></layout_numberfield>
-				<layout_stringcontrol name="l3"><static text="Stamina:" /></layout_stringcontrol>
-				<layout_numberfield name="stamina_cur" ><!--disabled /--></layout_numberfield>
-				<layout_stringcontrol name="l4"><static text="/" /></layout_stringcontrol>
-				<layout_numberfield name="stamina_max" ><!--disabled /--></layout_numberfield>
-            <LayoutEnd/>
-            <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
+            <layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
+            <layout_stringfield name="name" ><readonly/></layout_stringfield>
+            <layout_stringcontrol name="l1"><static text="Initiative:" /></layout_stringcontrol>
+            <layout_numberfield name="initiative_cur" ><readonly/></layout_numberfield>
+            <layout_stringcontrol name="l2"><static text="/" /></layout_stringcontrol>
+            <layout_numberfield name="initiative_max" ><readonly/></layout_numberfield>
+            <layout_stringcontrol name="l3"><static text="Stamina:" /></layout_stringcontrol>
+            <layout_numberfield name="stamina_cur" ><readonly/></layout_numberfield>
+            <layout_stringcontrol name="l4"><static text="/" /></layout_stringcontrol>
+            <layout_numberfield name="stamina_max" ><readonly/></layout_numberfield>
+
+            <layout_stringfield name="link_db_ref" ><invisible/><disabled/></layout_stringfield>
 
         </sheetdata>
 
@@ -39,16 +43,20 @@
 		</sizelimits>
 
 		<sheetdata>
-			<TypeLayout/>
+			<LayoutHorizontal>
+				<v_spacing>0</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>0</v_margin>
+				<h_margin>0</h_margin>
+			</LayoutHorizontal>
 
-			<LayoutBeginHorizontal name ="8"/>
-				<layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
-				<layout_stringfield name="name" ><disabled/></layout_stringfield>
-				<layout_stringcontrol name="l1"><static text="Acton:" /></layout_stringcontrol>
-				<layout_stringfield name="action" ><disabled /></layout_stringfield>
-            <LayoutEnd/>
-            <layout_numberfield name="turn_number"><invisible/></layout_numberfield>
-            <layout_stringfield name="link_db_ref" ><invisible/></layout_stringfield>
+            <layout_stringcontrol name="l0"><static text="Actor:" /></layout_stringcontrol>
+            <layout_stringfield name="name" ><readonly/></layout_stringfield>
+            <layout_stringcontrol name="l1"><static text="Acton:" /></layout_stringcontrol>
+            <layout_stringfield name="action" ><readonly/></layout_stringfield>
+
+            <layout_numberfield name="turn_number"><invisible/><disabled/></layout_numberfield>
+            <layout_stringfield name="link_db_ref" ><invisible/><disabled/></layout_stringfield>
         </sheetdata>
     </windowclass>
 
@@ -67,71 +75,73 @@
             <dynamic/>
         </sizelimits>
         <sheetdata>
-			<TypeLayout/>
+			<LayoutHorizontal>
+				<v_spacing>0</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>0</v_margin>
+				<h_margin>0</h_margin>
+			</LayoutHorizontal>
 
-			<LayoutBeginHorizontal name ="8"/>
-                <layout_buttoncontrol name="bttn_next_round">
-                    <script>
-                        function onButtonPress()
-                            return Combat.requestRoundReset()
-                        end
-                    </script>
-                    <frame>frame_single_pixel</frame>
-                    <textres>troika_next_round</textres>
-                    <anchored>
-                        <size>
-                            <width>80</width>
-                            <height>20</height>
-                        </size>
-                    </anchored>
-                </layout_buttoncontrol>
-				<layout_buttoncontrol name="bttn_next_turn">
-                    <script>
-                        function onButtonPress()
-                            return Combat.requestFightAction(Combat.k_action_done)
-                        end
-                    </script>
-                    <frame>frame_single_pixel</frame>
-                    <textres>troika_next_turn</textres>
-                    <anchored>
-                        <size>
-                            <width>80</width>
-                            <height>20</height>
-                        </size>
-                    </anchored>
-                </layout_buttoncontrol>
-				<layout_buttoncontrol name="bttn_delay">
-                    <script>
-                        function onButtonPress()
-                            return Combat.requestFightAction(Combat.k_action_delay)
-                        end
-                    </script>
-                    <frame>frame_single_pixel</frame>
-                    <textres>troika_delay</textres>
-                    <anchored>
-                        <size>
-                            <width>80</width>
-                            <height>20</height>
-                        </size>
-                    </anchored>
-                </layout_buttoncontrol>
-				<layout_buttoncontrol name="bttn_aim">
-                    <script>
-                        function onButtonPress()
-                            return Combat.requestFightAction(Combat.k_action_aim)
-                        end
-                    </script>
-                    <frame>frame_single_pixel</frame>
-                    <textres>troika_aim</textres>
-                    <anchored>
-                        <size>
-                            <width>80</width>
-                            <height>20</height>
-                        </size>
-                    </anchored>
-                </layout_buttoncontrol>
-
-            <LayoutEnd/>
+            <layout_buttoncontrol name="bttn_next_round">
+                <script>
+                    function onButtonPress()
+                        return Combat.requestRoundReset()
+                    end
+                </script>
+                <frame>frame_single_pixel</frame>
+                <textres>troika_next_round</textres>
+                <anchored>
+                    <size>
+                        <width>80</width>
+                        <height>20</height>
+                    </size>
+                </anchored>
+            </layout_buttoncontrol>
+            <layout_buttoncontrol name="bttn_next_turn">
+                <script>
+                    function onButtonPress()
+                        return Combat.requestFightAction(Combat.k_action_done)
+                    end
+                </script>
+                <frame>frame_single_pixel</frame>
+                <textres>troika_next_turn</textres>
+                <anchored>
+                    <size>
+                        <width>80</width>
+                        <height>20</height>
+                    </size>
+                </anchored>
+            </layout_buttoncontrol>
+            <layout_buttoncontrol name="bttn_delay">
+                <script>
+                    function onButtonPress()
+                        return Combat.requestFightAction(Combat.k_action_delay)
+                    end
+                </script>
+                <frame>frame_single_pixel</frame>
+                <textres>troika_delay</textres>
+                <anchored>
+                    <size>
+                        <width>80</width>
+                        <height>20</height>
+                    </size>
+                </anchored>
+            </layout_buttoncontrol>
+            <layout_buttoncontrol name="bttn_aim">
+                <script>
+                    function onButtonPress()
+                        return Combat.requestFightAction(Combat.k_action_aim)
+                    end
+                </script>
+                <frame>frame_single_pixel</frame>
+                <textres>troika_aim</textres>
+                <anchored>
+                    <size>
+                        <width>80</width>
+                        <height>20</height>
+                    </size>
+                </anchored>
+            </layout_buttoncontrol>
 
         </sheetdata>
     </windowclass>
@@ -150,6 +160,7 @@
 
 		<sheetdata>
             <window_close/>
+            <window_minimize/>
 			<window_resize/>
 
             <windowlist name="combat_actor_list">

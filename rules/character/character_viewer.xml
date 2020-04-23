@@ -11,23 +11,26 @@
         </sizelimits>
 
 		<sheetdata>
-			<TypeLayout/>
+			<LayoutHorizontal>
+				<v_spacing>0</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>0</v_margin>
+				<h_margin>0</h_margin>
+			</LayoutHorizontal>
 
-			<LayoutBeginHorizontal name="8"/>
-				<viewer_button_open/>
+			<viewer_button_open/>
 
-				<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>
-				<layout_stringfield name="name" ><disabled /></layout_stringfield>
+			<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>
+			<layout_stringfield name="name" ><readonly /></layout_stringfield>
 
-				<layout_stringcontrol name="l1"><static text="Skill:" /></layout_stringcontrol>
-				<layout_numberfield name="skill"><disabled /></layout_numberfield>
+			<layout_stringcontrol name="l1"><static text="Skill:" /></layout_stringcontrol>
+			<layout_numberfield name="skill"><readonly /></layout_numberfield>
 
-				<layout_stringcontrol name="l2"><static text="Stamina:" /></layout_stringcontrol>
-				<layout_numberfield name="stamina"><disabled /></layout_numberfield>
+			<layout_stringcontrol name="l2"><static text="Stamina:" /></layout_stringcontrol>
+			<layout_numberfield name="stamina"><readonly /></layout_numberfield>
 
-				<layout_stringcontrol name="l3"><static text="Luck:" /></layout_stringcontrol>
-				<layout_numberfield name="luck"><disabled /></layout_numberfield>
-			<LayoutEnd/>
+			<layout_stringcontrol name="l3"><static text="Luck:" /></layout_stringcontrol>
+			<layout_numberfield name="luck"><readonly /></layout_numberfield>
 
 		</sheetdata>
     </windowclass>
@@ -47,6 +50,7 @@
 		<sheetdata>
 			<window_title><static textres="troika_character_window_title"/></window_title>
 			<window_close/>
+			<window_minimize/>
 			<window_resize/>
 
 			<windowlist name="list">

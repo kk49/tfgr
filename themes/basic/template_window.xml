@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <template name="window_resize">
+        <window_resize_base name="window_resize">
+            <anchored height="21" width="21">
+				<right />
+				<bottom />
+			</anchored>
+			<icon>icon_window_resize</icon>
+        </window_resize_base>
+    </template>
+
+    <template name="window_close">
+        <window_close_base name="window_close">
+            <anchored height="21" width="21">
+				<right />
+				<top />
+			</anchored>
+
+			<icon normal="icon_window_close_normal"
+				  pressed="icon_window_close_pressed"
+				  hover="icon_window_close_hover"
+			/>
+        </window_close_base>
+    </template>
+
+    <template name="window_minimize">
+        <window_minimize_base name="window_minimize">
+            <anchored height="21" width="21">
+				<right offset="-23"/>
+				<top />
+			</anchored>
+
+			<icon normal="icon_window_minimize_normal"
+				  pressed="icon_window_minimize_pressed"
+				  hover="icon_window_minimize_hover"
+			/>
+        </window_minimize_base>
+    </template>
+
+	<template name="window_link">
+        <window_link_base name="window_link">
+            <anchored height="21" width="21">
+				<left/>
+				<top/>
+			</anchored>
+			<icon normal="icon_window_link_normal"
+				  pressed="icon_window_link_pressed"
+				  hover="icon_window_link_hover"
+			/>
+        </window_link_base>
+    </template>
+
+	<framedef name="frame_window">
+		<bitmap file="themes/basic/graphics/window_frame.png" />
+		<offset>21,21,21,21</offset>
+	</framedef>
+
+</root>

@@ -2,8 +2,8 @@ from PIL import Image
 
 # w = 31
 # master = Image.open('window_icons_31.png')
-w = 19
-master = Image.open('window_icons_19.png')
+w = 21
+master = Image.open('window_icons_21.png')
 
 icons = []
 

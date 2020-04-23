@@ -12,38 +12,31 @@
 <!--	</template>-->
 
 
-    <template name="TypeLayout">
-        <genericcontrol name="TypeLayout" >
-            <_class>LayoutBeginHorizontal</_class>
-            <anchored><top/><left/></anchored><invisible/>
-            <script file="sys/gui/layout.lua" />
+    <template name="Layout">
+        <genericcontrol name="_main" >
+            <_class>Layout</_class>
+            <anchored><top/><left/></anchored>
+            <invisible/>
+            <disabled/>
         </genericcontrol>
     </template>
 
-    <template name="LayoutEnd">
-        <genericcontrol name="LayoutEnd" >
-            <_class>LayoutEnd</_class>
-            <anchored><top/><left/></anchored><invisible/>
-        </genericcontrol>
+    <template name="LayoutForm">
+        <Layout>
+            <type>form</type>
+        </Layout>
     </template>
 
-    <template name="LayoutBeginHorizontal">
-        <genericcontrol name="LayoutBeginHorizontal" >
-            <_class>LayoutBeginHorizontal</_class>
-            <anchored><top/><left/></anchored><invisible/>
-        </genericcontrol>
-    </template>
-
-    <template name="LayoutBeginForm">
-        <genericcontrol name="LayoutBeginForm" >
-            <_class>LayoutBeginForm</_class>
-            <anchored><top/><left/></anchored><invisible/>
-        </genericcontrol>
+    <template name="LayoutHorizontal">
+        <Layout>
+            <type>horizontal</type>
+        </Layout>
     </template>
 
     <template name="layout_genericcontrol">
         <genericcontrol>
             <_class>genericcontrol</_class>
+            <layout>_main</layout>
             <anchored><top/><left/></anchored>
         </genericcontrol>
     </template>
@@ -51,6 +44,7 @@
     <template name="layout_stringcontrol">
         <stringcontrol>
             <_class>stringcontrol</_class>
+            <layout>_main</layout>
             <anchored><top/><left/></anchored>
         </stringcontrol>
     </template>
@@ -58,6 +52,7 @@
     <template name="layout_stringfield">
         <stringfield>
             <_class>stringfield</_class>
+            <layout>_main</layout>
             <anchored><top/><left/></anchored>
         </stringfield>
     </template>
@@ -65,6 +60,7 @@
     <template name="layout_numberfield">
         <numberfield>
             <_class>numberfield</_class>
+            <layout>_main</layout>
             <anchored><top/><left/></anchored>
         </numberfield>
     </template>
@@ -72,6 +68,7 @@
     <template name="layout_buttoncontrol">
         <buttoncontrol>
             <_class>buttoncontrol</_class>
+            <layout>_main</layout>
             <anchored><top/><left/></anchored>
         </buttoncontrol>
     </template>

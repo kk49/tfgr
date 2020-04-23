@@ -9,49 +9,49 @@
             <anchored>
                 <left anchor="left"/>
                 <right anchor="right"/>
-                <top anchor="top"/>
+                <top anchor="top" offset="3"/>
             </anchored>
         </stringcontrol>
     </template>
 
+    <windowclass name="window_title_field_window">
+        <sheetdata>
+            <stringfield name="name">
+                <disabled/>
+                <center/>
+                <anchored>
+                    <left anchor="left"/>
+                    <right anchor="right"/>
+                    <top anchor="top"/>
+                </anchored>
+            </stringfield>
+        </sheetdata>
+    </windowclass>
+
     <template name="window_title_field">
-        <stringfield name="name">
+        <subwindow name="window_title_field">
             <_class>window_title_field</_class>
-            <disabled/>
-            <center/>
+            <class>window_title_field_window</class>
+            <activate/>
+            <fastinit/>
             <anchored>
                 <left anchor="left"/>
                 <right anchor="right"/>
-                <top anchor="top"/>
+                <top anchor="top" offset="3"/>
             </anchored>
-        </stringfield>
+        </subwindow>
     </template>
 
-    <template name="window_resize">
-        <genericcontrol name="window_resize">
+    <template name="window_resize_base">
+        <genericcontrol name="window_resize_base">
 			<_class>window_resize</_class>
-            <anchored height="18" width="18">
-				<right />
-				<bottom />
-			</anchored>
-			<icon>icon_window_resize</icon>
-
 			<disabled />
         </genericcontrol>
     </template>
 
-    <template name="window_close">
-        <buttoncontrol name="window_close">
+    <template name="window_close_base">
+        <buttoncontrol name="window_close_base">
 			<_class>window_close</_class>
-            <anchored height="18" width="18">
-				<right />
-				<top />
-			</anchored>
-
-			<icon normal="icon_window_close_normal"
-				  pressed="icon_window_close_pressed"
-				  hover="icon_window_close_hover"
-			/>
 			<script>
 				function onButtonPress()
                     return window.close()
@@ -60,31 +60,15 @@
         </buttoncontrol>
     </template>
 
-    <template name="window_minimize">
-        <buttoncontrol name="window_minimize">
+    <template name="window_minimize_base">
+        <buttoncontrol name="window_minimize_base">
 			<_class>window_minimize</_class>
-            <anchored height="18" width="18">
-				<right offset="-20"/>
-				<top />
-			</anchored>
-			<icon normal="icon_window_minimize_normal"
-				  pressed="icon_window_minimize_pressed"
-				  hover="icon_window_minimize_hover"
-			/>
         </buttoncontrol>
     </template>
 
-	<template name="window_link">
-        <layout_buttoncontrol name="window_link">
-			<_class>window_minimize</_class>
-            <anchored height="18" width="18">
-				<left offset="2"/>
-				<top />
-			</anchored>
-			<icon normal="icon_window_link_normal"
-				  pressed="icon_window_link_pressed"
-				  hover="icon_window_link_hover"
-			/>
+	<template name="window_link_base">
+        <buttoncontrol name="window_link_base">
+			<_class>window_link</_class>
             <script>
                 function onButtonPress()
 					db_ref = window.getDatabaseNode().getNodeName()
@@ -96,7 +80,7 @@
 					return window.elementDrag(button, x, y, drag_info)
                 end
             </script>
-        </layout_buttoncontrol>
+        </buttoncontrol>
     </template>
 
 </root>
