@@ -24,11 +24,13 @@ function onUpdateHandler(actor_node, child_node)
         chits_used =  actor:initiativeUsedGet()
         chits_remaining = chits_available - chits_used
         DB.setValue(node, 'initiative_cur', 'number', chits_remaining)
+        DB.setValue(node, 'initiative_max', 'number', chits_available)
 
         stamina = actor:staminaGet()
         stamina_used = actor:staminaUsedGet()
         stamina_remaining = stamina - stamina_used
         DB.setValue(node, 'stamina_cur', 'number', stamina_remaining)
+        DB.setValue(node, 'stamina_max', 'number', stamina)
     else
         Core.error('did not link to combat.actor properly')
     end
