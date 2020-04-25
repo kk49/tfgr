@@ -3,13 +3,8 @@ Troika! ruleset implemented in fantasy grounds
 
 # TODO
 - Gui
-  - still missing at least two icons
-  - window title text
   - window title icon?
-  - layout engine update
   - scroll bar graphics
-- Setup Character
-- Setup Combat tracker
 - Make Enemy sheet look like main rule book layout
 - Mien should be per enemy table, with role button?
 - Damage as dropdown based on values from table

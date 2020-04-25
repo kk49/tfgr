@@ -66,18 +66,17 @@
         </buttoncontrol>
     </template>
 
-	<template name="window_link_base">
+    <template name="window_link_base">
         <buttoncontrol name="window_link_base">
-			<_class>window_link</_class>
+            <_class>window_link</_class>
             <script>
                 function onButtonPress()
-					db_ref = window.getDatabaseNode().getNodeName()
-					Interface.openWindow(Core.editorFind(db_ref), db_ref)
-					return true
+                    db_ref = window.getDatabaseNode().getNodeName()
+                    return Core.windowOpen('editor', db_ref)
                 end
 
                 function onDragStart(button, x, y, drag_info)
-					return window.elementDrag(button, x, y, drag_info)
+                    return window.elementDrag(button, x, y, drag_info)
                 end
             </script>
         </buttoncontrol>

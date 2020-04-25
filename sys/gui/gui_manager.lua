@@ -12,8 +12,8 @@ function onWindowClosed_handle(wi)
     Debug.console('onWindowClosedHandler', wi)
 end
 
-function onInit_handle(name, obj)
---     Debug.console(name .. '.onInit', obj)
+function onInit_handle(obj)
+     Debug.console(obj.getClass() .. '.onInit', obj)
     if 'windowinstance' == type(obj) then
         doLayout(obj)
     end
@@ -21,8 +21,8 @@ function onInit_handle(name, obj)
     onLockStateChanged_handle(obj)
 end
 
-function onFirstLayout_handle(name, obj)
-    Debug.console(name .. '.onFirstLayout', obj)
+function onFirstLayout_handle(obj)
+    Debug.console(obj.getClass() .. '.onFirstLayout', obj)
     if 'windowinstance' == type(obj) then
         doAdjustLayout(obj)
     end

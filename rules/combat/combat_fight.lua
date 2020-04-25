@@ -1,10 +1,10 @@
 
 function onInit()
-    Gui.onInit_handle('combat_fight', self)
+    Gui.onInit_handle(self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayout_handle('combat_fight', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function onDrop(x, y, drag_info)

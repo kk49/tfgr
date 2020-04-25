@@ -8,35 +8,50 @@ function error(...)
 end
 
 -- editor
-local editor_registry = {}
+local window_registry = {}
 
-function editorRegister(db_path_pattern, editor_name)
-    stored_names = editor_registry[db_path_pattern]
+function windowRegister(type, db_path_pattern, editor_name)
+    local type_registry = window_registry[type]
+
+    if not type_registry then
+        type_registry = {}
+        window_registry[type] = type_registry
+    end
+
+    local stored_names = type_registry[db_path_pattern]
     if not stored_names then
         stored_names = {}
+        type_registry[db_path_pattern] = stored_names
     end
 
     table.insert(stored_names, editor_name)
-
-    editor_registry[db_path_pattern] = stored_names
 end
 
-function editorUnregister(db_path_pattern, editor_name)
-    stored_names = editor_registry[db_path_pattern]
-    if stored_names and stored_names[#stored_names] == editor_name then
-        table.remove(stored_names)
-        editor_registry[db_path_pattern] = nil
+function windowUnregister(type, db_path_pattern, editor_name)
+    local type_registry = window_registry[type]
+    if type_registry then
+        local stored_names = type_registry[db_path_pattern]
+        if stored_names and stored_names[#stored_names] == editor_name then
+            table.remove(stored_names)
+            type_registry[db_path_pattern] = nil
+        else
+            Core.error('manager_core.windowUnregister: editor_name does not match top of stack for <%s>', db_path_pattern)
+        end
     else
-        Core.error('manager_core.editorUnregister: editor_name does not match top of stack for <%s>', db_path_pattern)
+        Core.error('manager_core.windowUnregister: type <%s} does not exist', type)
     end
 end
 
-function editorFind(db_path, default)
+function windowFind(type, db_path, default)
     editor = default
-    for k,v in pairs(editor_registry) do
-        if string.match(db_path, k) then
-            editor = v
-            break
+
+    local type_registry = window_registry[type]
+    if type_registry then
+        for k,v in pairs(type_registry) do
+            if string.match(db_path, k) then
+                editor = v
+                break
+            end
         end
     end
 
@@ -48,8 +63,8 @@ function editorFind(db_path, default)
     end
 end
 
-function openWindow(db_ref)
-    editor = editorFind(db_ref)
+function windowOpen(type, db_ref)
+    editor = windowFind(type, db_ref)
     if editor then
         return Interface.openWindow(editor, db_ref)
     else

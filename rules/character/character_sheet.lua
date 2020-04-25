@@ -1,9 +1,9 @@
 function onInit()
-    Gui.onInit_handle('character_sheet', self)
+    Gui.onInit_handle(self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayout_handle('character_sheet', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function elementDrag(button, x, y, drag_info)

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+
+
+      * Name
+  * Description
+  * Special {Text, code?}
+  * two_plus_handed T/F
+  * OPTIONAL: DamageTable
+
+
+    <windowclass name="item_sheet">
+		<script file="rules/item/item_sheet.lua" />
+
+		<frame>frame_window</frame>
+
+		<placement>
+			<size width="256" height="512" />
+		</placement>
+
+		<sizelimits>
+			<dynamic />
+        </sizelimits>
+
+		<tooltip field="name" />
+
+		<nodelete />
+        <playercontrol />
+
+		<sheetdata>
+			<window_title_field/>
+			<window_close/>
+			<window_minimize/>
+			<window_resize/>
+			<window_link/>
+
+			<LayoutForm>
+				<v_spacing>8</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>8</v_margin>
+				<h_margin>8</h_margin>
+				<col_widths>80,0</col_widths>
+			</LayoutForm>
+
+			<layout_stringcontrol name="l0"><static textres="troika_name" /></layout_stringcontrol>
+			<layout_stringfield name="name"><default text="NAME ME!!!"/></layout_stringfield>
+
+			<layout_stringcontrol name="l1"><static textres="troika_two_handed" /></layout_stringcontrol>
+			<layout_numberfield name="is_two_handed"><default>0</default></layout_numberfield>
+
+			<layout_stringcontrol name="l2"><static textres="troika_weapon_damage" /></layout_stringcontrol>
+			<layout_stringfield name="weapon_damage_table"><default></default></layout_stringfield>
+
+			<layout_stringcontrol name="l3"><static textres="troika_description" /></layout_stringcontrol>
+			<layout_formattedtextfield name="description"><default>DESCRIBE ME!!!</default></layout_formattedtextfield>
+
+		</sheetdata>
+	</windowclass>
+
+</root>

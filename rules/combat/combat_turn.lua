@@ -1,7 +1,7 @@
 local action_path = nil
 
 function onInit()
-    Gui.onInit_handle('combat_turn', self)
+    Gui.onInit_handle(self)
     doUpdate()
     action_path = getDatabaseNode().getPath() .. '.action'
     DB.addHandler(action_path, 'onUpdate', doUpdate)
@@ -12,7 +12,7 @@ function onClose()
 end
 
 function onFirstLayout()
-    Gui.onFirstLayout_handle('combat_turn', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function doUpdate()

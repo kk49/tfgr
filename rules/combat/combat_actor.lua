@@ -1,6 +1,6 @@
 function onInit()
     -- DB.addHandler was moved to onFirstLayout because the values are not loaded when onInit is called
-    Gui.onInit_handle('combat_actor', self)
+    Gui.onInit_handle(self)
 end
 
 function onClose()
@@ -11,7 +11,7 @@ end
 function onFirstLayout()
     DB.addHandler(link_db_ref.getValue(), 'onUpdate', onUpdateHandler)
     DB.addHandler(link_db_ref.getValue(), 'onChildUpdate', onUpdateHandler)
-    Gui.onFirstLayout_handle('combat_actor', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function onUpdateHandler(actor_node, child_node)
@@ -37,7 +37,7 @@ function onUpdateHandler(actor_node, child_node)
 end
 
 function elementOpen()
-    return Core.openWindow(link_db_ref.getValue())
+    return Core.windowOpen('editor', link_db_ref.getValue())
 end
 
 function elementDrag(button, x, y, drag_info)

@@ -1,15 +1,15 @@
 function onInit()
-    Gui.onInit_handle('npc_viewer', self)
+    Gui.onInit_handle(self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayout_handle('npc_viewer', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function onClose()
 end
 
 function onListChanged(node, child)
-    print('npc.viewer.onListChanged', node, child)
+    print(self.getClass() .. '.onListChanged', node, child)
     notifyUpdate()
 end

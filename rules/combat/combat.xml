@@ -63,11 +63,11 @@
     <windowclass name="combat_commands">
         <script>
             function onInit()
-                Gui.onInit_handle('combat_commands', self)
+                Gui.onInit_handle(self)
             end
 
             function onFirstLayout()
-                Gui.onFirstLayout_handle('combat_commands', self)
+                Gui.onFirstLayout_handle(self)
             end
         </script>
         <frame>frame_single_pixel</frame>

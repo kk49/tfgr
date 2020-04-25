@@ -25,6 +25,7 @@
 
   <script name="Campaign" file="rules/campaign/manager.lua" />
   <script name="Combat" file="rules/combat/combat_manager.lua" />
+  <script name="Item" file="rules/item/item_manager.lua" />
   <script name="Character" file="rules/character/character_manager.lua" />
   <script name="Npc" file="rules/npc/npc_manager.lua" />
 
@@ -40,6 +41,7 @@
 
   <includefile source="rules/campaign/base.xml" />
   <includefile source="rules/combat/base.xml" />
+  <includefile source="rules/item/base.xml" />
   <includefile source="rules/character/base.xml" />
   <includefile source="rules/npc/base.xml" />
 

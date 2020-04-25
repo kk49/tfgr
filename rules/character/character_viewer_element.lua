@@ -1,9 +1,9 @@
 function onInit()
-    Gui.onInit_handle('character_viewer_element', self)
+    Gui.onInit_handle(self)
 end
 
 function onFirstLayout()
-    Gui.onFirstLayout_handle('character_viewer_element', self)
+    Gui.onFirstLayout_handle(self)
 end
 
 function onDragStart(button, x, y, drag_info)
@@ -12,8 +12,7 @@ end
 
 function elementOpen()
     db_ref = getDatabaseNode().getNodeName()
-    Interface.openWindow(Core.editorFind(db_ref), db_ref)
-    return true
+    return Core.windowOpen('editor', db_ref)
 end
 
 function elementDrag(button, x, y, drag_info)

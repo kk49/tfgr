@@ -11,7 +11,7 @@
 		</sizelimits>
 		<script>
 			function onInit()
-				Gui.onInit_handle('chat', self)
+				Gui.onInit_handle(self)
 			end
 			function onLockStateChanged()
 				Gui.onLockStateChanged_handle(self)

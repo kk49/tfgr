@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+    <windowclass name="damage_table">
+		<script file="rules/combat/damage_table.lua" />
+
+		<frame>frame_single_pixel</frame>
+
+		<sizelimits>
+			<dynamic />
+        </sizelimits>
+
+		<sheetdata>
+			<LayoutHorizontal>
+				<v_spacing>0</v_spacing>
+				<h_spacing>8</h_spacing>
+				<v_margin>0</v_margin>
+				<h_margin>0</h_margin>
+			</LayoutHorizontal>
+
+			<viewer_button_open/>
+
+<!--			<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>-->
+			<layout_stringfield name="name" ><readonly /></layout_stringfield>
+			<layout_numberfield name="ignore_armour_points"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_1"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_2"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_3"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_4"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_5"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_6"><readonly /></layout_numberfield>
+			<layout_numberfield name="roll_7"><readonly /></layout_numberfield>
+
+		</sheetdata>
+    </windowclass>
+
+	<windowclass name="character_viewer">
+		<script file="rules/character/character_viewer.lua" />
+
+		<frame>frame_window</frame>
+
+		<sizelimits>
+			<dynamic />
+		</sizelimits>
+
+		<nodelete />
+		<softclose />
+
+		<sheetdata>
+			<window_title><static textres="troika_character_window_title"/></window_title>
+			<window_close/>
+			<window_minimize/>
+			<window_resize/>
+
+			<windowlist name="list">
+				<datasource>.</datasource>
+				<class>character_viewer_element</class>
+
+				<anchored position="below">
+					<top parent="" offset="24" />
+					<bottom parent="" offset="8" />
+					<left parent="" offset="8" />
+					<right parent="" offset="8" />
+				</anchored>
+				<allowcreate />
+				<allowdelete />
+				<columns width="400" filldown="true" />
+				<sortby><control>name</control></sortby>
+				<filter><control>filter</control></filter>
+				<filteron><control>name</control></filteron>
+			</windowlist>
+			<scrollbar>
+				<anchored to="list" />
+				<target>list</target>
+			</scrollbar>
+		</sheetdata>
+
+	</windowclass>
+</root>
