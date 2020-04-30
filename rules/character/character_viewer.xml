@@ -35,6 +35,7 @@
 		</sheetdata>
     </windowclass>
 
+<!---->
 	<windowclass name="character_viewer">
 		<script file="rules/character/character_viewer.lua" />
 
@@ -47,7 +48,10 @@
 		<nodelete />
 		<softclose />
 
+		<minimize>icon_triangle_31_left</minimize>
+
 		<sheetdata>
+<!---->
 			<window_title><static textres="troika_character_window_title"/></window_title>
 			<window_close/>
 			<window_minimize/>
@@ -55,6 +59,7 @@
 
 			<windowlist name="list">
 				<datasource>.</datasource>
+<!---->
 				<class>character_viewer_element</class>
 
 				<anchored position="below">

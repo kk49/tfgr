@@ -21,5 +21,6 @@
 
 	<string name="troika_character_window_title">Character List</string>
 	<string name="troika_npc_window_title">NPC List</string>
+	<string name="troika_damage_table_window_title">Damage Table List</string>
 
 </root>

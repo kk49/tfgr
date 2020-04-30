@@ -14,7 +14,7 @@
 			<dynamic />
 		</sizelimits>
 
-<!--		<minimize>troika_icon_npc_minimized</minimize>-->
+		<minimize>icon_triangle_31_left</minimize>
 
 		<tooltip field="name" />
 

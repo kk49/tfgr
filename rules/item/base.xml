@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
+    <includefile source="rules/item/damage_table_viewer.xml" />
     <includefile source="rules/item/item_sheet.xml" />
     <includefile source="rules/item/item_viewer.xml" />
 </root>

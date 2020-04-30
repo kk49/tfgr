@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <root>
-    <windowclass name="damage_table">
-		<script file="rules/combat/damage_table.lua" />
+    <windowclass name="damage_table_viewer_element">
+		<script file="rules/item/damage_table_viewer_element.lua" />
 
 		<frame>frame_single_pixel</frame>
 
@@ -21,21 +21,21 @@
 			<viewer_button_open/>
 
 <!--			<layout_stringcontrol name="l0"><static text="Name:" /></layout_stringcontrol>-->
-			<layout_stringfield name="name" ><readonly /></layout_stringfield>
-			<layout_numberfield name="ignore_armour_points"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_1"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_2"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_3"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_4"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_5"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_6"><readonly /></layout_numberfield>
-			<layout_numberfield name="roll_7"><readonly /></layout_numberfield>
+			<layout_stringfield name="name" ><default>NAME!?</default></layout_stringfield>
+			<layout_numberfield name="ignore_armour_points"><default>0</default></layout_numberfield>
+			<layout_numberfield name="roll_1"><default>1</default></layout_numberfield>
+			<layout_numberfield name="roll_2"><default>2</default></layout_numberfield>
+			<layout_numberfield name="roll_3"><default>3</default></layout_numberfield>
+			<layout_numberfield name="roll_4"><default>4</default></layout_numberfield>
+			<layout_numberfield name="roll_5"><default>5</default></layout_numberfield>
+			<layout_numberfield name="roll_6"><default>6</default></layout_numberfield>
+			<layout_numberfield name="roll_7"><default>7</default></layout_numberfield>
 
 		</sheetdata>
     </windowclass>
 
-	<windowclass name="character_viewer">
-		<script file="rules/character/character_viewer.lua" />
+	<windowclass name="damage_table_viewer">
+		<script file="rules/item/damage_table_viewer.lua" />
 
 		<frame>frame_window</frame>
 
@@ -47,14 +47,14 @@
 		<softclose />
 
 		<sheetdata>
-			<window_title><static textres="troika_character_window_title"/></window_title>
+			<window_title><static textres="troika_damage_table_window_title"/></window_title>
 			<window_close/>
 			<window_minimize/>
 			<window_resize/>
 
 			<windowlist name="list">
 				<datasource>.</datasource>
-				<class>character_viewer_element</class>
+				<class>damage_table_viewer_element</class>
 
 				<anchored position="below">
 					<top parent="" offset="24" />

@@ -63,6 +63,11 @@
     <template name="window_minimize_base">
         <buttoncontrol name="window_minimize_base">
 			<_class>window_minimize</_class>
+			<script>
+				function onButtonPress()
+                    return window.minimize()
+                end
+			</script>
         </buttoncontrol>
     </template>
 

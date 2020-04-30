@@ -14,13 +14,11 @@
 			<dynamic />
         </sizelimits>
 
-<!--		<minimize>troika_icon_char_minimized</minimize>-->
+		<minimize>icon_triangle_31_left</minimize>
 
 		<tooltip field="name" />
 
 		<nodelete />
-
-<!--		<softclose />-->
 
 		<playercontrol />
 

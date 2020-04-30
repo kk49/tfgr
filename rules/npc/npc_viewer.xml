@@ -46,6 +46,7 @@
 
 		<nodelete />
 		<softclose />
+		<minimize>icon_triangle_31_left</minimize>
 
 		<sheetdata>
 			<window_title><static textres="troika_npc_window_title"/></window_title>

@@ -33,6 +33,12 @@ local default_db =
             ['shortcut_class'] = {'string', 'combat_fight'},
             ['shortcut_db'] = {'string', 'combat.fight.id-00001'},
         },
+        ['id-00004'] = {
+            ['name'] = {'string', 'Damage Table'},
+            ['order'] = {'number', 3},
+            ['shortcut_class'] = {'string', 'damage_table_viewer'},
+            ['shortcut_db'] = {'string', 'table.damage'},
+        },
     },
     ['character'] = {
         ['id-00001'] = {
